@@ -1,0 +1,160 @@
+import Header from "@/components/Header";
+import PageHeader from "@/components/PageHeader";
+import Footer from "@/components/Footer";
+import Link from "next/link";
+import Image from "next/image";
+
+export const metadata = {
+  title: "施工事例 | 株式会社マルヨ",
+  description: "株式会社マルヨの施工事例。外壁塗装、屋根塗装、不用品回収、遺品整理など、これまでの施工実績をご紹介します。",
+};
+
+export default function CaseStudiesPage() {
+  const paintingCases = [
+    {
+      title: '外壁塗装施工例',
+      location: '静岡県富士市 A様邸',
+      description: '築20年の戸建て住宅の外壁塗装。色褪せと一部剥がれが見られたため、全面塗り替えを実施しました。',
+      image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&h=450&fit=crop'
+    },
+    {
+      title: '屋根塗装施工例',
+      location: '静岡県富士市 B様邸',
+      description: 'トタン屋根の塗り替え工事。錆止め処理後、遮熱塗料で仕上げました。',
+      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=450&fit=crop'
+    },
+    {
+      title: 'ブロック塀・門扉塗装',
+      location: '静岡県富士市 C様邸',
+      description: '経年劣化したブロック塀と門扉の塗装。建物との調和を考えた色選びをご提案しました。',
+      image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=450&fit=crop'
+    },
+    {
+      title: 'ウッドデッキ塗装',
+      location: '静岡県富士宮市 D様邸',
+      description: 'ウッドデッキのメンテナンス塗装。木材を保護し、美しさを取り戻しました。',
+      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=450&fit=crop'
+    },
+  ];
+
+  const junkCases = [
+    {
+      title: '不用品回収',
+      location: '静岡県富士市 E様',
+      description: '引っ越しに伴う不用品の回収。2トントラック1台分の家具・家電を回収しました。',
+      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=450&fit=crop'
+    },
+    {
+      title: '遺品整理',
+      location: '静岡県富士市 F様',
+      description: '故人宅の遺品整理。ご遺族の意向を尊重しながら、丁寧に整理・回収しました。',
+      image: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=600&h=450&fit=crop'
+    },
+    {
+      title: 'ゴミ屋敷清掃',
+      location: '静岡県沼津市 G様',
+      description: 'お部屋の片付けから不用品回収まで一貫して対応。プライバシーに配慮して作業しました。',
+      image: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&h=450&fit=crop'
+    },
+    {
+      title: '大型家具回収',
+      location: '静岡県富士市 H様',
+      description: 'タンス、ベッド、ソファなど大型家具の回収。搬出から処分まですべてお任せいただきました。',
+      image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=450&fit=crop'
+    },
+  ];
+
+  return (
+    <>
+      <Header />
+      <main className="main-content">
+        <PageHeader 
+          title="施工事例" 
+          subtitle="これまでの施工実績をご紹介します" 
+        />
+
+        {/* 塗装事例 */}
+        <section className="py-16 bg-white">
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="flex items-center gap-3 mb-8">
+              <span className="w-2 h-8 bg-[var(--primary-green)] rounded"></span>
+              <h2 className="text-2xl font-bold text-[var(--primary-green)]">塗装事例</h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {paintingCases.map((caseItem, index) => (
+                <div key={index} className="card overflow-hidden group">
+                  <div className="relative h-56 overflow-hidden">
+                    <Image
+                      src={caseItem.image}
+                      alt={caseItem.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="bg-[var(--primary-green)]/10 text-[var(--primary-green)] text-xs px-2 py-1 rounded">塗装</span>
+                      <span className="text-xs text-[var(--text-light)]">{caseItem.location}</span>
+                    </div>
+                    <h3 className="font-bold text-[var(--text-dark)] mb-2">{caseItem.title}</h3>
+                    <p className="text-sm text-[var(--text-medium)]">{caseItem.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 不用品回収事例 */}
+        <section className="py-16 bg-[var(--bg-light)]">
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="flex items-center gap-3 mb-8">
+              <span className="w-2 h-8 bg-[var(--accent-yellow)] rounded"></span>
+              <h2 className="text-2xl font-bold text-[var(--text-dark)]">不用品回収・遺品整理事例</h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {junkCases.map((caseItem, index) => (
+                <div key={index} className="card overflow-hidden group">
+                  <div className="relative h-56 overflow-hidden">
+                    <Image
+                      src={caseItem.image}
+                      alt={caseItem.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="bg-[var(--accent-yellow)]/30 text-[var(--text-dark)] text-xs px-2 py-1 rounded">回収</span>
+                      <span className="text-xs text-[var(--text-light)]">{caseItem.location}</span>
+                    </div>
+                    <h3 className="font-bold text-[var(--text-dark)] mb-2">{caseItem.title}</h3>
+                    <p className="text-sm text-[var(--text-medium)]">{caseItem.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="py-12 bg-[var(--primary-green)]">
+          <div className="max-w-4xl mx-auto px-4 text-center text-white">
+            <h2 className="text-xl font-bold mb-4">
+              事例について詳しく聞きたい方は
+            </h2>
+            <p className="mb-6 opacity-90">
+              ご自宅の状況に合わせたご提案をいたします
+            </p>
+            <Link href="/contact" className="btn-accent">
+              お問い合わせはこちら
+            </Link>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}
