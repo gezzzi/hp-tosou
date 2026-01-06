@@ -70,7 +70,7 @@ export default function CaseStudiesPage() {
       <main className="main-content">
         <PageHeader 
           title="施工事例" 
-          subtitle="これまでの施工実績をご紹介します" 
+          subtitle="WORKS" 
         />
 
         {/* 塗装事例 */}

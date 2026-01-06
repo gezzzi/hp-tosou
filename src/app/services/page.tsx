@@ -58,7 +58,7 @@ export default function ServicesPage() {
       <main className="main-content">
         <PageHeader 
           title="サービス" 
-          subtitle="塗装から不用品回収まで、幅広いサービスを提供しています" 
+          subtitle="SERVICE" 
         />
 
         {/* 塗装サービス */}

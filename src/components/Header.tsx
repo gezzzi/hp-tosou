@@ -1,12 +1,24 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+
+  // メニューが開いているときスクロールを無効化
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
 
   const navItems = [
     { label: 'ホーム', href: '/' },
@@ -26,11 +38,11 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-md">
+    <header className="bg-white shadow-md relative z-50">
       {/* トップバー */}
       <div className="bg-[var(--primary-green)] text-white py-1.5 px-4">
         <div className="max-w-6xl mx-auto flex justify-between items-center text-sm">
-          <span>静岡県全域対応 | 平日 8:00〜17:00</span>
+          <span>外壁塗装から不用品回収まで | 静岡県全域対応</span>
           <span className="hidden md:block">古物商許可: 静岡県公安委員会 第491100145100号</span>
         </div>
       </div>
@@ -66,17 +78,21 @@ export default function Header() {
 
           {/* ハンバーガーメニュー */}
           <button
-            className="lg:hidden p-2"
+            className="lg:hidden p-2 transition-all relative z-[60]"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="メニューを開く"
+            aria-label={isMenuOpen ? "メニューを閉じる" : "メニューを開く"}
           >
-            <svg className="w-8 h-8 text-[var(--primary-green)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {isMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
+            <div className="w-8 h-8 flex flex-col justify-center items-center relative">
+              <span className={`block w-6 h-0.5 bg-[var(--primary-green)] transition-all duration-300 absolute ${
+                isMenuOpen ? 'rotate-45' : '-translate-y-2'
+              }`} />
+              <span className={`block w-6 h-0.5 bg-[var(--primary-green)] transition-all duration-300 absolute ${
+                isMenuOpen ? 'opacity-0' : 'opacity-100'
+              }`} />
+              <span className={`block w-6 h-0.5 bg-[var(--primary-green)] transition-all duration-300 absolute ${
+                isMenuOpen ? '-rotate-45' : 'translate-y-2'
+              }`} />
+            </div>
           </button>
         </div>
 
@@ -101,41 +117,52 @@ export default function Header() {
         </nav>
       </div>
 
-      {/* モバイルメニュー */}
-      {isMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-[var(--border-light)]">
-          <nav className="max-w-6xl mx-auto px-4 py-4">
-            <ul className="space-y-4">
-              {navItems.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className={`block font-medium py-2 ${
-                      isActive(item.href)
-                        ? 'text-[var(--primary-green)]'
-                        : 'text-[var(--text-dark)] hover:text-[var(--primary-green)]'
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-4 pt-4 border-t border-[var(--border-light)]">
-              <a href="tel:000-0000-0000" className="flex items-center justify-center gap-2 text-xl font-bold text-[var(--primary-green)] mb-3">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                </svg>
-                000-0000-0000
-              </a>
-              <Link href="/contact" className="btn-primary block text-center" onClick={() => setIsMenuOpen(false)}>
-                無料お見積り
-              </Link>
-            </div>
-          </nav>
+      {/* モバイルメニューオーバーレイ */}
+      <>
+        {/* 背景オーバーレイ */}
+        <div 
+          className={`lg:hidden fixed inset-0 bg-black/50 z-[45] transition-opacity duration-300 ${
+            isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          }`}
+          onClick={() => setIsMenuOpen(false)}
+        />
+        
+        {/* メニューパネル */}
+        <div className={`lg:hidden fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-2xl z-[51] overflow-y-auto transition-transform duration-300 ease-out ${
+          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}>
+          <nav className="px-6 py-6 mt-20">
+              <ul className="space-y-4">
+                {navItems.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className={`block font-medium py-3 border-b border-[var(--border-light)] ${
+                        isActive(item.href)
+                          ? 'text-[var(--primary-green)]'
+                          : 'text-[var(--text-dark)] hover:text-[var(--primary-green)]'
+                      }`}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6 pt-6 border-t-2 border-[var(--border-light)]">
+                <a href="tel:000-0000-0000" className="flex items-center justify-center gap-2 text-xl font-bold text-[var(--primary-green)] mb-4">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                  </svg>
+                  000-0000-0000
+                </a>
+                <Link href="/contact" className="btn-primary block text-center" onClick={() => setIsMenuOpen(false)}>
+                  無料お見積り
+                </Link>
+              </div>
+            </nav>
         </div>
-      )}
+      </>
     </header>
   );
 }

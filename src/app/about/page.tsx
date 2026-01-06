@@ -55,7 +55,7 @@ export default function AboutPage() {
       <main className="main-content">
         <PageHeader 
           title="選ばれる理由" 
-          subtitle="マルヨが多くのお客様から選ばれる理由をご紹介します" 
+          subtitle="WHY US" 
         />
 
         {/* 選ばれる理由 */}

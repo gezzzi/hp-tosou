@@ -15,7 +15,7 @@ export default function PricingPage() {
       <main className="main-content">
         <PageHeader 
           title="料金案内" 
-          subtitle="明朗会計でご安心いただけます" 
+          subtitle="PRICING" 
         />
 
         {/* 不用品回収料金 */}

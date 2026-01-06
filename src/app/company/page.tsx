@@ -52,7 +52,7 @@ export default function CompanyPage() {
       <main className="main-content">
         <PageHeader 
           title="会社概要" 
-          subtitle="株式会社マルヨについて" 
+          subtitle="COMPANY" 
         />
 
         {/* 会社情報 */}

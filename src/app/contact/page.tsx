@@ -15,7 +15,7 @@ export default function ContactPage() {
       <main className="main-content">
         <PageHeader 
           title="お問い合わせ" 
-          subtitle="お見積り・ご相談は無料です" 
+          subtitle="CONTACT" 
         />
 
         <section className="py-16 bg-white">
