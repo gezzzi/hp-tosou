@@ -1,12 +1,15 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const pathname = usePathname();
+  const dropdownRef = useRef<HTMLLIElement>(null);
 
   // メニューが開いているときスクロールを無効化
   useEffect(() => {
@@ -20,9 +23,19 @@ export default function Header() {
     };
   }, [isMenuOpen]);
 
+  // ドロップダウン外クリックで閉じる
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsServicesOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   const navItems = [
     { label: 'ホーム', href: '/' },
-    { label: 'サービス', href: '/services' },
     { label: '料金案内', href: '/pricing' },
     { label: '選ばれる理由', href: '/about' },
     { label: '施工事例', href: '/case-studies' },
@@ -30,11 +43,20 @@ export default function Header() {
     { label: 'お問い合わせ', href: '/contact' },
   ];
 
+  const serviceItems = [
+    { label: '塗装サービス', href: '/services/painting' },
+    { label: '不用品回収・遺品整理', href: '/services/junk-removal' },
+  ];
+
   const isActive = (href: string) => {
     if (href === '/') {
       return pathname === '/';
     }
     return pathname.startsWith(href);
+  };
+
+  const isServicesActive = () => {
+    return pathname.startsWith('/services');
   };
 
   return (
@@ -99,7 +121,70 @@ export default function Header() {
         {/* ナビゲーション - PC */}
         <nav className="hidden lg:block mt-3 border-t border-[var(--border-light)] pt-3">
           <ul className="flex justify-center gap-6">
-            {navItems.map((item) => (
+            {/* ホーム */}
+            <li>
+              <Link
+                href="/"
+                className={`font-medium transition-colors pb-1 ${
+                  isActive('/')
+                    ? 'text-[var(--primary-green)] border-b-2 border-[var(--primary-green)]'
+                    : 'text-[var(--text-dark)] hover:text-[var(--primary-green)]'
+                }`}
+              >
+                ホーム
+              </Link>
+            </li>
+
+            {/* サービス（ドロップダウン） */}
+            <li className="relative" ref={dropdownRef}>
+              <button
+                onClick={() => setIsServicesOpen(!isServicesOpen)}
+                className={`font-medium transition-colors pb-1 flex items-center gap-1 ${
+                  isServicesActive()
+                    ? 'text-[var(--primary-green)] border-b-2 border-[var(--primary-green)]'
+                    : 'text-[var(--text-dark)] hover:text-[var(--primary-green)]'
+                }`}
+              >
+                サービス
+                <svg 
+                  className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {/* ドロップダウンメニュー */}
+              <div 
+                className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white rounded-lg shadow-lg border border-[var(--border-light)] overflow-hidden transition-all duration-200 ${
+                  isServicesOpen 
+                    ? 'opacity-100 visible translate-y-0' 
+                    : 'opacity-0 invisible -translate-y-2'
+                }`}
+              >
+                <div className="py-2">
+                  {serviceItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={`block px-4 py-2 text-sm transition-colors ${
+                        isActive(item.href)
+                          ? 'text-[var(--primary-green)] bg-[var(--primary-green)]/5'
+                          : 'text-[var(--text-dark)] hover:bg-[var(--bg-light)] hover:text-[var(--primary-green)]'
+                      }`}
+                      onClick={() => setIsServicesOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </li>
+
+            {/* 他のナビゲーション項目 */}
+            {navItems.slice(1).map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
@@ -132,8 +217,68 @@ export default function Header() {
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}>
           <nav className="px-6 py-6 mt-20">
-              <ul className="space-y-4">
-                {navItems.map((item) => (
+              <ul className="space-y-1">
+                {/* ホーム */}
+                <li>
+                  <Link
+                    href="/"
+                    className={`block font-medium py-3 border-b border-[var(--border-light)] ${
+                      isActive('/')
+                        ? 'text-[var(--primary-green)]'
+                        : 'text-[var(--text-dark)] hover:text-[var(--primary-green)]'
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    ホーム
+                  </Link>
+                </li>
+
+                {/* サービス（アコーディオン） */}
+                <li>
+                  <button
+                    onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                    className={`w-full flex items-center justify-between font-medium py-3 border-b border-[var(--border-light)] ${
+                      isServicesActive()
+                        ? 'text-[var(--primary-green)]'
+                        : 'text-[var(--text-dark)] hover:text-[var(--primary-green)]'
+                    }`}
+                  >
+                    サービス
+                    <svg 
+                      className={`w-5 h-5 transition-transform duration-200 ${isMobileServicesOpen ? 'rotate-180' : ''}`} 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  
+                  {/* サブメニュー */}
+                  <div 
+                    className={`overflow-hidden transition-all duration-300 ${
+                      isMobileServicesOpen ? 'max-h-60' : 'max-h-0'
+                    }`}
+                  >
+                    {serviceItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className={`block pl-6 font-medium py-3 border-b border-[var(--border-light)] ${
+                          isActive(item.href)
+                            ? 'text-[var(--primary-green)]'
+                            : 'text-[var(--text-dark)] hover:text-[var(--primary-green)]'
+                        }`}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </li>
+
+                {/* 他のナビゲーション項目 */}
+                {navItems.slice(1).map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
