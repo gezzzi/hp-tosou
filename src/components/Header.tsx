@@ -44,8 +44,7 @@ export default function Header() {
               <span className="text-white font-bold text-xl">丸</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-[var(--primary-green)]">株式会社マルヨ</h1>
-              <p className="text-xs text-[var(--text-light)]">塗装・不用品回収のプロフェッショナル</p>
+              <h1 className="text-3xl font-extrabold text-[#018615]" style={{ fontFamily: "var(--font-m-plus-1p), 'Yu Gothic', 'Hiragino Kaku Gothic ProN', sans-serif" }}>株式会社マルヨ</h1>
             </div>
           </Link>
 

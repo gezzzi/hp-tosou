@@ -127,7 +127,7 @@ export default function CompanyPage() {
                     <div className="hidden md:block absolute top-8 left-[60%] w-[80%] h-0.5 bg-[var(--primary-green)]/30"></div>
                   )}
                   <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-white ${
-                    index === flowSteps.length - 1 ? 'bg-[var(--accent-yellow)] text-[var(--text-dark)]' : 'bg-[var(--primary-green)]'
+                    index === 1 || index === 3 ? 'bg-[var(--secondary-green)]' : 'bg-[var(--primary-green)]'
                   }`}>
                     {step.number}
                   </div>

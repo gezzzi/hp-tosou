@@ -5,6 +5,7 @@
   --primary-green: #6fbb18;
   --primary-green-dark: #5a9a14;
   --primary-green-light: #82d426;
+  --secondary-green: #37bb18;
   --accent-yellow: #ffea03;
   --accent-yellow-dark: #e6d400;
   --accent-yellow-light: #fff44f;
@@ -156,10 +157,10 @@ body {
 
 /* ページヘッダー */
 .page-header {
-  background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-light) 100%);
+  background: #f0f8e7;
   padding: 3rem 1rem;
   text-align: center;
-  color: white;
+  color: var(--text-dark);
 }
 
 .page-header h1 {
@@ -169,7 +170,7 @@ body {
 }
 
 .page-header p {
-  opacity: 0.9;
+  color: var(--text-medium);
 }
 
 /* アニメーション */
