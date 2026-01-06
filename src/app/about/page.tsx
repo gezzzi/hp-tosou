@@ -55,7 +55,7 @@ export default function AboutPage() {
       <main className="main-content">
         <PageHeader 
           title="選ばれる理由" 
-          subtitle="WHY US" 
+          subtitle="REASONS" 
         />
 
         {/* 選ばれる理由 */}
