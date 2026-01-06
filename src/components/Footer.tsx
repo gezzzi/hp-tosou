@@ -13,7 +13,7 @@ export default function Footer() {
     <footer className="bg-white border-t border-[var(--border-light)]">
       {/* メインフッター */}
       <div className="max-w-6xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* 会社情報 */}
           <div>
             <div className="flex items-center gap-3 mb-4">
@@ -31,50 +31,6 @@ export default function Footer() {
               <p>定休日: 土曜日、日曜日</p>
               <p className="mt-2 text-xs text-[var(--text-light)]">古物商許可: 静岡県公安委員会<br />第491100145100号</p>
             </address>
-          </div>
-
-          {/* ナビゲーション */}
-          <div>
-            <h4 className="font-bold mb-4 text-lg text-[var(--text-dark)]">サイトマップ</h4>
-            <nav>
-              <ul className="space-y-2 text-sm text-[var(--text-medium)]">
-                <li>
-                  <Link href="/" className="hover:text-[var(--primary-green)] transition-colors">
-                    ホーム
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services" className="hover:text-[var(--primary-green)] transition-colors">
-                    サービス
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/pricing" className="hover:text-[var(--primary-green)] transition-colors">
-                    料金案内
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about" className="hover:text-[var(--primary-green)] transition-colors">
-                    選ばれる理由
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/case-studies" className="hover:text-[var(--primary-green)] transition-colors">
-                    施工事例
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/company" className="hover:text-[var(--primary-green)] transition-colors">
-                    会社概要
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="hover:text-[var(--primary-green)] transition-colors">
-                    お問い合わせ
-                  </Link>
-                </li>
-              </ul>
-            </nav>
           </div>
 
           {/* お問い合わせ */}
