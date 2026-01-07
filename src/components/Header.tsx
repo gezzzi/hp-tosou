@@ -8,8 +8,10 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const [isHeaderFixed, setIsHeaderFixed] = useState(false);
   const pathname = usePathname();
   const dropdownRef = useRef<HTMLLIElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
 
   // メニューが開いているときスクロールを無効化
   useEffect(() => {
@@ -32,6 +34,21 @@ export default function Header() {
     }
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // スクロール監視でヘッダーを固定（モバイルのみ）
+  useEffect(() => {
+    const handleScroll = () => {
+      // トップバーの高さ（約32px）を超えたら固定
+      if (window.scrollY > 32) {
+        setIsHeaderFixed(true);
+      } else {
+        setIsHeaderFixed(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navItems = [
@@ -60,17 +77,24 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-md relative z-50">
-      {/* トップバー */}
-      <div className="bg-[var(--primary-green)] text-white py-1.5 px-4">
-        <div className="max-w-6xl mx-auto flex justify-between items-center text-sm">
-          <span>外壁塗装から不用品回収まで | 静岡県全域対応</span>
-          <span className="hidden md:block">古物商許可: 静岡県公安委員会 第491100145100号</span>
+    <>
+      <header className="relative z-50">
+        {/* トップバー */}
+        <div className="bg-[var(--primary-green)] text-white py-1.5 px-4">
+          <div className="max-w-6xl mx-auto flex justify-between items-center text-sm">
+            <span>外壁塗装から不用品回収まで | 静岡県全域対応</span>
+            <span className="hidden md:block">古物商許可: 静岡県公安委員会 第491100145100号</span>
+          </div>
         </div>
-      </div>
 
-      {/* メインヘッダー */}
-      <div className="max-w-6xl mx-auto px-4 py-3">
+        {/* メインヘッダー */}
+        <div 
+          ref={headerRef}
+          className={`bg-white shadow-md transition-all duration-300 ${
+            isHeaderFixed ? 'fixed top-0 left-0 right-0 z-50 lg:relative' : 'relative'
+          }`}
+        >
+        <div className="max-w-6xl mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
           {/* ロゴ・会社名 */}
           <Link href="/" className="flex items-center gap-3">
@@ -197,7 +221,14 @@ export default function Header() {
             ))}
           </ul>
         </nav>
+        </div>
       </div>
+      </header>
+
+      {/* プレースホルダー（ヘッダー固定時にコンテンツがジャンプしないように） */}
+      {isHeaderFixed && (
+        <div className="lg:hidden" style={{ height: headerRef.current?.offsetHeight || 0 }} />
+      )}
 
       {/* モバイルメニューオーバーレイ */}
       <>
@@ -302,6 +333,6 @@ export default function Header() {
             </nav>
         </div>
       </>
-    </header>
+    </>
   );
 }
