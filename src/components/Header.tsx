@@ -136,29 +136,26 @@ export default function Header() {
             </li>
 
             {/* サービス（ドロップダウン） */}
-            <li className="relative" ref={dropdownRef}>
+            <li 
+              className="relative" 
+              ref={dropdownRef}
+              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseLeave={() => setIsServicesOpen(false)}
+            >
               <button
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
-                className={`font-medium transition-colors pb-1 flex items-center gap-1 ${
+                className={`font-medium transition-colors pb-1 ${
                   isServicesActive()
                     ? 'text-[var(--primary-green)] border-b-2 border-[var(--primary-green)]'
                     : 'text-[var(--text-dark)] hover:text-[var(--primary-green)]'
                 }`}
               >
                 サービス
-                <svg 
-                  className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
               </button>
 
               {/* ドロップダウンメニュー */}
               <div 
-                className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white rounded-lg shadow-lg border border-[var(--border-light)] overflow-hidden transition-all duration-200 ${
+                className={`absolute top-full left-0 mt-2 w-56 bg-white shadow-lg border border-[var(--border-light)] overflow-hidden transition-all duration-200 ${
                   isServicesOpen 
                     ? 'opacity-100 visible translate-y-0' 
                     : 'opacity-0 invisible -translate-y-2'
@@ -169,7 +166,7 @@ export default function Header() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className={`block px-4 py-2 text-sm transition-colors ${
+                      className={`block px-4 py-2 font-medium transition-colors ${
                         isActive(item.href)
                           ? 'text-[var(--primary-green)] bg-[var(--primary-green)]/5'
                           : 'text-[var(--text-dark)] hover:bg-[var(--bg-light)] hover:text-[var(--primary-green)]'
