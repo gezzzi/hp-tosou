@@ -76,9 +76,14 @@ export default function Footer() {
 
       {/* コピーライト */}
       <div className="border-t border-[var(--border-light)] py-4 bg-[var(--bg-light)]">
-        <p className="text-center text-sm text-[var(--text-light)]">
-          Copyright © {currentYear} 株式会社マルヨ All Rights Reserved.
-        </p>
+        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-2">
+          <p className="text-sm text-[var(--text-light)]">
+            Copyright © {currentYear} 株式会社マルヨ All Rights Reserved.
+          </p>
+          <Link href="/privacy-policy" className="text-sm text-[var(--text-light)] hover:text-[var(--primary-green)] transition-colors">
+            プライバシーポリシー
+          </Link>
+        </div>
       </div>
     </footer>
   );
