@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 export default function MobileFloatingCTA() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isAtBottom, setIsAtBottom] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +15,17 @@ export default function MobileFloatingCTA() {
       } else {
         setIsVisible(false);
       }
+
+      // ページの一番下に近づいたかチェック（下から150px以内）
+      const scrollHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.scrollY;
+      const clientHeight = window.innerHeight;
+      
+      if (scrollHeight - scrollTop - clientHeight < 150) {
+        setIsAtBottom(true);
+      } else {
+        setIsAtBottom(false);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -21,8 +33,8 @@ export default function MobileFloatingCTA() {
   }, []);
 
   return (
-    <div className={`fixed bottom-0 left-0 right-0 z-50 md:hidden transition-transform duration-500 ease-out ${
-      isVisible ? 'translate-y-0' : 'translate-y-full'
+    <div className={`fixed bottom-0 left-0 right-0 z-50 md:hidden transition-opacity duration-500 ease-out ${
+      isVisible && !isAtBottom ? 'opacity-100' : 'opacity-0 pointer-events-none'
     }`}>
       <div className="bg-white shadow-lg">
         <div className="flex">
