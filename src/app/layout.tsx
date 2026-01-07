@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP, M_PLUS_1p } from "next/font/google";
 import "./globals.css";
+import MobileFloatingCTA from "@/components/MobileFloatingCTA";
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
@@ -35,6 +36,7 @@ export default function RootLayout({
     <html lang="ja">
       <body className={`${notoSansJP.variable} ${mPlus1p.variable} antialiased`}>
         {children}
+        <MobileFloatingCTA />
       </body>
     </html>
   );
