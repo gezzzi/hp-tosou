@@ -61,6 +61,28 @@ export default function Footer() {
             </div>
           </div>
         </div>
+
+        {/* 地図セクション */}
+        <div className="mt-12 border-[3px] border-[var(--border-light)]">
+          <div className="bg-[var(--bg-light)] px-4 py-3 border-b-[3px] border-[var(--border-light)]">
+            <h3 className="font-bold text-xl text-[var(--text-dark)]">株式会社マルヨ</h3>
+          </div>
+          <div className="p-3">
+            <h4 className="mb-4 text-lg text-[var(--text-dark)]">〒417-0061 静岡県富士市伝法2503-5</h4>
+            <div className="w-full aspect-[4/3] overflow-hidden shadow-md">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6522.580654098764!2d138.66907867574517!3d35.174315757653815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601bd4d0f0d0ce67%3A0x145268c01e7846f9!2z44CSNDE3LTAwNjEg6Z2Z5bKh55yM5a-M5aOr5biC5Lyd5rOV77yS77yV77yQ77yT4oiS77yV!5e0!3m2!1sja!2sjp!4v1767803139375!5m2!1sja!2sjp"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="株式会社マルヨの所在地"
+            />
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* ページトップへ戻るボタン - PC版のみ表示 */}
