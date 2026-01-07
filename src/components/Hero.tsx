@@ -48,15 +48,6 @@ export default function Hero() {
             <span className="opacity-80">（くらしのマーケット 24件の口コミ）</span>
           </div>
 
-          {/* CTAボタン */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="btn-accent text-lg px-8 py-4">
-              無料お見積りはこちら
-            </Link>
-            <Link href="/services" className="bg-white text-[var(--primary-green)] px-8 py-4 rounded font-bold hover:bg-gray-100 transition-colors">
-              サービスを見る
-            </Link>
-          </div>
         </div>
       </div>
 

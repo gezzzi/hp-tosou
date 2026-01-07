@@ -7,14 +7,14 @@ export default function HomeServices() {
       title: '塗装サービス',
       description: '外壁塗装、屋根塗装、物置・門扉など各種塗装工事。祖父の代から続く確かな技術で対応します。',
       image: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600&h=400&fit=crop',
-      href: '/services#painting',
+      href: '/services/painting',
       color: 'primary'
     },
     {
       title: '不用品回収・遺品整理',
       description: '2トントラック積み放題28,000円。追加料金なし、自社施工で安心のサービスを提供します。',
       image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop',
-      href: '/services#junk',
+      href: '/services/junk-removal',
       color: 'accent'
     }
   ];
@@ -64,7 +64,7 @@ export default function HomeServices() {
         </div>
 
         <div className="text-center mt-10">
-          <Link href="/services" className="btn-outline">
+          <Link href="/services/painting" className="btn-outline">
             すべてのサービスを見る
           </Link>
         </div>
