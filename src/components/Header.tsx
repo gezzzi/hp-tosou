@@ -101,7 +101,7 @@ export default function Header() {
 
           {/* ハンバーガーメニュー */}
           <button
-            className="lg:hidden p-2 transition-all relative z-[60]"
+            className="lg:hidden p-2 transition-all relative z-[120]"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "メニューを閉じる" : "メニューを開く"}
           >
@@ -207,14 +207,14 @@ export default function Header() {
       <>
         {/* 背景オーバーレイ */}
         <div 
-          className={`lg:hidden fixed inset-0 bg-black/50 z-[45] transition-opacity duration-300 ${
+          className={`lg:hidden fixed inset-0 bg-black/50 z-[100] transition-opacity duration-300 ${
             isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
           }`}
           onClick={() => setIsMenuOpen(false)}
         />
         
         {/* メニューパネル */}
-        <div className={`lg:hidden fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-2xl z-[51] overflow-y-auto transition-transform duration-300 ease-out ${
+        <div className={`lg:hidden fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-2xl z-[110] overflow-y-auto transition-transform duration-300 ease-out ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}>
           <nav className="px-6 py-6 mt-20">
