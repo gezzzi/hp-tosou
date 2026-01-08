@@ -41,7 +41,6 @@ export default function Header() {
     { label: '施工事例', href: '/case-studies' },
     { label: '対応エリア', href: '/area' },
     { label: '会社概要', href: '/company' },
-    { label: 'お問い合わせ', href: '/contact' },
   ];
 
   const serviceItems = [
@@ -297,12 +296,28 @@ export default function Header() {
                 ))}
               </ul>
               <div className="mt-6 pt-6">
-                <a href="tel:000-0000-0000" className="flex items-center justify-center gap-2 text-xl font-bold text-[var(--primary-green)]">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <a href="tel:000-0000-0000" className="flex items-center justify-center gap-2 text-2xl font-bold text-black">
+                  <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                   </svg>
                   000-0000-0000
                 </a>
+                <p className="text-center text-sm text-gray-600 mt-2">
+                  <span className="border border-gray-500 px-1">営業時間</span> 8:00〜17:00（土日祝を除く）
+                </p>
+                <Link 
+                  href="/contact" 
+                  className="flex items-center justify-center gap-2 mt-4 text-black text-center py-3 px-6 font-bold border border-black transition-colors"
+                  style={{ backgroundColor: '#ffea03' }}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#e6d303'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#ffea03'}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                  </svg>
+                  お問い合わせ
+                </Link>
               </div>
             </nav>
         </div>
