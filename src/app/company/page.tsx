@@ -139,38 +139,6 @@ export default function CompanyPage() {
           </div>
         </section>
 
-        {/* アクセス */}
-        <section className="py-16 bg-white">
-          <div className="max-w-6xl mx-auto px-4">
-            <h2 className="section-title mb-8">アクセス</h2>
-            
-            <div className="rounded-lg overflow-hidden mb-6 relative h-80">
-              <Image
-                src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=1200&h=400&fit=crop"
-                alt="富士山と静岡の風景"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                <div className="bg-white rounded-lg p-6 text-center shadow-lg">
-                  <svg className="w-8 h-8 mx-auto mb-2 text-[var(--primary-green)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <p className="text-[var(--text-dark)] font-bold">株式会社マルヨ</p>
-                  <p className="text-sm text-[var(--text-medium)]">静岡県富士市伝法2503-5</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="text-center">
-              <p className="text-[var(--text-medium)]">
-                〒417-0061 静岡県富士市伝法2503-5
-              </p>
-            </div>
-          </div>
-        </section>
-
         {/* CTA */}
         <section className="py-12 bg-[var(--primary-green)]">
           <div className="max-w-4xl mx-auto px-4 text-center text-white">
