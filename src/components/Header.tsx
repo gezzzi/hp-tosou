@@ -151,8 +151,8 @@ export default function Header() {
               onMouseEnter={() => setIsServicesOpen(true)}
               onMouseLeave={() => setIsServicesOpen(false)}
             >
-              <button
-                onClick={() => setIsServicesOpen(!isServicesOpen)}
+              <Link
+                href="/services"
                 className={`font-medium transition-colors pb-1 ${
                   isServicesActive()
                     ? 'text-[var(--primary-green)] border-b-2 border-[var(--primary-green)]'
@@ -160,7 +160,7 @@ export default function Header() {
                 }`}
               >
                 サービス
-              </button>
+              </Link>
 
               {/* ドロップダウンメニュー */}
               <div
@@ -196,8 +196,8 @@ export default function Header() {
               onMouseEnter={() => setIsCaseStudiesOpen(true)}
               onMouseLeave={() => setIsCaseStudiesOpen(false)}
             >
-              <button
-                onClick={() => setIsCaseStudiesOpen(!isCaseStudiesOpen)}
+              <Link
+                href="/case-studies"
                 className={`font-medium transition-colors pb-1 ${
                   isCaseStudiesActive()
                     ? 'text-[var(--primary-green)] border-b-2 border-[var(--primary-green)]'
@@ -205,7 +205,7 @@ export default function Header() {
                 }`}
               >
                 サービス事例
-              </button>
+              </Link>
 
               {/* ドロップダウンメニュー */}
               <div
@@ -286,25 +286,36 @@ export default function Header() {
 
                 {/* サービス（アコーディオン） */}
                 <li>
-                  <button
-                    onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                    className={`w-full flex items-center justify-between font-medium py-3 border-b border-[var(--border-light)] ${
-                      isServicesActive()
-                        ? 'text-[var(--primary-green)]'
-                        : 'text-[var(--text-dark)] hover:text-[var(--primary-green)]'
-                    }`}
-                  >
-                    サービス
-                    <svg 
-                      className={`w-5 h-5 transition-transform duration-200 ${isMobileServicesOpen ? 'rotate-180' : ''}`} 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
+                  <div className="flex items-center justify-between border-b border-[var(--border-light)]">
+                    <Link
+                      href="/services"
+                      className={`flex-1 font-medium py-3 ${
+                        isServicesActive()
+                          ? 'text-[var(--primary-green)]'
+                          : 'text-[var(--text-dark)] hover:text-[var(--primary-green)]'
+                      }`}
+                      onClick={() => setIsMenuOpen(false)}
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                  
+                      サービス
+                    </Link>
+                    <button
+                      onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                      className="px-3 py-3"
+                      aria-label="サブメニューを開く"
+                    >
+                      <svg
+                        className={`w-5 h-5 transition-transform duration-200 ${isMobileServicesOpen ? 'rotate-180' : ''} ${
+                          isServicesActive() ? 'text-[var(--primary-green)]' : 'text-[var(--text-dark)]'
+                        }`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </div>
+
                   {/* サブメニュー */}
                   <div
                     className={`overflow-hidden transition-all duration-300 ${
@@ -330,24 +341,35 @@ export default function Header() {
 
                 {/* サービス事例（アコーディオン） */}
                 <li>
-                  <button
-                    onClick={() => setIsMobileCaseStudiesOpen(!isMobileCaseStudiesOpen)}
-                    className={`w-full flex items-center justify-between font-medium py-3 border-b border-[var(--border-light)] ${
-                      isCaseStudiesActive()
-                        ? 'text-[var(--primary-green)]'
-                        : 'text-[var(--text-dark)] hover:text-[var(--primary-green)]'
-                    }`}
-                  >
-                    サービス事例
-                    <svg
-                      className={`w-5 h-5 transition-transform duration-200 ${isMobileCaseStudiesOpen ? 'rotate-180' : ''}`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                  <div className="flex items-center justify-between border-b border-[var(--border-light)]">
+                    <Link
+                      href="/case-studies"
+                      className={`flex-1 font-medium py-3 ${
+                        isCaseStudiesActive()
+                          ? 'text-[var(--primary-green)]'
+                          : 'text-[var(--text-dark)] hover:text-[var(--primary-green)]'
+                      }`}
+                      onClick={() => setIsMenuOpen(false)}
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
+                      サービス事例
+                    </Link>
+                    <button
+                      onClick={() => setIsMobileCaseStudiesOpen(!isMobileCaseStudiesOpen)}
+                      className="px-3 py-3"
+                      aria-label="サブメニューを開く"
+                    >
+                      <svg
+                        className={`w-5 h-5 transition-transform duration-200 ${isMobileCaseStudiesOpen ? 'rotate-180' : ''} ${
+                          isCaseStudiesActive() ? 'text-[var(--primary-green)]' : 'text-[var(--text-dark)]'
+                        }`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </div>
 
                   {/* サブメニュー */}
                   <div

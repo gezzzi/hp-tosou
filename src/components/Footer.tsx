@@ -85,23 +85,18 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/services/painting" className="text-[var(--text-medium)] hover:text-[var(--primary-green)] transition-colors">
-                  塗装サービス
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/junk-removal" className="text-[var(--text-medium)] hover:text-[var(--primary-green)] transition-colors">
-                  不用品回収・遺品整理
-                </Link>
-              </li>
-              <li>
-                <Link href="/pricing" className="text-[var(--text-medium)] hover:text-[var(--primary-green)] transition-colors">
-                  料金案内
+                <Link href="/services" className="text-[var(--text-medium)] hover:text-[var(--primary-green)] transition-colors">
+                  サービス
                 </Link>
               </li>
               <li>
                 <Link href="/case-studies" className="text-[var(--text-medium)] hover:text-[var(--primary-green)] transition-colors">
                   サービス事例
+                </Link>
+              </li>
+              <li>
+                <Link href="/pricing" className="text-[var(--text-medium)] hover:text-[var(--primary-green)] transition-colors">
+                  料金案内
                 </Link>
               </li>
               <li>
