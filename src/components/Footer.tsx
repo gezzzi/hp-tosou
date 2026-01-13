@@ -100,11 +100,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-[var(--text-medium)] hover:text-[var(--primary-green)] transition-colors">
-                  選ばれる理由
-                </Link>
-              </li>
-              <li>
                 <Link href="/case-studies" className="text-[var(--text-medium)] hover:text-[var(--primary-green)] transition-colors">
                   施工事例
                 </Link>

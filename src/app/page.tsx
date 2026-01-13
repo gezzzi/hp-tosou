@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import HomeServices from "@/components/HomeServices";
 import HomeReasons from "@/components/HomeReasons";
+import HomeReviews from "@/components/HomeReviews";
 import HomeCTA from "@/components/HomeCTA";
 import Footer from "@/components/Footer";
 
@@ -13,6 +14,7 @@ export default function Home() {
         <Hero />
         <HomeServices />
         <HomeReasons />
+        <HomeReviews />
         <HomeCTA />
       </main>
       <Footer />

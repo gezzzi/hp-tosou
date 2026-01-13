@@ -37,7 +37,6 @@ export default function Header() {
   const navItems = [
     { label: 'ホーム', href: '/' },
     { label: '料金案内', href: '/pricing' },
-    { label: '選ばれる理由', href: '/about' },
     { label: '施工事例', href: '/case-studies' },
     { label: '対応エリア', href: '/area' },
     { label: '会社概要', href: '/company' },
@@ -61,14 +60,6 @@ export default function Header() {
 
   return (
     <>
-      {/* トップバー */}
-      <div className="bg-[var(--primary-green)] text-white py-1.5 px-4">
-        <div className="max-w-6xl mx-auto flex justify-between items-center text-sm">
-          <span>外壁塗装から不用品回収まで | 静岡県全域対応</span>
-          <span className="hidden md:block">古物商許可: 静岡県公安委員会 第491100145100号</span>
-        </div>
-      </div>
-
       {/* メインヘッダー */}
       <header className="lg:relative sticky top-0 bg-white shadow-md z-50">
         <div className="max-w-6xl mx-auto px-4 py-3">
