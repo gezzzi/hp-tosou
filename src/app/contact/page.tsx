@@ -19,10 +19,18 @@ export default function ContactPage() {
 
         <section className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-0 lg:px-4">
+            {/* 無料相談案内 */}
+            <div className="bg-[var(--primary-green)]/10 rounded-lg p-6 lg:p-8 mb-12 mx-4 lg:mx-0 border-l-4 border-[var(--primary-green)]">
+              <h2 className="text-2xl lg:text-xl font-bold text-black mb-4 text-center">お気軽にご相談ください</h2>
+              <p className="text-base lg:text-sm text-[var(--text-dark)] text-center leading-relaxed">
+                株式会社マルヨでは無料相談を行っております。塗装やそのほかの業務も行っておりますのでお困りごと、お悩みがあればお気軽にご相談ください。無理な営業行為等は致しませんのでご安心ください。
+              </p>
+            </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* 電話 */}
               <div className="px-4 lg:px-0">
-                <h2 className="text-xl font-bold text-[var(--primary-green)] mb-6 text-center">お電話でのお問い合わせ</h2>
+                <h2 className="text-2xl lg:text-xl font-bold text-black mb-6 text-center">お電話でのお問い合わせ</h2>
                 
                 <div className="bg-[var(--bg-light)] rounded-lg p-8 mb-6">
                   <p className="text-base lg:text-sm text-[var(--text-light)] mb-2 text-center">お気軽にお電話ください（社長直通）</p>
@@ -34,21 +42,11 @@ export default function ContactPage() {
                   </a>
                   <p className="text-base lg:text-sm text-[var(--text-light)] text-center">平日 8:00〜17:00</p>
                 </div>
-
-                {/* 対応エリア */}
-                <div className="bg-[var(--primary-green)]/5 rounded-lg p-6 border-l-4 border-[var(--primary-green)]">
-                  <h3 className="font-bold text-base lg:text-sm text-[var(--text-dark)] mb-2">対応エリア</h3>
-                  <p className="text-base lg:text-sm text-[var(--text-medium)]">
-                    静岡県全域に対応しております。<br />
-                    山梨県、関東（東京周辺）での施工実績もございます。<br />
-                    その他のエリアについてもお気軽にご相談ください。
-                  </p>
-                </div>
               </div>
 
               {/* お問い合わせフォーム */}
               <div>
-                <h2 className="text-xl font-bold text-[var(--primary-green)] mb-6 text-center">メールでのお問い合わせ</h2>
+                <h2 className="text-2xl lg:text-xl font-bold text-black mb-6 text-center">メールでのお問い合わせ</h2>
                 
                 <form className="space-y-6 bg-[#f7f7f5] rounded-lg px-4 py-8 lg:px-6">
                   <div>
@@ -175,12 +173,17 @@ export default function ContactPage() {
                     ></textarea>
                   </div>
 
-                  <button
-                    type="submit"
-                    className="w-full btn-primary text-lg py-4"
-                  >
-                    送信する
-                  </button>
+                  <div className="flex justify-center">
+                    <button
+                      type="submit"
+                      className="bg-[#ffea03] text-black text-lg py-4 px-16 font-bold hover:opacity-90 transition-opacity flex items-center justify-center gap-2 border border-black"
+                    >
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                      </svg>
+                      送信する
+                    </button>
+                  </div>
 
                   <div className="bg-[var(--bg-light)] rounded-lg p-4 text-base lg:text-sm text-[var(--text-dark)]">
                     <p>
