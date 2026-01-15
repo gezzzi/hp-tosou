@@ -18,7 +18,7 @@ export default function HomeReviews() {
   ];
 
   return (
-    <section className="py-16 bg-[var(--bg-light)]">
+    <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="section-title mb-12">お客様の声</h2>
 
