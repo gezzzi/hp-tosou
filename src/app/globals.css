@@ -217,3 +217,33 @@ body {
 .animate-fade-in {
   animation: fadeIn 0.3s ease-out forwards;
 }
+
+/* お困りごとセクションの円の配色 */
+.trouble-item:nth-child(odd) .trouble-circle {
+  fill: var(--primary-green);
+}
+
+.trouble-item:nth-child(even) .trouble-circle {
+  fill: var(--secondary-green);
+}
+
+/* 2列表示時の配色調整（3番目と4番目の色を入れ替えて市松模様にする） */
+/* モバイルサイズでの2列表示時 (400px〜600px付近) */
+@media (min-width: 400px) and (max-width: 600px) {
+  .trouble-item:nth-child(4n+3) .trouble-circle {
+    fill: var(--secondary-green);
+  }
+  .trouble-item:nth-child(4n+4) .trouble-circle {
+    fill: var(--primary-green);
+  }
+}
+
+/* タブレット・デスクトップサイズでの2列表示時 (mdブレイクポイント付近で3列に満たない場合) */
+@media (min-width: 768px) and (max-width: 784px) {
+  .trouble-item:nth-child(4n+3) .trouble-circle {
+    fill: var(--secondary-green);
+  }
+  .trouble-item:nth-child(4n+4) .trouble-circle {
+    fill: var(--primary-green);
+  }
+}
