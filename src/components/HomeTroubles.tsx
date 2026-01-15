@@ -13,9 +13,6 @@ export default function HomeTroubles() {
       <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-10">
           <h2 className="section-title">こんなお困りはありませんか？</h2>
-          <p className="section-subtitle">
-            そのお悩み、塗装と不用品回収のプロが解決します
-          </p>
         </div>
 
         <div>
@@ -44,6 +41,15 @@ export default function HomeTroubles() {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="text-center mt-10">
+          <p className="font-bold text-2xl md:text-3xl text-(--primary-green) mb-2">
+            そのお悩み、塗装と不用品回収のプロが解決します！
+          </p>
+          <p className="text-(--text-medium) text-lg">
+            お気軽にご相談ください
+          </p>
         </div>
       </div>
     </section>
