@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import logoIcon from '@/app/icon.png';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -18,11 +19,18 @@ export default function Footer() {
           {/* 会社情報 */}
           <div>
             <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-[var(--primary-green)] rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xl">丸</span>
+              <div className="flex items-center justify-center">
+                <Image 
+                  src={logoIcon} 
+                  alt="株式会社マルヨ ロゴ" 
+                  width={48}
+                  height={48}
+                  quality={100}
+                  className="object-contain"
+                />
               </div>
               <div>
-                <h3 className="text-3xl font-extrabold text-[#018615]" style={{ fontFamily: "var(--font-m-plus-1p), 'Yu Gothic', 'Hiragino Kaku Gothic ProN', sans-serif" }}>株式会社マルヨ</h3>
+                <h3 className="text-3xl font-extrabold text-black" style={{ fontFamily: "var(--font-mochiy-pop-p-one), sans-serif" }}>株式会社マルヨ</h3>
               </div>
             </div>
             <address className="not-italic text-sm text-[var(--text-dark)] space-y-1 text-center">

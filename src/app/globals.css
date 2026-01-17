@@ -227,9 +227,12 @@ body {
   fill: var(--secondary-green);
 }
 
-/* 2列表示時の配色調整（3番目と4番目の色を入れ替えて市松模様にする） */
-/* モバイルサイズでの2列表示時 (400px〜600px付近) */
-@media (min-width: 400px) and (max-width: 600px) {
+/* --- 市松模様（まだら）の調整 --- */
+
+/* 1. 【2列表示】の範囲 (スマホ中〜大) 
+   384px 〜 575px
+*/
+@media (min-width: 384px) and (max-width: 575px) {
   .trouble-item:nth-child(4n+3) .trouble-circle {
     fill: var(--secondary-green);
   }
@@ -238,12 +241,8 @@ body {
   }
 }
 
-/* タブレット・デスクトップサイズでの2列表示時 (mdブレイクポイント付近で3列に満たない場合) */
-@media (min-width: 768px) and (max-width: 784px) {
-  .trouble-item:nth-child(4n+3) .trouble-circle {
-    fill: var(--secondary-green);
-  }
-  .trouble-item:nth-child(4n+4) .trouble-circle {
-    fill: var(--primary-green);
-  }
-}
+/* 2. 【3列表示】の範囲 (576px 〜)
+   コンテナの最大幅 (max-w-4xl: 896px) により、最大3列までとなります。
+   ※3列（奇数列）はデフォルトの odd/even で自動的に市松模様になるため、追加設定は不要です。
+*/
+

@@ -10,13 +10,13 @@ export default function HomeTroubles() {
 
   return (
     <section className="py-16 bg-(--bg-light)">
-      <div className="max-w-4xl mx-auto px-4">
+      <div className="max-w-4xl mx-auto px-2 md:px-4">
         <div className="text-center mb-10">
           <h2 className="section-title">こんなお困りはありませんか？</h2>
         </div>
 
         <div>
-          <div className="flex flex-wrap justify-center gap-6 md:gap-10">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8">
             {troubles.map((trouble, index) => (
               <div key={index} className="trouble-item relative group w-44 h-44 md:w-56 md:h-56 flex items-center justify-center transition-all duration-300 hover:scale-105">
                 {/* 画像のデザインを忠実に再現したSVG */}
