@@ -5,6 +5,13 @@
   --primary-green: #6fbb18;
   --primary-green-dark: #5a9a14;
   --primary-green-light: #82d426;
+  --service-painting: #2a6f48;
+  --service-junk: #166caa;
+  --service-junk-dark: #12548a;
+  --service-junk-light: #1a84cf;
+  --btn-junk: #408cc2;
+  --btn-junk-dark: #2e74a8;
+  --btn-junk-light: #64aee0;
   --secondary-green: #37bb18;
   --accent-yellow: #ffea03;
   --accent-yellow-dark: #e6d400;
@@ -28,7 +35,32 @@
   --color-primary-light: var(--primary-green-light);
   --color-accent: var(--accent-yellow);
   --color-accent-dark: var(--accent-yellow-dark);
+  --color-service-painting: var(--service-painting);
+  --color-service-junk: var(--service-junk);
+  --color-service-junk-dark: var(--service-junk-dark);
+  --color-service-junk-light: var(--service-junk-light);
+  --color-btn-junk: var(--btn-junk);
+  --color-btn-junk-dark: var(--btn-junk-dark);
+  --color-btn-junk-light: var(--btn-junk-light);
   --font-sans: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+}
+
+.btn-junk {
+  background: linear-gradient(135deg, var(--btn-junk) 0%, var(--btn-junk-light) 100%);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-junk:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, var(--btn-junk-dark) 0%, var(--btn-junk) 100%);
 }
 
 * {
@@ -182,6 +214,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -196,6 +229,7 @@ body {
   from {
     transform: translateX(100%);
   }
+
   to {
     transform: translateX(0);
   }
@@ -205,6 +239,7 @@ body {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -216,6 +251,32 @@ body {
 
 .animate-fade-in {
   animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* ブラシストローク装飾 */
+.brush-stroke-container {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.brush-stroke-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12em;
+  height: 3.5em;
+  z-index: -1;
+  -webkit-mask-image: url('/brush-stroke.png');
+  mask-image: url('/brush-stroke.png');
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  pointer-events: none;
 }
 
 /* お困りごとセクションの円の配色 */
@@ -236,6 +297,7 @@ body {
   .trouble-item:nth-child(4n+3) .trouble-circle {
     fill: var(--secondary-green);
   }
+
   .trouble-item:nth-child(4n+4) .trouble-circle {
     fill: var(--primary-green);
   }
@@ -245,4 +307,3 @@ body {
    コンテナの最大幅 (max-w-4xl: 896px) により、最大3列までとなります。
    ※3列（奇数列）はデフォルトの odd/even で自動的に市松模様になるため、追加設定は不要です。
 */
-
