@@ -47,7 +47,7 @@ export default function Header() {
     { label: 'ホーム', href: '/' },
     { label: '料金案内', href: '/pricing' },
     { label: '対応エリア', href: '/area' },
-    { label: '会社概要', href: '/company' },
+    { label: '会社案内', href: '/about' },
     { label: 'お問い合わせ', href: '/contact' },
   ];
 

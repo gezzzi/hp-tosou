@@ -5,8 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
-  title: "会社概要 | 株式会社マルヨ",
-  description: "株式会社マルヨの会社概要。代表取締役 望月達也。静岡県富士市を拠点に、塗装工事・不用品回収・清掃業務を行っています。",
+  title: "会社案内 | 株式会社マルヨ",
+  description: "株式会社マルヨの会社案内。代表取締役 望月達也。静岡県富士市を拠点に、塗装工事・不用品回収・清掃業務を行っています。",
 };
 
 export default function CompanyPage() {
@@ -51,8 +51,8 @@ export default function CompanyPage() {
       <Header />
       <main className="main-content">
         <PageHeader 
-          title="会社概要" 
-          subtitle="COMPANY" 
+          title="会社案内" 
+          subtitle="ABOUT US" 
         />
 
         {/* 会社情報 */}

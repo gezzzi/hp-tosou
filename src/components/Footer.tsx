@@ -114,8 +114,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/company" className="text-[var(--text-medium)] hover:text-[var(--primary-green)] transition-colors">
-                  会社概要
+                <Link href="/about" className="text-[var(--text-medium)] hover:text-[var(--primary-green)] transition-colors">
+                  会社案内
                 </Link>
               </li>
             </ul>

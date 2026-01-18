@@ -8,10 +8,10 @@ export default function HomeCompany() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="max-w-sm md:max-w-[800px] mx-auto text-left mb-12 relative overflow-visible">
           <h2 className="section-title flex items-center justify-start gap-3 text-(--text-dark)! text-left! relative z-10">
-            <Info className="w-10 h-10 text-(--secondary-green)" />
-            <span className="relative z-10 text-3xl md:text-4xl">会社概要</span>
+            <Info className="w-10 h-10 text-(--secondary-green) shrink-0" />
+            <span className="relative z-10 text-3xl md:text-4xl">会社案内</span>
             <span className="absolute right-0 top-1/2 -translate-y-1/2 text-6xl md:text-7xl font-black text-slate-200 italic uppercase tracking-tighter opacity-80 -z-10 leading-none select-none pr-4">
-              company
+              about us
             </span>
           </h2>
         </div>
@@ -52,8 +52,8 @@ export default function HomeCompany() {
                 </div>
               </div>
 
-              <Link href="/company" className="btn-outline">
-                会社概要・代表挨拶を見る
+              <Link href="/about" className="btn-outline">
+                会社案内・代表挨拶を見る
               </Link>
             </div>
           </div>
