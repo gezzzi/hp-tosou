@@ -12,7 +12,7 @@ export default function HomeServices() {
       color: 'primary'
     },
     {
-      title: '不用品回収・その他',
+      title: '不用品回収・清掃',
       description: '2トントラック積み放題28,000円。追加料金なし、自社施工で安心のサービスを提供します。',
       image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop',
       href: '/services/junk-removal',

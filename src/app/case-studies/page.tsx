@@ -6,7 +6,7 @@ import { Paintbrush, Truck, ChevronRight } from "lucide-react";
 
 export const metadata = {
   title: "サービス事例 | 株式会社マルヨ",
-  description: "株式会社マルヨのサービス事例。外壁塗装、屋根塗装、不用品回収、遺品整理など、これまでのサービス実績をご紹介します。",
+  description: "株式会社マルヨのサービス事例。外壁塗装、屋根塗装、不用品回収、草刈り・清掃など、これまでのサービス実績をご紹介します。",
 };
 
 export default function CaseStudiesPage() {
@@ -19,8 +19,8 @@ export default function CaseStudiesPage() {
       icon: <Paintbrush className="w-16 h-16" />
     },
     {
-      title: '不用品回収・遺品整理事例',
-      description: '不用品回収、遺品整理、ゴミ屋敷清掃など、これまでのサービス実績をご紹介します。',
+      title: '不用品回収・清掃事例',
+      description: '不用品回収、ゴミ屋敷清掃、草刈り機や高圧洗浄機を使用した清掃など、これまでのサービス実績をご紹介します。',
       href: '/case-studies/junk-removal',
       color: 'var(--accent-yellow)',
       icon: <Truck className="w-16 h-16" />

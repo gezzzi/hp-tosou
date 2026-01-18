@@ -6,8 +6,8 @@ import Image from "next/image";
 import { Truck, Heart, Sparkles, Scissors, CheckCircle, Users, Lock, ShieldCheck } from "lucide-react";
 
 export const metadata = {
-  title: "不用品回収・遺品整理 | 株式会社マルヨ",
-  description: "株式会社マルヨの不用品回収・遺品整理サービス。追加料金一切なし、自社スタッフが責任を持って対応。高齢者やお忙しい方からのご依頼多数。",
+  title: "不用品回収・清掃 | 株式会社マルヨ",
+  description: "株式会社マルヨの不用品回収・清掃サービス。追加料金一切なし、自社スタッフが責任を持って対応。草刈りや高圧洗浄機を使った清掃業務もお任せください。",
 };
 
 export default function JunkRemovalServicePage() {
@@ -18,19 +18,14 @@ export default function JunkRemovalServicePage() {
       icon: <Truck className="w-8 h-8" />,
     },
     {
-      title: '遺品整理',
-      description: '故人の遺品を丁寧に整理。心を込めて対応いたします。ご遺族の気持ちに寄り添います。',
-      icon: <Heart className="w-8 h-8" />,
-    },
-    {
-      title: 'ゴミ屋敷清掃',
-      description: 'お部屋の状態を問わず対応。プライバシーに配慮して作業します。',
+      title: '清掃・草刈り',
+      description: '草刈り機を使用した除草作業や、高圧洗浄機による外壁・土間の清掃など、住まいの「困った」に対応します。',
       icon: <Sparkles className="w-8 h-8" />,
     },
     {
-      title: '草刈り・草むしり',
-      description: 'お庭の草刈りや草むしり、落ち葉清掃なども対応いたします。',
-      icon: <Scissors className="w-8 h-8" />,
+      title: 'ゴミ屋敷清掃',
+      description: 'お部屋の状態を問わず対応。不用品の回収から清掃まで、プライバシーに配慮して作業します。',
+      icon: <Truck className="w-8 h-8" />,
     },
   ];
 
@@ -65,8 +60,8 @@ export default function JunkRemovalServicePage() {
       <Header />
       <main className="main-content">
         <PageHeader 
-          title="不用品回収・遺品整理" 
-          subtitle="JUNK REMOVAL & ESTATE CLEANING" 
+          title="不用品回収・清掃" 
+          subtitle="JUNK REMOVAL & CLEANING" 
         />
 
         {/* イントロダクション */}
@@ -82,7 +77,7 @@ export default function JunkRemovalServicePage() {
                 </div>
                 <p className="text-[var(--text-medium)] mb-6 leading-relaxed">
                   不要になった家具や家電等を回収し、処分場へ運搬するサービスです。
-                  高齢者や自身で重い荷物を運べないお客様からのご依頼が多く、遺品整理も丁寧に対応いたします。
+                  また、草刈り機を使用した除草や、高圧洗浄機を使った清掃業務など、幅広く対応いたします。
                 </p>
                 <div className="bg-[var(--accent-yellow)]/20 rounded-xl p-6 border-l-4 border-[var(--accent-yellow)]">
                   <h3 className="font-bold text-[var(--text-dark)] mb-3 text-lg">こんな方におすすめ</h3>
@@ -97,7 +92,7 @@ export default function JunkRemovalServicePage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-[var(--accent-yellow)] mt-1">●</span>
-                      遺品整理を依頼したい
+                      草刈りや高圧洗浄清掃を頼みたい
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-[var(--accent-yellow)] mt-1">●</span>
@@ -201,7 +196,7 @@ export default function JunkRemovalServicePage() {
         {/* CTA */}
         <section className="py-12 bg-[var(--accent-yellow)]">
           <div className="max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-xl font-bold text-[var(--text-dark)] mb-4">不用品回収・遺品整理のご相談はお気軽に</h2>
+            <h2 className="text-xl font-bold text-[var(--text-dark)] mb-4">不用品回収・清掃のご相談はお気軽に</h2>
             <p className="mb-6 text-[var(--text-dark)] opacity-80">現地確認・お見積りは無料です。お気軽にお問い合わせください。</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/pricing" className="bg-white text-[var(--text-dark)] px-6 py-3 rounded font-bold hover:bg-gray-100 transition-colors">

@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "お問い合わせ | 株式会社マルヨ",
-  description: "株式会社マルヨへのお問い合わせ。塗装工事、不用品回収、遺品整理のお見積り・ご相談は無料です。お気軽にお問い合わせください。",
+  description: "株式会社マルヨへのお問い合わせ。塗装工事、不用品回収、清掃業務のお見積り・ご相談は無料です。お気軽にお問い合わせください。",
 };
 
 export default function ContactPage() {
@@ -23,7 +23,7 @@ export default function ContactPage() {
             <div className="bg-[var(--primary-green)]/10 rounded-lg p-6 lg:p-8 mb-12 mx-4 lg:mx-0 border-l-4 border-[var(--primary-green)]">
               <h2 className="text-2xl lg:text-xl font-bold text-black mb-4 text-center">お気軽にご相談ください</h2>
               <p className="text-base lg:text-sm text-[var(--text-dark)] text-center leading-relaxed">
-                株式会社マルヨでは無料相談を行っております。塗装やそのほかの業務も行っておりますのでお困りごと、お悩みがあればお気軽にご相談ください。無理な営業行為等は致しませんのでご安心ください。
+                株式会社マルヨでは無料相談を行っております。塗装や様々な業務を行っておりますので住まいのお困りごと、お悩みがあればお気軽にご相談ください。無理な営業行為等は致しませんのでご安心ください。
               </p>
             </div>
 
@@ -154,9 +154,8 @@ export default function ContactPage() {
                       <option value="">選択してください</option>
                       <option value="painting">塗装工事</option>
                       <option value="junk">不用品回収</option>
-                      <option value="ihin">遺品整理</option>
+                      <option value="cleaning_kusakari">草刈り・高圧洗浄清掃</option>
                       <option value="gomiyashiki">ゴミ屋敷清掃</option>
-                      <option value="kusakari">草刈り</option>
                       <option value="other">その他</option>
                     </select>
                   </div>

@@ -6,7 +6,7 @@ import { Paintbrush, Truck, ChevronRight } from "lucide-react";
 
 export const metadata = {
   title: "サービス | 株式会社マルヨ",
-  description: "株式会社マルヨのサービス。外壁塗装、屋根塗装、不用品回収、遺品整理など、幅広いサービスをご提供します。",
+  description: "株式会社マルヨのサービス。外壁塗装、屋根塗装、不用品回収、草刈り、高圧洗浄清掃など、幅広いサービスをご提供します。",
 };
 
 export default function ServicesPage() {
@@ -19,8 +19,8 @@ export default function ServicesPage() {
       icon: <Paintbrush className="w-16 h-16" />
     },
     {
-      title: '不用品回収・遺品整理',
-      description: '不用品回収、遺品整理、ゴミ屋敷清掃など、お手頃価格で丁寧に対応いたします。追加料金は一切ありません。',
+      title: '不用品回収・清掃',
+      description: '不用品回収、草刈り機を使用した除草作業、高圧洗浄機による土間や外壁の清掃など、住まいの「困った」を解決します。',
       href: '/services/junk-removal',
       color: 'var(--accent-yellow)',
       icon: <Truck className="w-16 h-16" />

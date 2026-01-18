@@ -22,7 +22,7 @@ export default function PricingPage() {
         <section className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-[var(--text-dark)] mb-8 text-center">
-              不用品回収・遺品整理
+              不用品回収・清掃
             </h2>
 
             <div className="max-w-2xl mx-auto">

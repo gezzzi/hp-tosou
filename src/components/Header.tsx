@@ -53,12 +53,12 @@ export default function Header() {
 
   const serviceItems = [
     { label: '塗装サービス', href: '/services/painting' },
-    { label: '不用品回収・遺品整理', href: '/services/junk-removal' },
+    { label: '不用品回収・清掃', href: '/services/junk-removal' },
   ];
 
   const caseStudiesItems = [
     { label: '塗装事例', href: '/case-studies/painting' },
-    { label: '不用品回収・遺品整理事例', href: '/case-studies/junk-removal' },
+    { label: '不用品回収・清掃事例', href: '/case-studies/junk-removal' },
   ];
 
   const isActive = (href: string) => {

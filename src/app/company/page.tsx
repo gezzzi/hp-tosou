@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export const metadata = {
   title: "会社概要 | 株式会社マルヨ",
-  description: "株式会社マルヨの会社概要。代表取締役 望月達也。静岡県富士市を拠点に、塗装工事・不用品回収・遺品整理を行っています。",
+  description: "株式会社マルヨの会社概要。代表取締役 望月達也。静岡県富士市を拠点に、塗装工事・不用品回収・清掃業務を行っています。",
 };
 
 export default function CompanyPage() {
@@ -18,7 +18,7 @@ export default function CompanyPage() {
     { label: '営業時間', value: '平日 8:00〜17:00' },
     { label: '定休日', value: '土曜日、日曜日' },
     { label: '対応エリア', value: '静岡県全域（山梨県、関東での施工実績あり）' },
-    { label: '事業内容', value: '塗装工事、不用品回収、遺品整理、ゴミ屋敷清掃、草刈り 他' },
+    { label: '事業内容', value: '塗装工事、不用品回収、草刈り、高圧洗浄清掃、ゴミ屋敷清掃 他' },
     { label: '従業員数', value: '5名' },
     { label: '許認可', value: '古物商許可: 静岡県公安委員会 第491100145100号' },
   ];
@@ -101,7 +101,7 @@ export default function CompanyPage() {
                   <p className="text-sm text-[var(--text-medium)] leading-relaxed">
                     株式会社マルヨのホームページをご覧いただき、ありがとうございます。
                     <br /><br />
-                    当社は祖父の代から続く塗装業を基盤に、近年は不用品回収・遺品整理事業にも力を入れております。
+                    当社は祖父の代から続く塗装業を基盤に、現在は不用品回収や、草刈り・高圧洗浄機を使った清掃業務など、住まいの「困った」を解決する事業に幅広く力を入れております。
                     <br /><br />
                     「安心感」と「丁寧な仕事」をモットーに、お客様のお困りごとに真摯に向き合い、
                     ご満足いただけるサービスを提供してまいります。

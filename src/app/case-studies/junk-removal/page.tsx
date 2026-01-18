@@ -5,8 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
-  title: "不用品回収・遺品整理事例 | 株式会社マルヨ",
-  description: "株式会社マルヨの不用品回収・遺品整理事例。引っ越し、遺品整理、ゴミ屋敷清掃など、これまでのサービス実績をご紹介します。",
+  title: "不用品回収・清掃事例 | 株式会社マルヨ",
+  description: "株式会社マルヨの不用品回収・清掃事例。引っ越しに伴う不用品回収、高圧洗浄清掃、草刈りなど、これまでのサービス実績をご紹介します。",
 };
 
 export default function JunkRemovalCasesPage() {
@@ -18,9 +18,9 @@ export default function JunkRemovalCasesPage() {
       image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=450&fit=crop'
     },
     {
-      title: '遺品整理',
+      title: '高圧洗浄清掃・草刈り作業',
       location: '静岡県富士市 F様',
-      description: '故人宅の遺品整理。ご遺族の意向を尊重しながら、丁寧に整理・回収しました。',
+      description: '長年放置されていたお庭の草刈りと、外構・土間の高圧洗浄清掃。見違えるほど綺麗になりました。',
       image: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=600&h=450&fit=crop'
     },
     {
@@ -42,8 +42,8 @@ export default function JunkRemovalCasesPage() {
       <Header />
       <main className="main-content">
         <PageHeader
-          title="不用品回収・遺品整理事例"
-          subtitle="JUNK REMOVAL WORKS"
+          title="不用品回収・清掃事例"
+          subtitle="JUNK REMOVAL & CLEANING"
         />
 
         {/* 不用品回収事例 */}
@@ -78,7 +78,7 @@ export default function JunkRemovalCasesPage() {
         <section className="py-12 bg-[var(--primary-green)]">
           <div className="max-w-4xl mx-auto px-4 text-center text-white">
             <h2 className="text-xl font-bold mb-4">
-              不用品回収・遺品整理について詳しく聞きたい方は
+              不用品回収・清掃について詳しく聞きたい方は
             </h2>
             <p className="mb-6 opacity-90">
               ご状況に合わせたご提案をいたします

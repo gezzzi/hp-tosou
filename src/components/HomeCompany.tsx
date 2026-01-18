@@ -48,7 +48,7 @@ export default function HomeCompany() {
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="bg-primary text-white text-[10px] px-2 py-0.5 rounded mt-1 font-bold">事業内容</span>
-                  <p className="text-sm text-(--text-dark)">塗装工事、不用品回収、遺品整理、他</p>
+                  <p className="text-sm text-(--text-dark)">塗装工事、不用品回収、清掃（草刈り・高圧洗浄）</p>
                 </div>
               </div>
 
