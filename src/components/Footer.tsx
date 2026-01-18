@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { ArrowUp } from 'lucide-react';
 import logoIcon from '@/app/icon.png';
 
 export default function Footer() {
@@ -145,9 +146,7 @@ export default function Footer() {
         className="hidden lg:flex fixed bottom-6 right-6 w-12 h-12 bg-[var(--primary-green)] text-white rounded-full items-center justify-center shadow-lg hover:bg-[var(--primary-green-dark)] transition-colors z-40"
         aria-label="ページトップへ戻る"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-        </svg>
+        <ArrowUp className="w-6 h-6" />
       </button>
 
       {/* コピーライト */}

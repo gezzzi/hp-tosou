@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Wrench } from 'lucide-react';
 
 export default function HomeServices() {
   const services = [
@@ -24,9 +25,7 @@ export default function HomeServices() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="max-w-sm md:max-w-[800px] mx-auto text-left mb-12 relative overflow-visible">
           <h2 className="section-title flex items-center justify-start gap-3 text-(--text-dark)! text-left! relative z-10">
-            <svg className="w-10 h-10 text-(--secondary-green)" fill="currentColor" viewBox="0 0 16 16">
-              <path fillRule="evenodd" d="M15.1 3.12a1 1 0 0 1 .706.71c.452 1.71.032 3.62-1.32 4.97a5.14 5.14 0 0 1-4.87 1.36a.34.34 0 0 0-.148-.006l-.025.008l-5.08 5.08a2.563 2.563 0 0 1-3.62 0a2.563 2.563 0 0 1 0-3.62l5.08-5.08l.008-.025a.34.34 0 0 0-.006-.148a5.16 5.16 0 0 1 1.366-4.88a5.11 5.11 0 0 1 4.97-1.32a1 1 0 0 1 .452 1.674l-2.1 2.1l.383 1.15l1.15.383l2.1-2.1a1 1 0 0 1 .968-.258zM5.81 6.55l.001-.002zm3.62 3.62l.002-.001zm4.34-2.07a4.16 4.16 0 0 1-3.93 1.1c-.396-.096-.827-.023-1.12.265l-5.08 5.08c-.607.608-1.6.608-2.21 0a1.57 1.57 0 0 1 0-2.21l5.08-5.08c.288-.288.361-.721.265-1.12a4.2 4.2 0 0 1-.043-1.78a4.2 4.2 0 0 1 1.14-2.15c.76-.76 1.74-1.16 2.73-1.2c.428-.02.86.027 1.28.137l-2.1 2.1a1 1 0 0 0-.242 1.02l.383 1.15c.1.299.334.533.632.632l1.15.383a.99.99 0 0 0 1.02-.242l2.1-2.1c.11.418.156.849.137 1.28a4.1 4.1 0 0 1-1.2 2.73z" clipRule="evenodd"/>
-            </svg>
+            <Wrench className="w-10 h-10 text-(--secondary-green)" />
             <span className="relative z-10 text-3xl md:text-4xl">サービス</span>
             <span className="absolute right-0 top-1/2 -translate-y-1/2 text-6xl md:text-7xl font-black text-slate-200 italic uppercase tracking-tighter opacity-80 -z-10 leading-none select-none pr-1">
               service

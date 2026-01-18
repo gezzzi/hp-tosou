@@ -3,6 +3,7 @@ import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
+import { Building2, Home, Warehouse, Droplets, Menu, Paintbrush } from "lucide-react";
 
 export const metadata = {
   title: "塗装サービス | 株式会社マルヨ",
@@ -14,47 +15,27 @@ export default function PaintingServicePage() {
     {
       title: '外壁塗装',
       description: '外壁の塗り替えで建物を美しく保護。色褪せや剥がれを解消し、建物の寿命を延ばします。',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-        </svg>
-      ),
+      icon: <Building2 className="w-8 h-8" />,
     },
     {
       title: '屋根塗装',
       description: 'トタン屋根などの塗り替え。雨漏りや錆を防ぎ、建物を守ります。',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-        </svg>
-      ),
+      icon: <Home className="w-8 h-8" />,
     },
     {
       title: '物置・ブロック塀塗装',
       description: '物置やブロック塀、門扉、玄関ドアなど、建物周りの塗装も対応。',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
-        </svg>
-      ),
+      icon: <Warehouse className="w-8 h-8" />,
     },
     {
       title: '外壁高圧洗浄',
       description: '塗装前の下地処理として、または洗浄のみのご依頼も承ります。',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-        </svg>
-      ),
+      icon: <Droplets className="w-8 h-8" />,
     },
     {
       title: 'ウッドデッキ塗装',
       description: 'ウッドデッキのメンテナンス塗装で、木材を長持ちさせます。',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
-        </svg>
-      ),
+      icon: <Menu className="w-8 h-8" />,
     },
   ];
 
@@ -90,9 +71,7 @@ export default function PaintingServicePage() {
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-14 h-14 bg-[var(--primary-green)] rounded-full flex items-center justify-center">
-                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                    </svg>
+                    <Paintbrush className="w-7 h-7 text-white" />
                   </div>
                   <h2 className="text-3xl font-bold text-[var(--primary-green)]">確かな技術で<br />建物を守ります</h2>
                 </div>

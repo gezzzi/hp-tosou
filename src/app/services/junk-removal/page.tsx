@@ -3,6 +3,7 @@ import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
+import { Truck, Heart, Sparkles, Scissors, CheckCircle, Users, Lock, ShieldCheck } from "lucide-react";
 
 export const metadata = {
   title: "不用品回収・遺品整理 | 株式会社マルヨ",
@@ -14,38 +15,22 @@ export default function JunkRemovalServicePage() {
     {
       title: '不用品回収',
       description: '大きな家具や家電、日用品など不要になったものを回収。お客様で運ぶ必要はありません。',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-        </svg>
-      ),
+      icon: <Truck className="w-8 h-8" />,
     },
     {
       title: '遺品整理',
       description: '故人の遺品を丁寧に整理。心を込めて対応いたします。ご遺族の気持ちに寄り添います。',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-        </svg>
-      ),
+      icon: <Heart className="w-8 h-8" />,
     },
     {
       title: 'ゴミ屋敷清掃',
       description: 'お部屋の状態を問わず対応。プライバシーに配慮して作業します。',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-        </svg>
-      ),
+      icon: <Sparkles className="w-8 h-8" />,
     },
     {
       title: '草刈り・草むしり',
       description: 'お庭の草刈りや草むしり、落ち葉清掃なども対応いたします。',
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-        </svg>
-      ),
+      icon: <Scissors className="w-8 h-8" />,
     },
   ];
 
@@ -53,29 +38,17 @@ export default function JunkRemovalServicePage() {
     {
       title: '追加料金一切なし',
       description: '見積もり後に料金が上がることはありません。安心してご依頼ください。',
-      icon: (
-        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      ),
+      icon: <CheckCircle className="w-10 h-10" />,
     },
     {
       title: '作業外注一切なし',
       description: '自社スタッフが責任を持って対応。信頼できるスタッフがお伺いします。',
-      icon: (
-        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-      ),
+      icon: <Users className="w-10 h-10" />,
     },
     {
       title: 'プライバシー厳守',
       description: 'お客様のプライバシーに最大限配慮して作業いたします。',
-      icon: (
-        <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-        </svg>
-      ),
+      icon: <Lock className="w-10 h-10" />,
     },
   ];
 
@@ -103,9 +76,7 @@ export default function JunkRemovalServicePage() {
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-14 h-14 bg-[var(--accent-yellow)] rounded-full flex items-center justify-center">
-                    <svg className="w-7 h-7 text-[var(--text-dark)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-                    </svg>
+                    <Truck className="w-7 h-7 text-[var(--text-dark)]" />
                   </div>
                   <h2 className="text-3xl font-bold text-[var(--text-dark)]">お困りごとを<br />解決します</h2>
                 </div>
@@ -219,9 +190,7 @@ export default function JunkRemovalServicePage() {
         <section className="py-8 bg-white">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <div className="inline-flex items-center gap-3 bg-gray-50 px-6 py-3 rounded-lg">
-              <svg className="w-6 h-6 text-[var(--primary-green)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
+              <ShieldCheck className="w-6 h-6 text-[var(--primary-green)]" />
               <span className="text-[var(--text-medium)]">
                 古物商許可: 静岡県公安委員会 第491100145100号
               </span>

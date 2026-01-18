@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import { Paintbrush, Truck, ChevronRight } from "lucide-react";
 
 export const metadata = {
   title: "サービス | 株式会社マルヨ",
@@ -15,22 +16,14 @@ export default function ServicesPage() {
       description: '外壁塗装、屋根塗装など、住宅の塗装工事を承ります。祖父の代から続く確かな技術でお客様の大切な住まいを守ります。',
       href: '/services/painting',
       color: 'var(--primary-green)',
-      icon: (
-        <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-        </svg>
-      )
+      icon: <Paintbrush className="w-16 h-16" />
     },
     {
       title: '不用品回収・遺品整理',
       description: '不用品回収、遺品整理、ゴミ屋敷清掃など、お手頃価格で丁寧に対応いたします。追加料金は一切ありません。',
       href: '/services/junk-removal',
       color: 'var(--accent-yellow)',
-      icon: (
-        <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
-        </svg>
-      )
+      icon: <Truck className="w-16 h-16" />
     }
   ];
 
@@ -70,9 +63,7 @@ export default function ServicesPage() {
                     style={{ color: category.color }}
                   >
                     詳しく見る
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
+                    <ChevronRight className="w-5 h-5" />
                   </span>
                 </Link>
               ))}
