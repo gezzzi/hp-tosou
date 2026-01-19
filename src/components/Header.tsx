@@ -46,8 +46,8 @@ export default function Header() {
   const navItems = [
     { label: 'ホーム', href: '/' },
     { label: '料金案内', href: '/pricing' },
-    { label: '対応エリア', href: '/area' },
     { label: '会社案内', href: '/about' },
+    { label: 'よくあるご質問', href: '/faq' },
     { label: 'お問い合わせ', href: '/contact' },
   ];
 

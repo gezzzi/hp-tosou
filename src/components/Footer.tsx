@@ -109,11 +109,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/area" className="text-[var(--text-medium)] hover:text-[var(--primary-green)] transition-colors">
-                  対応エリア
-                </Link>
-              </li>
-              <li>
                 <Link href="/about" className="text-[var(--text-medium)] hover:text-[var(--primary-green)] transition-colors">
                   会社案内
                 </Link>
@@ -125,6 +120,11 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-3 text-[var(--text-dark)]">ヘルプ</h4>
             <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/faq" className="text-[var(--text-medium)] hover:text-[var(--primary-green)] transition-colors">
+                  よくあるご質問
+                </Link>
+              </li>
               <li>
                 <Link href="/contact" className="text-[var(--text-medium)] hover:text-[var(--primary-green)] transition-colors">
                   お問い合わせ

@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { MapPin } from 'lucide-react';
 
@@ -24,59 +23,58 @@ export default function HomeArea() {
         </div>
 
         <div className="max-w-5xl mx-auto">
-          <div className="border-[3px] border-(--border-light) overflow-hidden">
-            <div className="bg-(--bg-light) px-4 py-3 border-b-[3px] border-(--border-light)">
-              <h3 className="font-bold text-xl text-(--text-dark) flex items-center justify-center gap-2">
-                <span className="w-2 h-8 bg-primary rounded-full"></span>
-                静岡県内全域対応
-              </h3>
-            </div>
+          <div className="border-t-[3px] border-(--border-light) overflow-hidden">
+            <div className="border-x-[3px] border-(--border-light)">
+              <div className="bg-(--bg-light) px-4 py-3 border-b-[3px] border-(--border-light)">
+                <h3 className="font-bold text-xl text-(--text-dark) flex items-center justify-center gap-2">
+                  <span className="w-2 h-8 bg-primary rounded-full"></span>
+                  静岡県内全域対応
+                </h3>
+              </div>
 
-            <div>
-              <div className="p-4 md:p-6 pb-0">
-                {/* マップ画像 */}
-                <div className="relative aspect-4/3 w-full max-w-[600px] mx-auto mb-8">
-                  <Image
-                    src="/shizuoka.png"
-                    alt="静岡県対応エリアマップ"
-                    fill
-                    className="object-contain"
-                  />
+              <div>
+                <div className="p-4 md:p-6 pb-0">
+                  {/* マップ画像 */}
+                  <div className="relative aspect-4/3 w-full max-w-[600px] mx-auto mb-8">
+                    <Image
+                      src="/shizuoka.png"
+                      alt="静岡県対応エリアマップ"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </div>
+
+                {/* エリア表形式 */}
+                <div className="bg-white overflow-hidden border-y-[3px] border-(--border-light)">
+                  <table className="w-full text-sm md:text-base border-collapse">
+                    <thead>
+                      <tr className="bg-slate-50 border-b border-(--border-light)">
+                        <th className="py-3 px-6 text-center font-bold text-primary w-1/4 border-r border-(--border-light)">地域</th>
+                        <th className="py-3 px-6 text-center font-bold text-primary">対応市区町村</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {areas.map((area, index) => (
+                        <tr key={index} className={index !== areas.length - 1 ? "border-b border-(--border-light)" : ""}>
+                          <td className="py-3 px-6 font-bold text-(--text-dark) bg-slate-50/50 text-center border-r border-(--border-light)">
+                            {area.region}
+                          </td>
+                          <td className="py-3 px-6 text-(--text-medium) leading-relaxed">
+                            {area.cities.join('、')}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               </div>
+            </div>
 
-              {/* エリア表形式 */}
-              <div className="bg-white overflow-hidden border-y-[3px] border-(--border-light)">
-                <table className="w-full text-sm md:text-base border-collapse">
-                  <thead>
-                    <tr className="bg-slate-50 border-b border-(--border-light)">
-                      <th className="py-3 px-6 text-center font-bold text-primary w-1/4 border-x border-(--border-light)">地域</th>
-                      <th className="py-3 px-6 text-center font-bold text-primary border-r border-(--border-light)">対応市区町村</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {areas.map((area, index) => (
-                      <tr key={index} className={index !== areas.length - 1 ? "border-b border-(--border-light)" : ""}>
-                        <td className="py-3 px-6 font-bold text-(--text-dark) bg-slate-50/50 text-center border-x border-(--border-light)">
-                          {area.region}
-                        </td>
-                        <td className="py-3 px-6 text-(--text-medium) leading-relaxed border-r border-(--border-light)">
-                          {area.cities.join('、')}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-
-              <div className="p-6 text-center">
-                <p className="text-(--text-medium) mb-6 text-sm">
-                  山梨県・関東地方も出張可能です。まずはお気軽にお問い合わせください。
-                </p>
-                <Link href="/area" className="btn-outline">
-                  対応エリアの詳細を見る →
-                </Link>
-              </div>
+            <div className="p-6 text-center">
+              <p className="text-(--text-medium) text-sm">
+                山梨県・関東地方も出張可能です。まずはお気軽にお問い合わせください。
+              </p>
             </div>
           </div>
         </div>
