@@ -6,15 +6,28 @@ export default function Hero() {
     <section className="relative min-h-[600px] flex items-center overflow-hidden">
       {/* 背景画像 */}
       <div className="absolute inset-0">
-        <Image
-          src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=1920&h=1080&fit=crop"
-          alt="塗装作業イメージ"
-          fill
-          className="object-cover"
-          priority
-        />
+        {/* モバイル用画像 */}
+        <div className="block min-[461px]:hidden h-full w-full relative">
+          <Image
+            src="/pic/header-mb.jpg?v=1"
+            alt="塗装作業イメージ"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+        {/* PC・タブレット用画像 */}
+        <div className="hidden min-[461px]:block h-full w-full relative">
+          <Image
+            src="/pic/header-pc.jpg?v=1"
+            alt="塗装作業イメージ"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
         {/* オーバーレイ */}
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/30"></div>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-16 relative z-10">

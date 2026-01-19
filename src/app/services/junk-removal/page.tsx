@@ -103,7 +103,7 @@ export default function JunkRemovalServicePage() {
               </div>
               <div className="relative h-80 lg:h-[400px] rounded-2xl overflow-hidden shadow-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop"
+                  src="/pic/truck.webp"
                   alt="不用品回収の様子"
                   fill
                   className="object-cover"

@@ -15,7 +15,7 @@ export default function JunkRemovalCasesPage() {
       title: '不用品回収',
       location: '静岡県富士市 E様',
       description: '引っ越しに伴う不用品の回収。2トントラック1台分の家具・家電を回収しました。',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=450&fit=crop'
+      image: '/pic/truck.webp'
     },
     {
       title: '高圧洗浄清掃・草刈り作業',

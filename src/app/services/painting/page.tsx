@@ -62,7 +62,7 @@ export default function PaintingServicePage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="relative h-80 lg:h-[400px] rounded-2xl overflow-hidden shadow-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&h=600&fit=crop"
+                  src="/pic/painting.jpg"
                   alt="塗装作業の様子"
                   fill
                   className="object-cover"

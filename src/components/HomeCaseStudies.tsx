@@ -14,7 +14,7 @@ export default function HomeCaseStudies() {
       title: '外壁・屋根塗装',
       category: '塗装',
       description: '築15年の住宅。外壁のひび割れと屋根の苔が目立っていましたが、高耐久塗料で新築同様の輝きを取り戻しました。',
-      image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&h=400&fit=crop',
+      image: '/pic/painting.jpg',
       href: '/case-studies/painting',
       color: 'primary'
     },
