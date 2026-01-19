@@ -52,7 +52,7 @@ export default function Header() {
   ];
 
   const serviceItems = [
-    { label: '塗装サービス', href: '/services/painting' },
+    { label: '塗装', href: '/services/painting' },
     { label: '不用品回収・清掃', href: '/services/junk-removal' },
   ];
 

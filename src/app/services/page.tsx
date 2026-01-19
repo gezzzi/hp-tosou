@@ -12,7 +12,7 @@ export const metadata = {
 export default function ServicesPage() {
   const serviceCategories = [
     {
-      title: '塗装サービス',
+      title: '塗装',
       description: '外壁塗装、屋根塗装など、住宅の塗装工事を承ります。祖父の代から続く確かな技術でお客様の大切な住まいを守ります。',
       href: '/services/painting',
       color: 'var(--primary-green)',

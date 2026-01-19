@@ -5,7 +5,7 @@ import { Wrench } from 'lucide-react';
 export default function HomeServices() {
   const services = [
     {
-      title: '塗装サービス',
+      title: '塗装',
       description: '外壁塗装、屋根塗装、物置・門扉など各種塗装工事。祖父の代から続く確かな技術で対応します。',
       image: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600&h=400&fit=crop',
       href: '/services/painting',
@@ -58,7 +58,7 @@ export default function HomeServices() {
                   <p className="text-white/90 text-sm mb-4 line-clamp-3">
                     {service.description}
                   </p>
-                  <div>
+                  <div className="text-center">
                     <Link href={service.href} className={service.color === 'primary' ? 'btn-secondary' : 'btn-junk'}>
                       詳しく見る →
                     </Link>
@@ -70,8 +70,8 @@ export default function HomeServices() {
         </div>
 
         <div className="text-center mt-10">
-          <Link href="/services/painting" className="btn-outline">
-            すべてのサービスを見る
+          <Link href="/pricing" className="btn-outline">
+            料金案内 →
           </Link>
         </div>
       </div>

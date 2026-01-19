@@ -6,8 +6,8 @@ import Image from "next/image";
 import { Building2, Home, Warehouse, Droplets, Menu, Paintbrush } from "lucide-react";
 
 export const metadata = {
-  title: "塗装サービス | 株式会社マルヨ",
-  description: "株式会社マルヨの塗装サービス。外壁塗装、屋根塗装、物置・ブロック塀塗装など、祖父の代から続く確かな技術で対応いたします。",
+  title: "塗装 | 株式会社マルヨ",
+  description: "株式会社マルヨの塗装。外壁塗装、屋根塗装、物置・ブロック塀塗装など、祖父の代から続く確かな技術で対応いたします。",
 };
 
 export default function PaintingServicePage() {
@@ -52,7 +52,7 @@ export default function PaintingServicePage() {
       <Header />
       <main className="main-content">
         <PageHeader 
-          title="塗装サービス" 
+          title="塗装" 
           subtitle="PAINTING SERVICE" 
         />
 
