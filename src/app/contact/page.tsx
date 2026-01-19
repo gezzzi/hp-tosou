@@ -194,40 +194,6 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
-
-        {/* FAQ */}
-        <section className="py-16 bg-[var(--bg-light)]">
-          <div className="max-w-4xl mx-auto px-4">
-            <h2 className="section-title mb-8">よくあるご質問</h2>
-            
-            <div className="space-y-4">
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <h3 className="font-bold text-[var(--text-dark)] mb-2">Q. 見積もりは無料ですか？</h3>
-                <p className="text-sm text-[var(--text-medium)]">
-                  A. はい、お見積りは無料です。お気軽にお問い合わせください。
-                </p>
-              </div>
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <h3 className="font-bold text-[var(--text-dark)] mb-2">Q. 対応エリアはどこですか？</h3>
-                <p className="text-sm text-[var(--text-medium)]">
-                  A. 静岡県全域に対応しております。山梨県や関東での施工実績もございますので、お気軽にご相談ください。
-                </p>
-              </div>
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <h3 className="font-bold text-[var(--text-dark)] mb-2">Q. 不用品回収で追加料金は発生しますか？</h3>
-                <p className="text-sm text-[var(--text-medium)]">
-                  A. エレベーターなしの建物で2階以上の場合、1階ごとに3,000円の追加料金が発生します。それ以外の追加料金は一切ございません。
-                </p>
-              </div>
-              <div className="bg-white rounded-lg p-6 shadow-sm">
-                <h3 className="font-bold text-[var(--text-dark)] mb-2">Q. 土日の対応は可能ですか？</h3>
-                <p className="text-sm text-[var(--text-medium)]">
-                  A. 基本的に平日8:00〜17:00の対応となりますが、ご相談いただければ可能な限り対応いたします。
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </>

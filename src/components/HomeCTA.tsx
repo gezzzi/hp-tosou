@@ -3,7 +3,7 @@ import { Phone } from 'lucide-react';
 
 export default function HomeCTA() {
   return (
-    <section className="py-16 bg-gradient-to-r from-[var(--primary-green)] to-[var(--primary-green-light)]">
+    <section className="py-16 bg-[#6fbb18]">
       <div className="max-w-4xl mx-auto px-4 text-center text-white">
         <h2 className="text-2xl md:text-3xl font-bold mb-4">
           お見積り・ご相談は無料です

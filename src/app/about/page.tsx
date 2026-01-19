@@ -86,7 +86,7 @@ export default function CompanyPage() {
                 <div className="bg-[var(--bg-light)] rounded-lg p-6">
                   <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden relative">
                     <Image
-                      src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop"
+                      src="/pic/ceo-photo.webp"
                       alt="代表取締役 望月達也"
                       fill
                       className="object-cover"
