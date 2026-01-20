@@ -27,16 +27,16 @@ export default function Hero() {
           />
         </div>
         {/* オーバーレイ */}
-        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0 bg-black/15"></div>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-16 relative z-10">
         <div className="text-center text-white">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-            <span className="block">塗装も、不用品回収も。</span>
-            <span className="block mt-2">
-              <span className="text-[var(--accent-yellow)]">安心</span>と
-              <span className="text-[var(--accent-yellow)]">丁寧</span>をお届けします。
+          <h2 className="font-bold mb-6 leading-[1.6] md:leading-tight">
+            <span className="block text-2xl md:text-4xl mb-4 md:mb-6 opacity-90">塗装も、不用品回収も。</span>
+            <span className="inline text-4xl md:text-6xl pb-1 md:pb-2 bg-bottom-left bg-repeat-x bg-[url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2020%22%3E%3Cpath%20d%3D%22M0%2010%20Q%2010%200%2020%2010%20T%2040%2010%22%20fill%3D%22none%22%20stroke%3D%22%23ffea03%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E')] bg-size-[auto_12px] md:bg-size-[auto_20px] box-decoration-clone">
+              <span className="text-accent">安心</span>と
+              <span className="text-accent">丁寧</span>をお届けします！
             </span>
           </h2>
         </div>

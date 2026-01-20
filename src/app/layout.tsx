@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   keywords: "塗装, 外壁塗装, 屋根塗装, 不用品回収, 草刈り, 高圧洗浄, 清掃, 静岡県, 富士市, ゴミ屋敷清掃",
   openGraph: {
     title: "株式会社マルヨ | 静岡県富士市の塗装・不用品回収",
-    description: "塗装も、不用品回収も。安心と丁寧をお届けします。",
+    description: "塗装も、不用品回収も。安心と丁寧をお届けします！",
     locale: "ja_JP",
     type: "website",
     images: [
