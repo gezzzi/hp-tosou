@@ -14,9 +14,9 @@ export default function HomeCTA() {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a href="tel:000-0000-0000" className="flex items-center gap-3 bg-white text-[var(--primary-green)] px-8 py-4 rounded font-bold text-xl hover:bg-gray-100 transition-colors">
+          <a href="tel:0545-67-8348" className="flex items-center gap-3 bg-white text-[var(--primary-green)] px-8 py-4 rounded font-bold text-xl hover:bg-gray-100 transition-colors">
             <Phone className="w-6 h-6" />
-            000-0000-0000
+            0545-67-8348
           </a>
           <Link href="/contact" className="btn-accent text-lg px-8 py-4">
             メールでお問い合わせ

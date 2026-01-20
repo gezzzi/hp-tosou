@@ -54,6 +54,7 @@ export default function PaintingServicePage() {
         <PageHeader 
           title="塗装" 
           subtitle="PAINTING SERVICE" 
+          bgImage="/pic/hd/painting-hd.jpg"
         />
 
         {/* イントロダクション */}
@@ -62,7 +63,7 @@ export default function PaintingServicePage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="relative h-80 lg:h-[400px] rounded-2xl overflow-hidden shadow-lg">
                 <Image
-                  src="/pic/painting.jpg"
+                  src="/pic/service-tosou-v2.jpg"
                   alt="塗装作業の様子"
                   fill
                   className="object-cover"

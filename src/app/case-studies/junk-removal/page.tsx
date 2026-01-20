@@ -44,6 +44,7 @@ export default function JunkRemovalCasesPage() {
         <PageHeader
           title="不用品回収・清掃事例"
           subtitle="JUNK REMOVAL & CLEANING"
+          bgImage="/pic/hd/junk-hd.jpg"
         />
 
         {/* 不用品回収事例 */}

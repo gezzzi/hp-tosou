@@ -62,6 +62,7 @@ export default function JunkRemovalServicePage() {
         <PageHeader 
           title="不用品回収・清掃" 
           subtitle="JUNK REMOVAL & CLEANING" 
+          bgImage="/pic/hd/junk-hd.jpg"
         />
 
         {/* イントロダクション */}

@@ -92,6 +92,7 @@ export default function FAQPage() {
         <PageHeader 
           title="よくあるご質問" 
           subtitle="FAQ" 
+          bgImage="/pic/hd/faq-hd.jpg"
         />
 
         <section className="py-16 bg-white">

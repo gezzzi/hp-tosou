@@ -34,6 +34,7 @@ export default function CaseStudiesPage() {
         <PageHeader
           title="サービス事例"
           subtitle="WORKS"
+          bgImage="/pic/hd/service-hd.jpg"
         />
 
         {/* カテゴリー選択 */}

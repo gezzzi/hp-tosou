@@ -16,6 +16,7 @@ export default function PricingPage() {
         <PageHeader 
           title="料金案内" 
           subtitle="PRICING" 
+          bgImage="/pic/hd/pricing-hd.jpg"
         />
 
         {/* 不用品回収料金 */}
@@ -139,11 +140,11 @@ export default function PricingPage() {
             <h2 className="text-xl font-bold mb-4">お見積りは無料です</h2>
             <p className="mb-6 opacity-90">お気軽にお問い合わせください</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:000-0000-0000" className="flex items-center justify-center gap-2 bg-white text-[var(--primary-green)] px-6 py-3 rounded font-bold hover:bg-gray-100 transition-colors">
+              <a href="tel:0545-67-8348" className="flex items-center justify-center gap-2 bg-white text-[var(--primary-green)] px-6 py-3 rounded font-bold hover:bg-gray-100 transition-colors">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                 </svg>
-                000-0000-0000
+                0545-67-8348
               </a>
               <Link href="/contact" className="btn-accent">
                 メールでお問い合わせ

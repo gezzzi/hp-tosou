@@ -44,6 +44,7 @@ export default function PaintingCasesPage() {
         <PageHeader
           title="塗装事例"
           subtitle="PAINTING WORKS"
+          bgImage="/pic/hd/painting-hd.jpg"
         />
 
         {/* 塗装事例 */}

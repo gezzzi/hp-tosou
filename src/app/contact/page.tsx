@@ -15,6 +15,7 @@ export default function ContactPage() {
         <PageHeader 
           title="お問い合わせ" 
           subtitle="CONTACT" 
+          bgImage="/pic/hd/contact-hd.jpg"
         />
 
         <section className="py-16 bg-white">
@@ -34,11 +35,11 @@ export default function ContactPage() {
                 
                 <div className="bg-[var(--bg-light)] rounded-lg p-8 mb-6">
                   <p className="text-base lg:text-sm text-[var(--text-light)] mb-2 text-center">お気軽にお電話ください（社長直通）</p>
-                  <a href="tel:000-0000-0000" className="flex items-center justify-center gap-3 text-3xl font-bold text-[var(--primary-green)] mb-4">
+                  <a href="tel:0545-67-8348" className="flex items-center justify-center gap-3 text-3xl font-bold text-[var(--primary-green)] mb-4">
                     <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                     </svg>
-                    000-0000-0000
+                    0545-67-8348
                   </a>
                   <p className="text-base lg:text-sm text-[var(--text-light)] text-center">平日 8:00〜17:00</p>
                 </div>

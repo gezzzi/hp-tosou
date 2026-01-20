@@ -14,7 +14,7 @@ export default function CompanyPage() {
     { label: '会社名', value: '株式会社マルヨ' },
     { label: '代表者', value: '望月 達也（もちづき たつや）' },
     { label: '所在地', value: '〒417-0061 静岡県富士市伝法2503-5' },
-    { label: '電話番号', value: '000-0000-0000' },
+    { label: '電話番号', value: '0545-67-8348' },
     { label: '営業時間', value: '平日 8:00〜17:00' },
     { label: '定休日', value: '土曜日、日曜日' },
     { label: '対応エリア', value: '静岡県全域（山梨県、関東での施工実績あり）' },
@@ -53,6 +53,7 @@ export default function CompanyPage() {
         <PageHeader 
           title="会社案内" 
           subtitle="ABOUT US" 
+          bgImage="/pic/hd/about-hd.jpg"
         />
 
         {/* 会社情報 */}
@@ -144,11 +145,11 @@ export default function CompanyPage() {
           <div className="max-w-4xl mx-auto px-4 text-center text-white">
             <h2 className="text-xl font-bold mb-4">お気軽にお問い合わせください</h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:000-0000-0000" className="flex items-center justify-center gap-2 bg-white text-[var(--primary-green)] px-6 py-3 rounded font-bold hover:bg-gray-100 transition-colors">
+              <a href="tel:0545-67-8348" className="flex items-center justify-center gap-2 bg-white text-[var(--primary-green)] px-6 py-3 rounded font-bold hover:bg-gray-100 transition-colors">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                 </svg>
-                000-0000-0000
+                0545-67-8348
               </a>
               <Link href="/contact" className="btn-accent">
                 お問い合わせフォーム

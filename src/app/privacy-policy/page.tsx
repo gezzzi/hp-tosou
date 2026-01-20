@@ -109,7 +109,7 @@ export default function PrivacyPolicyPage() {
                   {section.contactInfo && (
                     <div className="bg-[var(--bg-light)] rounded-lg p-6 mt-4">
                       <p className="font-bold text-[var(--text-dark)] mb-2">株式会社マルヨ</p>
-                      <p className="text-sm text-[var(--text-medium)] mb-1">電話：000-0000-0000</p>
+                      <p className="text-sm text-[var(--text-medium)] mb-1">電話：0545-67-8348</p>
                       <p className="text-sm text-[var(--text-medium)] mb-1">受付時間：平日 8:00〜17:00</p>
                       <Link href="/contact" className="text-sm text-[var(--primary-green)] hover:underline">
                         お問い合わせフォームはこちら →

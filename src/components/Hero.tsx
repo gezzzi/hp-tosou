@@ -9,7 +9,7 @@ export default function Hero() {
         {/* モバイル用画像 */}
         <div className="block min-[461px]:hidden h-full w-full relative">
           <Image
-            src="/pic/header-mb.jpg?v=1"
+            src="/pic/header-mb.jpg?v=2"
             alt="塗装作業イメージ"
             fill
             className="object-cover"
@@ -19,7 +19,7 @@ export default function Hero() {
         {/* PC・タブレット用画像 */}
         <div className="hidden min-[461px]:block h-full w-full relative">
           <Image
-            src="/pic/header-pc.jpg?v=1"
+            src="/pic/header-pc.jpg?v=2"
             alt="塗装作業イメージ"
             fill
             className="object-cover"

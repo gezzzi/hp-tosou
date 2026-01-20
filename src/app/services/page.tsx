@@ -34,6 +34,7 @@ export default function ServicesPage() {
         <PageHeader
           title="サービス"
           subtitle="SERVICES"
+          bgImage="/pic/hd/service-hd.jpg"
         />
 
         {/* カテゴリー選択 */}

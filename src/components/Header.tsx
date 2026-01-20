@@ -104,9 +104,9 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-6">
             <div className="text-right">
               <p className="text-xs text-[var(--text-light)]">お気軽にお電話ください</p>
-              <a href="tel:000-0000-0000" className="flex items-center gap-2 text-2xl font-bold text-[var(--primary-green)]">
+              <a href="tel:0545-67-8348" className="flex items-center gap-2 text-2xl font-bold text-[var(--primary-green)]">
                 <Phone className="w-6 h-6" />
-                000-0000-0000
+                0545-67-8348
               </a>
             </div>
             <Link href="/contact" className="btn-primary">
@@ -414,9 +414,9 @@ export default function Header() {
                 ))}
               </ul>
               <div className="mt-6 pt-6">
-                <a href="tel:000-0000-0000" className="flex items-center justify-center gap-2 text-2xl font-bold text-black">
+                <a href="tel:0545-67-8348" className="flex items-center justify-center gap-2 text-2xl font-bold text-black">
                   <Phone className="w-7 h-7" />
-                  000-0000-0000
+                  0545-67-8348
                 </a>
                 <p className="text-center text-sm text-gray-600 mt-2">
                   <span className="border border-gray-500 px-1">営業時間</span> 8:00〜17:00（土日祝を除く）

@@ -21,7 +21,7 @@ export default function HomeCompany() {
             <div className="w-full md:w-1/3">
               <div className="relative aspect-square rounded-full overflow-hidden border-4 border-white shadow-lg">
                 <Image
-                  src="/pic/ceo-photo.webp"
+                  src="/pic/ceo-photo.webp?v=2"
                   alt="代表取締役 望月達也"
                   fill
                   className="object-cover"
