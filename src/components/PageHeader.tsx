@@ -21,7 +21,7 @@ export default function PageHeader({ title, subtitle, bgImage = "/pic/hd/service
         {/* グラデーションオーバーレイ */}
         <div className="absolute inset-0 bg-linear-to-b from-white/20 via-transparent to-white/40"></div>
       </div>
-      
+
       <div className="relative z-10 text-center px-4">
         <h1 className="text-3xl md:text-4xl font-bold text-[var(--text-dark)] mb-2 drop-shadow-sm">
           {title}

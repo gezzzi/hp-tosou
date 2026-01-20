@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
+import HomeCTA from "@/components/HomeCTA";
 import Link from "next/link";
 import Image from "next/image";
 import { Building2, Home, Warehouse, Droplets, Menu, Paintbrush } from "lucide-react";
@@ -147,21 +148,10 @@ export default function PaintingServicePage() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-12 bg-[var(--primary-green)]">
-          <div className="max-w-4xl mx-auto px-4 text-center text-white">
-            <h2 className="text-xl font-bold mb-4">塗装のご相談・お見積りはお気軽に</h2>
-            <p className="mb-6 opacity-90">現地調査・お見積りは無料です。お気軽にお問い合わせください。</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/pricing" className="bg-white text-[var(--primary-green)] px-6 py-3 rounded font-bold hover:bg-gray-100 transition-colors">
-                料金案内を見る
-              </Link>
-              <Link href="/contact" className="btn-accent">
-                お問い合わせ
-              </Link>
-            </div>
-          </div>
-        </section>
+        <HomeCTA 
+          title="塗装のご相談・お見積りはお気軽に"
+          description="現地調査・お見積りは無料です。お気軽にお問い合わせください。"
+        />
       </main>
       <Footer />
     </>

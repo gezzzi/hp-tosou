@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
+import HomeCTA from "@/components/HomeCTA";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -75,20 +76,10 @@ export default function JunkRemovalCasesPage() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-12 bg-[var(--primary-green)]">
-          <div className="max-w-4xl mx-auto px-4 text-center text-white">
-            <h2 className="text-xl font-bold mb-4">
-              不用品回収・清掃について詳しく聞きたい方は
-            </h2>
-            <p className="mb-6 opacity-90">
-              ご状況に合わせたご提案をいたします
-            </p>
-            <Link href="/contact" className="btn-accent">
-              お問い合わせはこちら
-            </Link>
-          </div>
-        </section>
+        <HomeCTA 
+          title="不用品回収・清掃について詳しく聞きたい方は"
+          description="ご状況に合わせたご提案をいたします"
+        />
       </main>
       <Footer />
     </>
