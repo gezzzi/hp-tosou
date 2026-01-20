@@ -76,10 +76,7 @@ export default function PaintingCasesPage() {
           </div>
         </section>
 
-        <HomeCTA 
-          title="塗装について詳しく聞きたい方は"
-          description="ご自宅の状況に合わせたご提案をいたします"
-        />
+        <HomeCTA />
       </main>
       <Footer />
     </>

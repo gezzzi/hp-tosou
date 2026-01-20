@@ -135,10 +135,7 @@ export default function PricingPage() {
           </div>
         </section>
 
-        <HomeCTA 
-          title="お見積りは無料です"
-          description="お気軽にお問い合わせください"
-        />
+        <HomeCTA />
       </main>
       <Footer />
     </>

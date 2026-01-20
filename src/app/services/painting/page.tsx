@@ -8,7 +8,7 @@ import { Building2, Home, Warehouse, Droplets, Menu, Paintbrush } from "lucide-r
 
 export const metadata = {
   title: "塗装 | 株式会社マルヨ",
-  description: "株式会社マルヨの塗装。外壁塗装、屋根塗装、物置・ブロック塀塗装など、祖父の代から続く確かな技術で対応いたします。",
+  description: "株式会社マルヨの塗装。外壁塗装、屋根塗装、物置・ブロック塀塗装など、親子代々続く確かな技術で対応いたします。",
 };
 
 export default function PaintingServicePage() {
@@ -78,7 +78,7 @@ export default function PaintingServicePage() {
                   <h2 className="text-3xl font-bold text-[var(--primary-green)]">確かな技術で<br />建物を守ります</h2>
                 </div>
                 <p className="text-[var(--text-medium)] mb-6 leading-relaxed">
-                  祖父の代から続く確かな技術で、外壁・屋根塗装から小さな塗装工事まで幅広く対応いたします。
+                  親子代々続く確かな技術で、外壁・屋根塗装から小さな塗装工事まで幅広く対応いたします。
                   お客様のご要望・ご予算に応じて最適なプランをご提案します。
                 </p>
                 <div className="bg-[var(--primary-green)]/5 rounded-xl p-6 border-l-4 border-[var(--primary-green)]">
@@ -86,7 +86,7 @@ export default function PaintingServicePage() {
                   <ul className="text-[var(--text-medium)] space-y-2">
                     <li className="flex items-start gap-2">
                       <span className="text-[var(--primary-green)] mt-1">✓</span>
-                      祖父の代から続く確かな技術力
+                      親子代々続く確かな技術力
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-[var(--primary-green)] mt-1">✓</span>
@@ -148,10 +148,7 @@ export default function PaintingServicePage() {
           </div>
         </section>
 
-        <HomeCTA 
-          title="塗装のご相談・お見積りはお気軽に"
-          description="現地調査・お見積りは無料です。お気軽にお問い合わせください。"
-        />
+        <HomeCTA />
       </main>
       <Footer />
     </>

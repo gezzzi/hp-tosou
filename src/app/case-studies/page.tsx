@@ -73,10 +73,7 @@ export default function CaseStudiesPage() {
           </div>
         </section>
 
-        <HomeCTA 
-          title="事例について詳しく聞きたい方は"
-          description="ご自宅の状況に合わせたご提案をいたします"
-        />
+        <HomeCTA />
       </main>
       <Footer />
     </>

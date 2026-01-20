@@ -76,10 +76,7 @@ export default function JunkRemovalCasesPage() {
           </div>
         </section>
 
-        <HomeCTA 
-          title="不用品回収・清掃について詳しく聞きたい方は"
-          description="ご状況に合わせたご提案をいたします"
-        />
+        <HomeCTA />
       </main>
       <Footer />
     </>

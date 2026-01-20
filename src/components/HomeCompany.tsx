@@ -34,7 +34,7 @@ export default function HomeCompany() {
             </div>
             
             <div className="w-full md:w-2/3">
-              <h3 className="text-xl font-bold text-(--text-dark) mb-4">祖父の代から続く、信頼と実績。</h3>
+              <h3 className="text-xl font-bold text-(--text-dark) mb-4">親子代々続く、信頼と実績。</h3>
               <p className="text-(--text-medium) text-sm leading-relaxed mb-6">
                 株式会社マルヨは、静岡県富士市を中心に地域密着で活動しております。塗装工事から不用品回収まで、お客様の「困った」を解決するために、丁寧で迅速な対応を心がけています。
                 <br /><br />

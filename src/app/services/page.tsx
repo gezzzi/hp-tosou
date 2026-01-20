@@ -3,6 +3,7 @@ import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
 import HomeCTA from "@/components/HomeCTA";
 import Link from "next/link";
+import Image from "next/image";
 import { Paintbrush, Truck, ChevronRight } from "lucide-react";
 
 export const metadata = {
@@ -14,16 +15,18 @@ export default function ServicesPage() {
   const serviceCategories = [
     {
       title: '塗装',
-      description: '外壁塗装、屋根塗装など、住宅の塗装工事を承ります。祖父の代から続く確かな技術でお客様の大切な住まいを守ります。',
+      description: '外壁塗装、屋根塗装など、住宅の塗装工事を承ります。親子代々続く確かな技術でお客様の大切な住まいを守ります。',
+      image: '/pic/service-tosou-v2.jpg',
       href: '/services/painting',
       color: 'var(--primary-green)',
       icon: <Paintbrush className="w-16 h-16" />
     },
     {
       title: '不用品回収・清掃',
-      description: '不用品回収、草刈り機を使用した除草作業、高圧洗浄機による土間や外壁の清掃など、住まいの「困った」を解決します。',
+      description: '２トントラックによる不用品回収、草刈り機を使った除草作業、高圧洗浄機での土間・外壁清掃など、住まいの「困った」を解決します。',
+      image: '/pic/truck.webp',
       href: '/services/junk-removal',
-      color: 'var(--accent-yellow)',
+      color: 'var(--service-junk-light)',
       icon: <Truck className="w-16 h-16" />
     }
   ];
@@ -38,45 +41,66 @@ export default function ServicesPage() {
           bgImage="/pic/hd/service-hd.jpg"
         />
 
-        {/* カテゴリー選択 */}
+        {/* サービス内容 */}
         <section className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="text-center mb-16">
+              <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-dark)] mb-6">
+                塗装・不用品回収・清掃のことはお任せください
+              </h2>
+              <p className="text-[var(--text-medium)] leading-relaxed max-w-3xl mx-auto">
+                株式会社マルヨは、静岡県富士市を拠点に、地域に根ざした住まいのトータルサポートを提供しています。
+                親子代々培ってきた確かな塗装技術をはじめ、不用品回収や専門的な清掃業務まで、
+                お客様の「困った」を解決するために、誠心誠意対応させていただきます。
+                どんな小さなことでも、お気軽にご相談ください。
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
               {serviceCategories.map((category, index) => (
-                <Link
+                <div
                   key={index}
-                  href={category.href}
-                  className="card p-8 text-center hover:shadow-lg transition-all duration-300 group"
+                  className="text-center"
                 >
+                  <div className="relative h-48 md:h-64 mb-8 -mx-4 md:mx-0">
+                    <Image
+                      src={category.image}
+                      alt={category.title}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                      <h2 className="text-2xl md:text-3xl font-bold brush-stroke-container text-white whitespace-nowrap">
+                        <span className="relative z-10">{category.title}</span>
+                        <div className={`brush-stroke-bg ${category.color === 'var(--primary-green)' ? 'bg-service-painting' : 'bg-service-junk'}`} />
+                      </h2>
+                    </div>
+                  </div>
                   <div
-                    className="inline-flex items-center justify-center w-24 h-24 rounded-full mb-6 transition-transform duration-300 group-hover:scale-110"
+                    className="inline-flex items-center justify-center w-24 h-24 rounded-full mb-6"
                     style={{ backgroundColor: `${category.color}20`, color: category.color }}
                   >
                     {category.icon}
                   </div>
-                  <h2 className="text-2xl font-bold text-[var(--text-dark)] mb-4">
-                    {category.title}
-                  </h2>
-                  <p className="text-[var(--text-medium)] mb-6">
+                  <p className="text-[var(--text-medium)] mb-6 leading-relaxed">
                     {category.description}
                   </p>
-                  <span
-                    className="inline-flex items-center gap-2 font-bold transition-colors"
-                    style={{ color: category.color }}
-                  >
-                    詳しく見る
-                    <ChevronRight className="w-5 h-5" />
-                  </span>
-                </Link>
+                  <div className="flex justify-center">
+                    <Link
+                      href={category.href}
+                      className="btn-outline px-6! flex! items-center justify-center gap-2 group whitespace-nowrap min-w-[200px]"
+                    >
+                      サービスの詳細
+                      <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        <HomeCTA 
-          title="サービスについて詳しく聞きたい方は"
-          description="お気軽にお問い合わせください"
-        />
+        <HomeCTA />
       </main>
       <Footer />
     </>

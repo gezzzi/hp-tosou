@@ -6,7 +6,7 @@ export default function HomeServices() {
   const services = [
     {
       title: '塗装',
-      description: '外壁塗装、屋根塗装、物置・門扉など各種塗装工事。祖父の代から続く確かな技術で対応します。',
+      description: '外壁塗装、屋根塗装、物置・門扉など各種塗装工事。親子代々続く確かな技術で対応します。',
       image: '/pic/service-tosou-v2.jpg?v=2',
       href: '/services/painting',
       color: 'primary'

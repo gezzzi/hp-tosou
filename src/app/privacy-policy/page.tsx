@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
+import HomeCTA from "@/components/HomeCTA";
 import Link from "next/link";
 
 export const metadata = {
@@ -128,20 +129,7 @@ export default function PrivacyPolicyPage() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-12 bg-[var(--bg-light)]">
-          <div className="max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-xl font-bold text-[var(--text-dark)] mb-4">
-              ご不明な点がございましたら
-            </h2>
-            <p className="text-[var(--text-medium)] mb-6">
-              お気軽にお問い合わせください
-            </p>
-            <Link href="/contact" className="btn-primary">
-              お問い合わせはこちら
-            </Link>
-          </div>
-        </section>
+        <HomeCTA />
       </main>
       <Footer />
     </>

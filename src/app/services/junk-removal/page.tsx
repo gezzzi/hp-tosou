@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
+import HomeCTA from "@/components/HomeCTA";
 import Link from "next/link";
 import Image from "next/image";
 import { Truck, Heart, Sparkles, Scissors, CheckCircle, Users, Lock, ShieldCheck } from "lucide-react";
@@ -194,21 +195,7 @@ export default function JunkRemovalServicePage() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-12 bg-[var(--accent-yellow)]">
-          <div className="max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-xl font-bold text-[var(--text-dark)] mb-4">不用品回収・清掃のご相談はお気軽に</h2>
-            <p className="mb-6 text-[var(--text-dark)] opacity-80">現地確認・お見積りは無料です。お気軽にお問い合わせください。</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/pricing" className="bg-white text-[var(--text-dark)] px-6 py-3 rounded font-bold hover:bg-gray-100 transition-colors">
-                料金案内を見る
-              </Link>
-              <Link href="/contact" className="bg-[var(--text-dark)] text-white px-6 py-3 rounded font-bold hover:bg-black transition-colors">
-                お問い合わせ
-              </Link>
-            </div>
-          </div>
-        </section>
+        <HomeCTA />
       </main>
       <Footer />
     </>

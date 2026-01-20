@@ -2,15 +2,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, Mail } from 'lucide-react';
 
-interface HomeCTAProps {
-  title?: string;
-  description?: string;
-}
-
-export default function HomeCTA({
-  title = "無料｜ご相談｜診断｜お見積り｜",
-  description = "まずはお気軽にご相談ください"
-}: HomeCTAProps) {
+export default function HomeCTA() {
+  const title = "無料｜ご相談｜診断｜お見積り｜";
+  const description = "まずはお気軽にご相談ください";
   return (
     <section className="py-16 relative overflow-hidden">
       {/* 背景画像とオーバーレイ */}
