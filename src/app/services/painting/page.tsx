@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import HomeCTA from "@/components/HomeCTA";
 import Link from "next/link";
 import Image from "next/image";
-import { Building2, Home, Warehouse, Droplets, Menu, Paintbrush } from "lucide-react";
+import { Building2, Home, Warehouse, Droplets, Menu, Paintbrush, Phone, Search, FileText, CheckCircle, ChevronDown } from "lucide-react";
 
 export const metadata = {
   title: "塗装 | 株式会社マルヨ",
@@ -41,67 +41,52 @@ export default function PaintingServicePage() {
   ];
 
   const processSteps = [
-    { step: 1, title: 'お問い合わせ', description: 'お電話またはメールでお気軽にご連絡ください。' },
-    { step: 2, title: '現地調査・お見積り', description: '現地を確認し、無料でお見積りをご提示します。' },
-    { step: 3, title: 'ご契約', description: '内容にご納得いただけましたら契約となります。' },
-    { step: 4, title: '施工', description: '自社職人が責任を持って丁寧に施工いたします。' },
-    { step: 5, title: '完了・お引き渡し', description: '仕上がりをご確認いただき、完了となります。' },
+    { step: 1, title: 'お問い合わせ', description: 'お電話またはメールでお気軽にご連絡ください。', icon: <Phone className="w-24 h-24" /> },
+    { step: 2, title: '現地調査・お見積り', description: '現地を確認し、無料でお見積りをご提示します。', icon: <Search className="w-24 h-24" /> },
+    { step: 3, title: 'ご契約', description: '内容にご納得いただけましたら契約となります。', icon: <FileText className="w-24 h-24" /> },
+    { step: 4, title: '施工開始', description: '自社職人が責任を持って丁寧に施工いたします。', icon: <Paintbrush className="w-24 h-24" /> },
+    { step: 5, title: '施工完了', description: '仕上がりをご確認いただき、完了となります。', icon: <CheckCircle className="w-24 h-24" /> },
   ];
 
   return (
     <>
       <Header />
       <main className="main-content">
-        <PageHeader 
-          title="塗装" 
-          subtitle="PAINTING SERVICE" 
+        <PageHeader
+          title="塗装"
+          subtitle="PAINTING SERVICE"
           bgImage="/pic/hd/painting-hd.jpg"
         />
 
         {/* イントロダクション */}
         <section className="py-16 bg-white">
-          <div className="max-w-6xl mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="relative h-80 lg:h-[400px] rounded-2xl overflow-hidden shadow-lg">
-                <Image
-                  src="/pic/service-tosou-v2.jpg"
-                  alt="塗装作業の様子"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-14 h-14 bg-[var(--primary-green)] rounded-full flex items-center justify-center">
-                    <Paintbrush className="w-7 h-7 text-white" />
-                  </div>
-                  <h2 className="text-3xl font-bold text-[var(--primary-green)]">確かな技術で<br />建物を守ります</h2>
+          <div className="max-w-4xl mx-auto px-4">
+            <div className="text-center">
+              <div className="flex items-center justify-center mb-4">
+                  <h2 className="text-3xl font-bold text-[var(--text-dark)]">確かな技術で<br />建物を守ります</h2>
                 </div>
-                <p className="text-[var(--text-medium)] mb-6 leading-relaxed">
+                <div className="flex justify-center gap-2 mb-6">
+                  <div className="w-3 h-3 rounded-full bg-[#6fbb18]"></div>
+                  <div className="w-3 h-3 rounded-full bg-[#ffea03]"></div>
+                  <div className="w-3 h-3 rounded-full bg-[#6fbb18]"></div>
+                </div>
+                <p className="text-[var(--text-medium)] leading-relaxed mx-auto max-w-2xl">
                   親子代々続く確かな技術で、外壁・屋根塗装から小さな塗装工事まで幅広く対応いたします。
                   お客様のご要望・ご予算に応じて最適なプランをご提案します。
                 </p>
-                <div className="bg-[var(--primary-green)]/5 rounded-xl p-6 border-l-4 border-[var(--primary-green)]">
-                  <h3 className="font-bold text-[var(--text-dark)] mb-3 text-lg">マルヨの塗装へのこだわり</h3>
-                  <ul className="text-[var(--text-medium)] space-y-2">
-                    <li className="flex items-start gap-2">
-                      <span className="text-[var(--primary-green)] mt-1">✓</span>
-                      親子代々続く確かな技術力
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-[var(--primary-green)] mt-1">✓</span>
-                      お客様と一緒に最適なプランを考えます
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-[var(--primary-green)] mt-1">✓</span>
-                      基本的に自社の職人が対応し、責任を持って施工
-                    </li>
-                  </ul>
-                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+
+        {/* 区切り 1: Intro -> Services */}
+        <div className="bg-white">
+          <section className="relative w-full h-10 overflow-hidden">
+            <div 
+              className="absolute inset-0 bg-[var(--bg-light)]" 
+              style={{ clipPath: 'polygon(0px 0px, 40% 0px, 50% 100%, 60% 0px, 100% 0px, 100% 100%, 0px 100%)' }}
+            />
+          </section>
+        </div>
 
         {/* サービス一覧 */}
         <section className="py-16 bg-[var(--bg-light)]">
@@ -124,23 +109,46 @@ export default function PaintingServicePage() {
           </div>
         </section>
 
+        {/* 区切り 2: Services -> Flow */}
+        <div className="bg-[var(--bg-light)]">
+          <section className="relative w-full h-10 overflow-hidden">
+            <div 
+              className="absolute inset-0 bg-white" 
+              style={{ clipPath: 'polygon(0px 0px, 40% 0px, 50% 100%, 60% 0px, 100% 0px, 100% 100%, 0px 100%)' }}
+            />
+          </section>
+        </div>
+
         {/* 施工の流れ */}
         <section className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-2xl font-bold text-[var(--text-dark)] mb-4">施工の流れ</h2>
-              <p className="text-[var(--text-medium)]">お問い合わせから完了まで、丁寧に対応いたします</p>
+              <h2 className="text-2xl font-bold text-[var(--text-dark)] mb-4">ご依頼の流れ</h2>
             </div>
             <div className="relative">
               <div className="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-[var(--primary-green)]/20" />
               <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
                 {processSteps.map((item) => (
                   <div key={item.step} className="relative text-center">
-                    <div className="w-16 h-16 bg-[var(--primary-green)] rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl relative z-10">
+                    <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 bg-[#ffea03] text-[#6fbb18] border-2 border-[#6fbb18] font-bold text-3xl relative z-10">
                       {item.step}
                     </div>
-                    <h3 className="font-bold text-[var(--text-dark)] mb-2">{item.title}</h3>
-                    <p className="text-sm text-[var(--text-medium)]">{item.description}</p>
+                    <div className="relative py-4">
+                      <div className="absolute inset-0 flex items-center justify-center text-[var(--primary-green)] opacity-20 pointer-events-none">
+                        {item.icon}
+                      </div>
+                      <div className="relative z-10">
+                        <h3 className="text-xl font-bold text-[var(--text-dark)] mb-2">
+                          {item.title}
+                        </h3>
+                        <p className="text-base text-[var(--text-medium)] leading-relaxed">{item.description}</p>
+                      </div>
+                    </div>
+                    {item.step < processSteps.length && (
+                      <div className="md:hidden flex justify-center py-4">
+                        <ChevronDown className="w-8 h-8 text-[var(--primary-green)]/30" />
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
