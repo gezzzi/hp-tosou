@@ -48,6 +48,11 @@ export default function ServicesPage() {
               <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-dark)] mb-6">
                 塗装・不用品回収・清掃のことはお任せください
               </h2>
+              <div className="flex justify-center gap-2 mb-6">
+                <div className="w-3 h-3 rounded-full bg-[#6fbb18]"></div>
+                <div className="w-3 h-3 rounded-full bg-[#ffea03]"></div>
+                <div className="w-3 h-3 rounded-full bg-[#6fbb18]"></div>
+              </div>
               <p className="text-[var(--text-medium)] leading-relaxed max-w-3xl mx-auto">
                 株式会社マルヨは、静岡県富士市を拠点に、地域に根ざした住まいのトータルサポートを提供しています。
                 親子代々培ってきた確かな塗装技術をはじめ、不用品回収や専門的な清掃業務まで、
