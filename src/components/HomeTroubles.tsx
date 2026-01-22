@@ -11,7 +11,7 @@ export default function HomeTroubles() {
   ];
 
   return (
-    <section className="py-16 bg-(--bg-light)">
+    <section className="py-16 bg-white">
       <div className="max-w-4xl mx-auto px-2 md:px-4">
         <div className="max-w-sm md:max-w-[800px] mx-auto text-left mb-12 relative overflow-visible">
           <h2 className="section-title flex items-center justify-start gap-3 text-(--text-dark)! text-left! relative z-10">

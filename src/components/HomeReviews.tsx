@@ -20,7 +20,7 @@ export default function HomeReviews() {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-(--bg-light)">
       <div className="max-w-6xl mx-auto px-4">
         <div className="max-w-sm md:max-w-[800px] mx-auto text-left mb-12 relative overflow-visible">
           <h2 className="section-title flex items-center justify-start gap-3 text-(--text-dark)! text-left! relative z-10">

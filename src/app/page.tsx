@@ -17,29 +17,29 @@ export default function Home() {
       <main className="main-content">
         <Hero />
         <HomeTroubles />
-        {/* bg-light -> white */}
-        <div className="bg-(--bg-light)">
-          <ChevronDivider color="#ffffff" />
+        {/* white -> bg-light */}
+        <div className="bg-white">
+          <ChevronDivider color="var(--bg-light)" />
         </div>
         <HomeServices />
-        {/* white -> bg-light */}
-        <div className="bg-white">
-          <ChevronDivider color="var(--bg-light)" />
+        {/* bg-light -> white */}
+        <div className="bg-(--bg-light)">
+          <ChevronDivider color="#ffffff" />
         </div>
         <HomeCaseStudies />
-        {/* bg-light -> white */}
-        <div className="bg-(--bg-light)">
-          <ChevronDivider color="#ffffff" />
-        </div>
-        <HomeArea />
         {/* white -> bg-light */}
         <div className="bg-white">
           <ChevronDivider color="var(--bg-light)" />
         </div>
-        <HomeCompany />
+        <HomeArea />
         {/* bg-light -> white */}
         <div className="bg-(--bg-light)">
           <ChevronDivider color="#ffffff" />
+        </div>
+        <HomeCompany />
+        {/* white -> bg-light */}
+        <div className="bg-white">
+          <ChevronDivider color="var(--bg-light)" />
         </div>
         <HomeReviews />
         <HomeCTA />
