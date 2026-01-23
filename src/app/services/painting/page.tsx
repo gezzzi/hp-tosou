@@ -67,6 +67,28 @@ export default function PaintingServicePage() {
                   親子代々続く確かな塗装技術で、外壁・屋根塗装から小さな塗装工事まで幅広く対応いたします。
                   お客様のご要望・ご予算に応じて最適なプランをご提案します。
                 </p>
+                
+                <div className="mt-10 bg-[var(--primary-green)]/10 rounded-xl p-6 border-l-4 border-[var(--primary-green)] text-left max-w-2xl mx-auto">
+                  <h3 className="font-bold text-[var(--text-dark)] mb-4 text-xl md:text-2xl text-center">こんなお困りありませんか？</h3>
+                  <ul className="text-[var(--text-medium)] space-y-2">
+                    <li className="flex items-start gap-2">
+                      <span className="text-[var(--primary-green)] mt-1">●</span>
+                      外壁の汚れやひび割れが気になる
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[var(--primary-green)] mt-1">●</span>
+                      前回の塗装から10年以上経過している
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[var(--primary-green)] mt-1">●</span>
+                      屋根の錆や色褪せを直したい
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[var(--primary-green)] mt-1">●</span>
+                      信頼できる地元の職人に頼みたい
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </section>
@@ -90,7 +112,7 @@ export default function PaintingServicePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16">
               {paintingServices.map((service, index) => (
                 <div key={index} className="text-center">
-                  <div className="relative h-48 md:h-56 mb-8 -mx-4 md:mx-0 rounded-lg overflow-hidden shadow-md">
+                  <div className="relative h-48 md:h-56 mb-8 -mx-4 md:mx-0 overflow-hidden">
                     <Image
                       src={service.image}
                       alt={service.title}
@@ -144,7 +166,7 @@ export default function PaintingServicePage() {
               <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
                 {processSteps.map((item) => (
                   <div key={item.step} className="relative text-center">
-                    <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 bg-[#ffea03] text-slate-500 border-2 border-slate-500 font-bold text-3xl relative z-10">
+                    <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 bg-[#038717] text-white font-bold text-3xl relative z-10">
                       {item.step}
                     </div>
                     <div className="relative py-4">
