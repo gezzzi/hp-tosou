@@ -149,7 +149,7 @@ export default function ContactPage() {
                       <label className="flex items-center cursor-pointer ml-2">
                         <input
                           type="radio"
-                          name="customerType"
+                          name="お客様種別"
                           value="個人"
                           className="w-4 h-4 text-[var(--primary-green)] focus:ring-2 focus:ring-[var(--primary-green)]"
                           required
@@ -159,7 +159,7 @@ export default function ContactPage() {
                       <label className="flex items-center cursor-pointer">
                         <input
                           type="radio"
-                          name="customerType"
+                          name="お客様種別"
                           value="法人"
                           className="w-4 h-4 text-[var(--primary-green)] focus:ring-2 focus:ring-[var(--primary-green)]"
                           required
@@ -176,7 +176,7 @@ export default function ContactPage() {
                     </label>
                     <input
                       type="text"
-                      name="name"
+                      name="お名前"
                       className="w-full px-4 py-3 border-2 border-[#9ca3af] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] focus:border-transparent text-base"
                       placeholder="山田 太郎"
                       required
@@ -190,7 +190,7 @@ export default function ContactPage() {
                     </label>
                     <input
                       type="text"
-                      name="furigana"
+                      name="フリガナ"
                       className="w-full px-4 py-3 border-2 border-[#9ca3af] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] focus:border-transparent text-base"
                       placeholder="ヤマダ タロウ"
                     />
@@ -203,7 +203,7 @@ export default function ContactPage() {
                     </label>
                     <input
                       type="tel"
-                      name="phone"
+                      name="電話番号"
                       className="w-full px-4 py-3 border-2 border-[#9ca3af] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] focus:border-transparent text-base"
                       placeholder="090-0000-0000"
                       required
@@ -217,7 +217,7 @@ export default function ContactPage() {
                     </label>
                     <input
                       type="email"
-                      name="email"
+                      name="メールアドレス"
                       className="w-full px-4 py-3 border-2 border-[#9ca3af] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] focus:border-transparent text-base"
                       placeholder="example@example.com"
                       required
@@ -231,7 +231,7 @@ export default function ContactPage() {
                     </label>
                     <input
                       type="text"
-                      name="address"
+                      name="ご住所"
                       className="w-full px-4 py-3 border-2 border-[#9ca3af] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] focus:border-transparent text-base"
                       placeholder="静岡県富士市..."
                       required
@@ -244,7 +244,7 @@ export default function ContactPage() {
                       ご依頼内容
                     </label>
                     <select
-                      name="service"
+                      name="ご依頼内容"
                       className="w-full px-4 py-3 border-2 border-[#9ca3af] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] focus:border-transparent text-base"
                       required
                     >
@@ -263,7 +263,7 @@ export default function ContactPage() {
                       お問い合わせ内容
                     </label>
                     <textarea
-                      name="message"
+                      name="お問い合わせ内容"
                       rows={6}
                       className="w-full px-4 py-3 border-2 border-[#9ca3af] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] focus:border-transparent resize-none"
                       placeholder="ご相談内容をご記入ください"
