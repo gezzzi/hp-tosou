@@ -4,8 +4,8 @@
   "description": "株式会社マルヨ のファビコン一式",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff",
+  "background_color": "#6366f1",
+  "theme_color": "#6366f1",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
