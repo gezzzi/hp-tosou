@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import HomeCTA from "@/components/HomeCTA";
 import Link from "next/link";
 import Image from "next/image";
-import { Truck, Heart, Sparkles, Scissors, CheckCircle, Users, Lock, Phone, Search, FileText, Paintbrush, ChevronDown, ChevronRight } from "lucide-react";
+import { Truck, Heart, Sparkles, Scissors, CheckCircle, Users, Lock, Phone, Search, FileText, Paintbrush, Droplets, Trash2, Brush, SprayCan, ChevronDown, ChevronRight } from "lucide-react";
 
 export const metadata = {
   title: "不用品回収・清掃 | 株式会社マルヨ",
@@ -29,7 +29,7 @@ export default function JunkRemovalServicePage() {
       title: 'ゴミ屋敷清掃',
       description: 'お部屋の状態を問わず対応。不用品の回収から清掃まで、プライバシーに配慮して作業します。',
       image: '/pic/header-junk.jpg',
-      icon: <Truck className="w-16 h-16" />,
+      icon: <Trash2 className="w-16 h-16" />,
     },
   ];
 
