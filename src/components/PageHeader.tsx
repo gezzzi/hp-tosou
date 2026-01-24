@@ -35,7 +35,7 @@ export default function PageHeader({ title, subtitle, bgImage = "/pic/hd/service
           )}
         </div>
       </div>
-      <Breadcrumbs />
+      <Breadcrumbs lastSegmentLabel={title} />
     </>
   );
 }

@@ -35,9 +35,9 @@ export default function HomeCTA() {
           </p>
 
           <div className="mb-8">
-            <a href="tel:0545-67-8348" className="inline-flex items-center gap-3 text-3xl md:text-5xl font-black text-(--text-dark) hover:opacity-70 transition-opacity mb-2">
+            <a href="tel:054-552-8798" className="inline-flex items-center gap-3 text-3xl md:text-5xl font-black text-(--text-dark) hover:opacity-70 transition-opacity mb-2">
               <Phone className="w-8 h-8 md:w-10 md:h-10 text-primary" />
-              0545-67-8348
+              054-552-8798
             </a>
             <p className="text-base font-medium text-slate-600">
               <span className="border border-slate-600 px-1 mr-2">営業時間</span>平日 8:00〜17:00

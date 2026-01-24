@@ -41,11 +41,11 @@ export default function MobileFloatingCTA() {
         <div className="flex">
           {/* 電話番号ボタン */}
           <a
-            href="tel:0545-67-8348"
+            href="tel:054-552-8798"
             className="flex-1 flex items-center justify-center gap-2 bg-[var(--primary-green)] text-white py-3 px-4 font-bold hover:bg-[var(--primary-green-dark)] transition-colors"
           >
             <Phone className="w-5 h-5" />
-            <span>0545-67-8348</span>
+            <span>054-552-8798</span>
           </a>
 
           {/* お問い合わせボタン */}

@@ -15,7 +15,7 @@ export default function CompanyPage() {
     { label: '会社名', value: '株式会社マルヨ' },
     { label: '代表者', value: '望月 達也（もちづき たつや）' },
     { label: '所在地', value: '〒417-0061 静岡県富士市伝法2503-5' },
-    { label: '電話番号', value: '0545-67-8348' },
+    { label: '電話番号', value: '054-552-8798' },
     { label: '営業時間', value: '平日 8:00〜17:00' },
     { label: '定休日', value: '土曜日、日曜日' },
     { label: '対応エリア', value: '静岡県全域（山梨県、関東での施工実績あり）' },

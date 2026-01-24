@@ -16,7 +16,7 @@ const segmentMap: { [key: string]: string } = {
   "privacy-policy": "プライバシーポリシー",
 };
 
-export default function Breadcrumbs() {
+export default function Breadcrumbs({ lastSegmentLabel }: { lastSegmentLabel?: string }) {
   const pathname = usePathname();
   
   // ホームページでは表示しない
@@ -26,7 +26,7 @@ export default function Breadcrumbs() {
 
   return (
     <nav className="bg-[#f7f7f5] py-3 border-b border-(--border-light)">
-      <div className="max-w-6xl mx-auto px-4 flex items-center gap-2 text-xs text-(--text-medium)">
+      <div className="max-w-6xl mx-auto px-4 flex flex-wrap items-center gap-y-2 gap-x-2 text-xs text-(--text-medium)">
         <Link href="/" className="flex items-center gap-1 hover:text-primary transition-colors">
           <Home className="w-3.5 h-3.5" />
           <span>HOME</span>
@@ -35,7 +35,7 @@ export default function Breadcrumbs() {
         {segments.map((segment, index) => {
           const href = "/" + segments.slice(0, index + 1).join("/");
           const isLast = index === segments.length - 1;
-          const label = segmentMap[segment] || segment;
+          const label = isLast && lastSegmentLabel ? lastSegmentLabel : (segmentMap[segment] || segment);
 
           return (
             <div key={href} className="flex items-center gap-2">
