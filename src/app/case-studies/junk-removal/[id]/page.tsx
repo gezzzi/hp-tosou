@@ -5,12 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { Clock, MapPin, Tag, ChevronLeft } from "lucide-react";
 import { notFound } from "next/navigation";
+import ImageModalWrapper from "@/components/ImageModalWrapper";
 
 const junkRemovalCases = [
   {
     id: '1',
     title: '不用品回収',
-    location: '静岡県富士市 E様',
     description: '引っ越しに伴う不用品の回収。2トントラック1台分の家具・家電を回収しました。',
     image: '/pic/truck.webp',
     tags: ['不用品回収'],
@@ -19,7 +19,6 @@ const junkRemovalCases = [
   {
     id: '2',
     title: '高圧洗浄清掃・草刈り作業',
-    location: '静岡県富士市 F様',
     description: '長年放置されていたお庭の草刈りと、外構・土間の高圧洗浄清掃。見違えるほど綺麗になりました。',
     image: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1200&h=800&fit=crop',
     tags: ['清掃'],
@@ -28,7 +27,6 @@ const junkRemovalCases = [
   {
     id: '3',
     title: 'ゴミ屋敷清掃',
-    location: '静岡県沼津市 G様',
     description: 'お部屋の片付けから不用品回収まで一貫して対応。プライバシーに配慮して作業しました。',
     image: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=1200&h=800&fit=crop',
     tags: ['清掃', '不用品回収'],
@@ -37,7 +35,6 @@ const junkRemovalCases = [
   {
     id: '4',
     title: '大型家具回収',
-    location: '静岡県富士市 H様',
     description: 'タンス、ベッド、ソファなど大型家具の回収。搬出から処分まですべてお任せいただきました。',
     image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&h=800&fit=crop',
     tags: ['不用品回収'],
@@ -65,36 +62,16 @@ export default async function JunkRemovalCaseDetailPage({ params }: { params: Pr
 
         <section className="py-16 bg-white">
           <div className="max-w-4xl mx-auto px-4">
-            <Link 
-              href="/case-studies/junk-removal" 
-              className="inline-flex items-center text-primary hover:underline mb-8"
-            >
-              <ChevronLeft size={20} />
-              <span>一覧に戻る</span>
-            </Link>
-
-            <div className="bg-white shadow-lg overflow-hidden">
-              <div className="relative h-[400px] md:h-[500px]">
-                <Image
-                  src={caseItem.image}
-                  alt={caseItem.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              
-              <div className="p-8 md:p-12">
-                <div className="flex flex-wrap items-center gap-6 mb-8 text-sm text-(--text-medium) border-b border-(--border-light) pb-6">
+            <div className="bg-white">
+              <div className="relative pl-8 mb-8 md:mb-12">
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#018615]"></div>
+                <div className="absolute left-2 top-0 bottom-0 w-0.5 bg-[#018615]"></div>
+                <div className="flex flex-wrap items-center gap-6 mb-4 text-sm text-(--text-medium)">
                   <div className="flex items-center gap-2">
-                    <Clock size={18} className="text-primary" />
+                    <Clock size={18} />
                     <span>{caseItem.date}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <MapPin size={18} className="text-primary" />
-                    <span>{caseItem.location}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Tag size={18} className="text-primary" />
                     <div className="flex gap-2">
                       {caseItem.tags.map(tag => (
                         <span 
@@ -110,19 +87,92 @@ export default async function JunkRemovalCaseDetailPage({ params }: { params: Pr
                   </div>
                 </div>
 
-                <h2 className="text-2xl md:text-3xl font-bold text-(--text-dark) mb-6">
+                <h2 className="text-2xl md:text-3xl font-bold text-(--text-dark)">
                   {caseItem.title}
                 </h2>
-                
+              </div>
+
+              <div className="relative h-[300px] md:h-[500px] mb-8 md:mb-12">
+                <Image
+                  src={caseItem.image}
+                  alt={caseItem.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              
+              <div>
                 <div className="prose max-w-none text-(--text-medium) leading-relaxed">
-                  <p className="whitespace-pre-wrap">{caseItem.description}</p>
-                  
-                  <div className="mt-12 p-6 bg-(--bg-light) border-l-4 border-primary">
-                    <h4 className="font-bold text-(--text-dark) mb-2">作業のポイント</h4>
-                    <p>
-                      迅速かつ丁寧な作業を心がけ、お客様の負担を最小限に抑えるよう努めました。
-                      分別から搬出まで一括して行うことで、スムーズなサービス提供を実現しています。
-                    </p>
+                  {/* メモセクション */}
+                  <div className="mt-12">
+                    <h3 className="text-xl font-bold text-(--text-dark) mb-6 flex items-center gap-2">
+                      <span className="w-2 h-6 bg-[#018615]"></span>
+                      メモ
+                    </h3>
+                    <div className="p-8 bg-white border-t-4 border-b-2 border-[#dee2e6] border-t-[#018615] relative shadow-sm">
+                      <div className="absolute top-0 left-8 right-8 h-full opacity-60 pointer-events-none" style={{ backgroundImage: 'linear-gradient(transparent 2.45rem, #adb5bd 2.45rem)', backgroundSize: '100% 2.5rem' }}></div>
+                      <div className="relative text-[#018615] font-medium text-lg leading-[2.5rem] pt-[0.6rem]">
+                        {caseItem.description}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 作業概要セクション */}
+                  <div className="mt-16">
+                    <h3 className="text-xl font-bold text-(--text-dark) mb-6 flex items-center gap-2">
+                      <span className="w-2 h-6 bg-[#018615]"></span>
+                      作業概要
+                    </h3>
+                    <div className="overflow-hidden border-y border-gray-400">
+                      <table className="w-full text-base text-left">
+                        <tbody>
+                          <tr className="border-b border-gray-400">
+                            <th className="w-1/3 px-6 py-4 bg-(--bg-light) font-bold text-(--text-dark) border-r border-gray-400">サービス内容</th>
+                            <td className="px-6 py-4 text-(--text-medium)">{caseItem.tags.join('、')}</td>
+                          </tr>
+                          <tr className="border-b border-gray-400">
+                            <th className="px-6 py-4 bg-(--bg-light) font-bold text-(--text-dark) border-r border-gray-400">作業時間</th>
+                            <td className="px-6 py-4 text-(--text-medium)">約4時間</td>
+                          </tr>
+                          <tr>
+                            <th className="px-6 py-4 bg-(--bg-light) font-bold text-(--text-dark) border-r border-gray-400">作業時期</th>
+                            <td className="px-6 py-4 text-(--text-medium)">{caseItem.date}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  {/* 現場写真セクション */}
+                  <div className="mt-16">
+                    <h3 className="text-xl font-bold text-(--text-dark) mb-6 flex items-center gap-2">
+                      <span className="w-2 h-6 bg-[#018615]"></span>
+                      現場写真
+                    </h3>
+                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                      {[
+                        { title: '作業前確認', img: 'https://images.unsplash.com/photo-1581578731548-c64695cc6954?w=600&h=450&fit=crop' },
+                        { title: '搬出・清掃作業', img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=450&fit=crop' },
+                        { title: '最終確認', img: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&h=450&fit=crop' },
+                        { title: '完了', img: caseItem.image },
+                      ].map((step, i, array) => (
+                        <ImageModalWrapper key={i} images={array.map(s => s.img)} initialIndex={i}>
+                          <div className="bg-white overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.1)] group cursor-pointer h-full">
+                            <div className="relative h-40 sm:h-64 overflow-hidden">
+                              <Image
+                                src={step.img}
+                                alt={step.title}
+                                fill
+                                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                              />
+                            </div>
+                            <div className="p-6">
+                              <h4 className="font-bold text-(--text-dark) text-center">{step.title}</h4>
+                            </div>
+                          </div>
+                        </ImageModalWrapper>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>

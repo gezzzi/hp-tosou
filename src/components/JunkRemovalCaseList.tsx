@@ -9,7 +9,6 @@ const junkRemovalCases = [
   {
     id: '1',
     title: '不用品回収',
-    location: '静岡県富士市 E様',
     description: '引っ越しに伴う不用品の回収。2トントラック1台分の家具・家電を回収しました。',
     image: '/pic/truck.webp',
     tags: ['不用品回収'],
@@ -18,7 +17,6 @@ const junkRemovalCases = [
   {
     id: '2',
     title: '高圧洗浄清掃・草刈り作業',
-    location: '静岡県富士市 F様',
     description: '長年放置されていたお庭の草刈りと、外構・土間の高圧洗浄清掃。見違えるほど綺麗になりました。',
     image: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=600&h=450&fit=crop',
     tags: ['清掃'],
@@ -27,7 +25,6 @@ const junkRemovalCases = [
   {
     id: '3',
     title: 'ゴミ屋敷清掃',
-    location: '静岡県沼津市 G様',
     description: 'お部屋の片付けから不用品回収まで一貫して対応。プライバシーに配慮して作業しました。',
     image: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&h=450&fit=crop',
     tags: ['清掃', '不用品回収'],
@@ -36,7 +33,6 @@ const junkRemovalCases = [
   {
     id: '4',
     title: '大型家具回収',
-    location: '静岡県富士市 H様',
     description: 'タンス、ベッド、ソファなど大型家具の回収。搬出から処分まですべてお任せいただきました。',
     image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=450&fit=crop',
     tags: ['不用品回収'],
