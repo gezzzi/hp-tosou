@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Info } from 'lucide-react';
+import { Info, ArrowRight } from 'lucide-react';
 
 export default function HomeCompany() {
   return (
@@ -17,7 +17,7 @@ export default function HomeCompany() {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="flex flex-col md:flex-row gap-8 items-center bg-white rounded-2xl p-8 border border-(--border-light)">
+          <div className="flex flex-col md:flex-row gap-8 items-center bg-white rounded-2xl p-8 border-[3px] border-[#6fbb18]">
             <div className="w-full md:w-1/3">
               <div className="relative aspect-square rounded-full overflow-hidden border-4 border-white shadow-lg">
                 <Image
@@ -32,28 +32,11 @@ export default function HomeCompany() {
                 <p className="text-lg font-bold text-(--text-dark)">望月 達也</p>
               </div>
             </div>
-            
-            <div className="w-full md:w-2/3">
-              <h3 className="text-xl font-bold text-(--text-dark) mb-4">親子代々続く、信頼と実績。</h3>
-              <p className="text-(--text-medium) text-sm leading-relaxed mb-6">
-                株式会社マルヨは、静岡県富士市を中心に地域密着で活動しております。塗装工事から不用品回収まで、お客様の「困った」を解決するために、丁寧で迅速な対応を心がけています。
-                <br /><br />
-                自社施工・追加料金なしの明朗会計で、安心してお任せいただけるサービスを提供し続けてまいります。
-              </p>
-              
-              <div className="space-y-3 mb-8">
-                <div className="flex items-start gap-3">
-                  <span className="bg-primary text-white text-[10px] px-2 py-0.5 rounded mt-1 font-bold">所在地</span>
-                  <p className="text-sm text-(--text-dark)">〒417-0061 静岡県富士市伝法2503-5</p>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="bg-primary text-white text-[10px] px-2 py-0.5 rounded mt-1 font-bold">事業内容</span>
-                  <p className="text-sm text-(--text-dark)">塗装工事、不用品回収、清掃（草刈り・高圧洗浄）</p>
-                </div>
-              </div>
 
-              <Link href="/about" className="btn-outline">
-                会社案内・代表挨拶を見る
+            <div className="w-full md:w-2/3 flex flex-col items-center md:items-start justify-center">
+              <Link href="/about" className="btn-outline !flex flex-row items-center justify-center gap-2 whitespace-nowrap w-full max-w-[300px] sm:w-80 sm:max-w-none py-4">
+                会社案内・代表挨拶
+                <ArrowRight className="w-5 h-5 shrink-0" />
               </Link>
             </div>
           </div>
