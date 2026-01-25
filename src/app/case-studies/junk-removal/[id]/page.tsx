@@ -20,7 +20,7 @@ const junkRemovalCases = [
     id: '2',
     title: '高圧洗浄清掃・草刈り作業',
     description: '長年放置されていたお庭の草刈りと、外構・土間の高圧洗浄清掃。見違えるほど綺麗になりました。',
-    image: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1200&h=800&fit=crop',
+    image: '/pic/hd/junk-hd.jpg',
     tags: ['清掃'],
     date: '2024年1月25日'
   },
@@ -28,7 +28,7 @@ const junkRemovalCases = [
     id: '3',
     title: 'ゴミ屋敷清掃',
     description: 'お部屋の片付けから不用品回収まで一貫して対応。プライバシーに配慮して作業しました。',
-    image: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=1200&h=800&fit=crop',
+    image: '/pic/truck.webp',
     tags: ['清掃', '不用品回収'],
     date: '2023年12月15日'
   },
@@ -36,7 +36,7 @@ const junkRemovalCases = [
     id: '4',
     title: '大型家具回収',
     description: 'タンス、ベッド、ソファなど大型家具の回収。搬出から処分まですべてお任せいただきました。',
-    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&h=800&fit=crop',
+    image: '/pic/hd/service-hd.jpg',
     tags: ['不用品回収'],
     date: '2023年11月20日'
   },
@@ -151,9 +151,9 @@ export default async function JunkRemovalCaseDetailPage({ params }: { params: Pr
                     </h3>
                     <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                       {[
-                        { title: '作業前確認', img: 'https://images.unsplash.com/photo-1581578731548-c64695cc6954?w=600&h=450&fit=crop' },
-                        { title: '搬出・清掃作業', img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=450&fit=crop' },
-                        { title: '最終確認', img: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&h=450&fit=crop' },
+                        { title: '作業前確認', img: '/pic/hd/junk-hd.jpg' },
+                        { title: '搬出・清掃作業', img: '/pic/truck.webp' },
+                        { title: '最終確認', img: '/pic/hd/service-hd.jpg' },
                         { title: '完了', img: caseItem.image },
                       ].map((step, i, array) => (
                         <ImageModalWrapper key={i} images={array.map(s => s.img)} initialIndex={i}>

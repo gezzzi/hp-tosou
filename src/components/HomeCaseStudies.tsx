@@ -23,7 +23,7 @@ export default function HomeCaseStudies() {
       title: '一軒家丸ごと回収',
       category: '不用品回収',
       description: '実家の片付けに伴う不用品回収。2トントラック2台分、家具から家電まで1日でスピーディーに回収いたしました。',
-      image: 'https://images.unsplash.com/photo-1595273670150-db0a3bf39079?w=600&h=400&fit=crop',
+      image: '/pic/hd/junk-hd.jpg',
       href: '/case-studies/junk-removal',
       color: 'junk'
     }
