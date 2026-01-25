@@ -24,7 +24,7 @@ export default function PricingPage() {
         {/* 導入セクション */}
         <section className="py-16 bg-[var(--bg-light)]">
           <div className="max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-dark)] mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-dark)] mb-6">
               安心と信頼の適正価格
             </h2>
             <div className="flex justify-center gap-2 mb-6">

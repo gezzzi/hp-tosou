@@ -415,7 +415,7 @@ export default function Header() {
               </ul>
               <div className="mt-6 pt-6">
                 <a href="tel:054-552-8798" className="flex items-center justify-center gap-2 text-2xl font-bold text-black">
-                  <Phone className="w-7 h-7" />
+                  <Phone className="w-7 h-7 text-[var(--primary-green)]" />
                   054-552-8798
                 </a>
                 <p className="text-center text-sm text-gray-600 mt-2">

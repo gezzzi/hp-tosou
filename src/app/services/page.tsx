@@ -45,7 +45,7 @@ export default function ServicesPage() {
         <section className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-dark)] mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-dark)] mb-6">
                 塗装・不用品回収・清掃のことはお任せください
               </h2>
               <div className="flex justify-center gap-2 mb-6">
