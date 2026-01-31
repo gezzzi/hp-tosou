@@ -304,7 +304,7 @@ export default function ContactPage() {
 
                   <div className="bg-[var(--bg-light)] rounded-lg p-4 text-base lg:text-sm text-[var(--text-dark)]">
                     <p>
-                      プライバシーポリシーは<a href="/privacy" className="text-[var(--primary-green)] underline hover:opacity-80">こちら</a>からご確認いただけます。
+                      プライバシーポリシーは<a href="/privacy-policy/" className="text-[var(--primary-green)] underline hover:opacity-80">こちら</a>からご確認いただけます。
                     </p>
                   </div>
                 </form>

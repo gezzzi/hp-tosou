@@ -50,7 +50,7 @@ export default function MobileFloatingCTA() {
 
           {/* お問い合わせボタン */}
           <Link
-            href="/contact"
+            href="/contact/"
             className="flex-1 flex items-center justify-center gap-2 bg-[var(--accent-yellow)] text-[var(--text-dark)] py-3 px-4 font-bold hover:bg-[var(--accent-yellow-dark)] transition-colors"
           >
             <Mail className="w-5 h-5" />

@@ -34,7 +34,7 @@ export default function HomeCompany() {
             </div>
 
             <div className="w-full md:w-2/3 flex flex-col items-center md:items-start justify-center">
-              <Link href="/about" className="btn-outline !flex flex-row items-center justify-center gap-2 whitespace-nowrap w-full max-w-[300px] sm:w-80 sm:max-w-none py-4">
+              <Link href="/about/" className="btn-outline !flex flex-row items-center justify-center gap-2 whitespace-nowrap w-full max-w-[300px] sm:w-80 sm:max-w-none py-4">
                 会社案内・代表挨拶
                 <ArrowRight className="w-5 h-5 shrink-0" />
               </Link>

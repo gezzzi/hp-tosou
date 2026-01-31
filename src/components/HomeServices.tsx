@@ -70,7 +70,7 @@ export default function HomeServices() {
         </div>
 
         <div className="text-center mt-10">
-          <Link href="/pricing" className="btn-outline">
+          <Link href="/pricing/" className="btn-outline">
             料金案内 →
           </Link>
         </div>

@@ -104,7 +104,7 @@ export default function HomeCaseStudies() {
         </div>
 
         <div className="text-center mt-12">
-          <Link href="/case-studies" className="btn-outline">
+          <Link href="/case-studies/" className="btn-outline">
             事例一覧 →
           </Link>
         </div>

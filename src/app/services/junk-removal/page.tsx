@@ -132,7 +132,7 @@ export default function JunkRemovalServicePage() {
                   <p className="text-[var(--text-medium)] leading-relaxed mb-8">{service.description}</p>
                   <div className="flex justify-center">
                     <Link
-                      href="/case-studies/junk-removal"
+                      href="/case-studies/junk-removal/"
                       className="btn-outline px-6! flex! items-center justify-center gap-2 group whitespace-nowrap min-w-[200px]"
                     >
                       {service.title}の事例

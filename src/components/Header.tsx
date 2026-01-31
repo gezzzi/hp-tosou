@@ -45,20 +45,20 @@ export default function Header() {
 
   const navItems = [
     { label: 'ホーム', href: '/' },
-    { label: '料金案内', href: '/pricing' },
-    { label: '会社案内', href: '/about' },
-    { label: 'よくあるご質問', href: '/faq' },
-    { label: 'お問い合わせ', href: '/contact' },
+    { label: '料金案内', href: '/pricing/' },
+    { label: '会社案内', href: '/about/' },
+    { label: 'よくあるご質問', href: '/faq/' },
+    { label: 'お問い合わせ', href: '/contact/' },
   ];
 
   const serviceItems = [
-    { label: '塗装', href: '/services/painting' },
-    { label: '不用品回収・清掃', href: '/services/junk-removal' },
+    { label: '塗装', href: '/services/painting/' },
+    { label: '不用品回収・清掃', href: '/services/junk-removal/' },
   ];
 
   const caseStudiesItems = [
-    { label: '塗装事例', href: '/case-studies/painting' },
-    { label: '不用品回収・清掃事例', href: '/case-studies/junk-removal' },
+    { label: '塗装事例', href: '/case-studies/painting/' },
+    { label: '不用品回収・清掃事例', href: '/case-studies/junk-removal/' },
   ];
 
   const isActive = (href: string) => {
@@ -109,7 +109,7 @@ export default function Header() {
                 054-552-8798
               </a>
             </div>
-            <Link href="/contact" className="btn-primary">
+            <Link href="/contact/" className="btn-primary">
               無料お見積り
             </Link>
           </div>
@@ -164,7 +164,7 @@ export default function Header() {
               onMouseLeave={() => setIsServicesOpen(false)}
             >
               <Link
-                href="/services"
+                href="/services/"
                 className={`font-medium transition-colors pb-1 ${
                   isServicesActive()
                     ? 'text-[var(--primary-green)] border-b-2 border-[var(--primary-green)]'
@@ -209,7 +209,7 @@ export default function Header() {
               onMouseLeave={() => setIsCaseStudiesOpen(false)}
             >
               <Link
-                href="/case-studies"
+                href="/case-studies/"
                 className={`font-medium transition-colors pb-1 ${
                   isCaseStudiesActive()
                     ? 'text-[var(--primary-green)] border-b-2 border-[var(--primary-green)]'
@@ -300,7 +300,7 @@ export default function Header() {
                 <li>
                   <div className="flex items-center justify-between border-b border-[var(--border-light)]">
                     <Link
-                      href="/services"
+                      href="/services/"
                       className={`flex-1 font-medium py-3 ${
                         isServicesActive()
                           ? 'text-[var(--primary-green)]'
@@ -350,7 +350,7 @@ export default function Header() {
                 <li>
                   <div className="flex items-center justify-between border-b border-[var(--border-light)]">
                     <Link
-                      href="/case-studies"
+                      href="/case-studies/"
                       className={`flex-1 font-medium py-3 ${
                         isCaseStudiesActive()
                           ? 'text-[var(--primary-green)]'

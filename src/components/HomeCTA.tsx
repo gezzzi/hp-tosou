@@ -45,7 +45,7 @@ export default function HomeCTA() {
           </div>
 
           <div className="flex justify-center">
-            <Link href="/contact" className="btn-accent text-lg px-16! md:px-32! py-4 shadow-lg flex! items-center justify-center gap-2 whitespace-nowrap">
+            <Link href="/contact/" className="btn-accent text-lg px-16! md:px-32! py-4 shadow-lg flex! items-center justify-center gap-2 whitespace-nowrap">
               <Mail className="w-6 h-6 shrink-0" />
               <span>お問い合わせ</span>
             </Link>

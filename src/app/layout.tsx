@@ -23,6 +23,7 @@ const mochiyPopPOne = Mochiy_Pop_P_One({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://maruyo-shizuoka.com"),
   title: "株式会社マルヨ | 静岡県富士市の塗装・不用品回収",
   description: "静岡県富士市を拠点に塗装工事、不用品回収、草刈りや高圧洗浄機を使った清掃業務を行う株式会社マルヨです。親子代々続く確かな技術と、2トントラック積み放題28,000円のお手頃価格で、お客様の「困った」を解決します。くらしのマーケット評価5.00の信頼と実績。",
   keywords: "塗装, 外壁塗装, 屋根塗装, 不用品回収, 草刈り, 高圧洗浄, 清掃, 静岡県, 富士市, ゴミ屋敷清掃",
