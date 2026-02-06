@@ -111,14 +111,6 @@ export default function ContactPage() {
 
         <section className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-0 lg:px-4">
-            {/* 無料相談案内 */}
-            <div className="bg-[var(--primary-green)]/10 rounded-lg p-6 lg:p-8 mb-12 mx-4 lg:mx-0 border-l-4 border-[var(--primary-green)]">
-              <h2 className="text-2xl lg:text-xl font-bold text-black mb-4 text-center">お気軽にご相談ください</h2>
-              <p className="text-base lg:text-sm text-[var(--text-dark)] text-center leading-relaxed">
-                株式会社マルヨでは無料相談を行っております。塗装や様々な業務を行っておりますので住まいのお困りごと、お悩みがあればお気軽にご相談ください。無理な営業行為等は致しませんのでご安心ください。
-              </p>
-            </div>
-
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* 電話 */}
               <div className="px-4 lg:px-0">

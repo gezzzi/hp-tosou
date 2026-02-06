@@ -10,7 +10,7 @@ interface PageHeaderProps {
 export default function PageHeader({ title, subtitle, bgImage = "/pic/hd/service-hd.jpg" }: PageHeaderProps) {
   return (
     <>
-      <div className="relative h-48 md:h-64 flex items-center justify-center overflow-hidden border-b-4 border-[#99c144]">
+      <div className="relative h-48 md:h-64 flex items-center justify-center overflow-hidden border-t-4 border-b-4 border-[#99c144]">
         {/* 背景画像 */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -25,11 +25,11 @@ export default function PageHeader({ title, subtitle, bgImage = "/pic/hd/service
         </div>
 
         <div className="relative z-10 text-center px-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-[var(--text-dark)] mb-2 drop-shadow-sm">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[var(--text-dark)] mb-2 drop-shadow-sm">
             {title}
           </h1>
           {subtitle && (
-            <p className="text-[#018615] italic tracking-widest font-medium drop-shadow-sm">
+            <p className="text-[#018615] italic tracking-widest font-medium drop-shadow-sm text-base sm:text-lg">
               {subtitle}
             </p>
           )}

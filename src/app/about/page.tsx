@@ -60,7 +60,7 @@ export default function CompanyPage() {
         {/* 代表挨拶 */}
         <section className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-dark)] mb-6 text-center">代表者挨拶</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[var(--text-dark)] mb-6 text-center">代表者挨拶</h2>
             <div className="flex justify-center gap-2 mb-12">
               <div className="w-3 h-3 rounded-full bg-[#6fbb18]"></div>
               <div className="w-3 h-3 rounded-full bg-[#ffea03]"></div>
@@ -79,11 +79,11 @@ export default function CompanyPage() {
                 
                 <div className="flex-1 text-center md:text-left">
                   <div className="mb-6">
-                    <p className="text-sm text-[var(--text-light)] mb-1">代表取締役</p>
-                    <p className="text-2xl font-bold text-[var(--text-dark)]">望月 達也</p>
+                    <p className="text-base text-[var(--text-light)] mb-1">代表取締役</p>
+                    <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-[var(--text-dark)]">望月 達也</p>
                   </div>
                   
-                  <p className="text-[var(--text-medium)] leading-relaxed text-left">
+                  <p className="text-[var(--text-medium)] text-base sm:text-lg leading-relaxed text-left">
                     株式会社マルヨのホームページをご覧いただき、ありがとうございます。
                     <br /><br />
                     当社は親子代々続く塗装業を基盤に、現在は不用品回収や、草刈り・高圧洗浄機を使った清掃業務など、住まいの「困った」を解決する事業に幅広く力を入れております。
@@ -107,7 +107,7 @@ export default function CompanyPage() {
         {/* 会社情報 */}
         <section className="py-16 bg-[var(--bg-light)]">
           <div className="max-w-6xl mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-dark)] mb-6 text-center">会社情報</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[var(--text-dark)] mb-6 text-center">会社情報</h2>
             <div className="flex justify-center gap-2 mb-12">
               <div className="w-3 h-3 rounded-full bg-[#6fbb18]"></div>
               <div className="w-3 h-3 rounded-full bg-[#ffea03]"></div>
@@ -119,10 +119,10 @@ export default function CompanyPage() {
                   <tbody>
                     {companyInfo.map((info, index) => (
                       <tr key={index} className={index === companyInfo.length - 1 ? "" : "border-b border-gray-400"}>
-                        <th className="px-6 py-4 text-sm font-bold text-[var(--text-dark)] bg-[var(--bg-light)] whitespace-nowrap w-1/3 border-r border-gray-400">
+                        <th className="px-6 py-4 text-base sm:text-lg font-bold text-[var(--text-dark)] bg-[var(--bg-light)] whitespace-nowrap w-1/3 border-r border-gray-400">
                           {info.label}
                         </th>
-                        <td className="px-6 py-4 text-sm text-[var(--text-medium)] bg-white">
+                        <td className="px-6 py-4 text-base sm:text-lg text-[var(--text-medium)] bg-white">
                           {info.value}
                         </td>
                       </tr>
@@ -141,7 +141,7 @@ export default function CompanyPage() {
         {/* ご依頼の流れ */}
         <section className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-dark)] mb-6 text-center">ご依頼の流れ</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[var(--text-dark)] mb-6 text-center">ご依頼の流れ</h2>
             <div className="flex justify-center gap-2 mb-12">
               <div className="w-3 h-3 rounded-full bg-[#6fbb18]"></div>
               <div className="w-3 h-3 rounded-full bg-[#ffea03]"></div>
@@ -159,8 +159,8 @@ export default function CompanyPage() {
                   }`}>
                     {step.number}
                   </div>
-                  <h3 className="font-bold text-[var(--text-dark)] mb-2">{step.title}</h3>
-                  <p className="text-sm text-[var(--text-medium)] leading-relaxed">{step.description}</p>
+                  <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-[var(--text-dark)] mb-2">{step.title}</h3>
+                  <p className="text-base sm:text-lg text-[var(--text-medium)] leading-relaxed">{step.description}</p>
                 </div>
               ))}
             </div>

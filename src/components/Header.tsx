@@ -79,7 +79,7 @@ export default function Header() {
   return (
     <>
       {/* メインヘッダー */}
-      <header className="lg:relative sticky top-0 bg-white z-[130] border-b-4 border-[#99c144]">
+      <header className="lg:relative sticky top-0 bg-white z-[130]">
         <div className="max-w-6xl mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
           {/* ロゴ・会社名 */}

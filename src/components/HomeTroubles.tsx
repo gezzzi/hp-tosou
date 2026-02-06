@@ -16,7 +16,7 @@ export default function HomeTroubles() {
         <div className="max-w-sm md:max-w-[800px] mx-auto text-left mb-12 relative overflow-visible">
           <h2 className="section-title flex items-center justify-start gap-3 text-(--text-dark)! text-left! relative z-10">
             <HelpCircle className="w-10 h-10 text-(--secondary-green) shrink-0" />
-            <span className="relative z-10 text-3xl md:text-4xl">こんなお困りごとはありませんか？</span>
+            <span className="relative z-10 text-2xl md:text-3xl lg:text-5xl">こんなお困りごとはありませんか？</span>
             <span className="absolute right-0 top-1/2 -translate-y-1/2 text-6xl md:text-7xl font-black text-slate-200 italic uppercase tracking-tighter opacity-80 -z-10 leading-none select-none pr-4">
               problems
             </span>
@@ -52,10 +52,10 @@ export default function HomeTroubles() {
         </div>
 
         <div className="text-center mt-10">
-          <p className="font-bold text-2xl md:text-3xl text-(--primary-green) mb-2">
+          <p className="font-bold text-lg md:text-2xl text-(--primary-green) mb-2">
             そのお悩み、塗装と不用品回収・清掃のプロが解決します！
           </p>
-          <p className="text-(--text-medium) text-lg">
+          <p className="text-(--text-medium) text-base sm:text-lg">
             お気軽にご相談ください
           </p>
         </div>

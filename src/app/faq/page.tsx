@@ -100,7 +100,7 @@ export default function FAQPage() {
             <div className="space-y-12">
               {faqItems.map((category, catIndex) => (
                 <div key={catIndex}>
-                  <h2 className="text-2xl font-bold text-(--text-dark) mb-6 flex items-center gap-3">
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-(--text-dark) mb-6 flex items-center gap-3">
                     <span className="w-2 h-8 bg-primary rounded-full"></span>
                     {category.category}
                   </h2>
@@ -112,15 +112,15 @@ export default function FAQPage() {
                       >
                         <summary className="flex items-center justify-between p-4 md:p-6 cursor-pointer bg-white hover:bg-slate-50 list-none">
                           <div className="flex items-start gap-4">
-                            <span className="text-xl font-bold text-primary shrink-0 mt-0.5">Q.</span>
-                            <span className="font-bold text-(--text-dark) md:text-lg">{item.question}</span>
+                            <span className="text-xl md:text-2xl font-bold text-primary shrink-0 mt-0.5">Q.</span>
+                            <span className="font-bold text-(--text-dark) text-lg md:text-2xl">{item.question}</span>
                           </div>
                           <ChevronDown className="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform duration-300" />
                         </summary>
                         <div className="p-4 md:p-6 bg-slate-50 border-t border-(--border-light)">
                           <div className="flex items-start gap-4">
-                            <span className="text-xl font-bold text-(--secondary-green) shrink-0 mt-0.5">A.</span>
-                            <p className="text-(--text-medium) leading-relaxed">
+                            <span className="text-xl md:text-2xl font-bold text-(--secondary-green) shrink-0 mt-0.5">A.</span>
+                            <p className="text-(--text-medium) text-base sm:text-lg leading-relaxed">
                               {item.answer}
                             </p>
                           </div>
@@ -134,8 +134,8 @@ export default function FAQPage() {
 
             <div className="mt-16 bg-(--bg-light) rounded-xl p-8 text-center">
               <HelpCircle className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-(--text-dark) mb-2">解決しない場合はお気軽にお問い合わせください</h3>
-              <p className="text-(--text-medium) mb-0">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-(--text-dark) mb-2">解決しない場合はお気軽にお問い合わせください</h3>
+              <p className="text-(--text-medium) text-base sm:text-lg mb-0">
                 専門スタッフが丁寧にお答えいたします。
               </p>
             </div>
