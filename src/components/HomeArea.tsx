@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { MapPin } from 'lucide-react';
 import FadeIn from './FadeIn';
@@ -28,7 +29,7 @@ export default function HomeArea() {
         </FadeIn>
 
         <FadeIn direction="none" delay={0.2}>
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-3xl mx-auto">
           <div className="border-t-[3px] border-(--border-light) overflow-hidden">
             <div className="border-x-[3px] border-(--border-light)">
               <div className="bg-(--bg-light) px-4 py-3 border-b-[3px] border-(--border-light)">
@@ -41,14 +42,17 @@ export default function HomeArea() {
               <div>
                 <div className="p-4 md:p-6 pb-0">
                   {/* マップ画像 */}
-                  <div className="relative aspect-4/3 w-full max-w-[600px] mx-auto mb-8">
+                  <motion.div 
+                    whileHover={{ scale: 1.02 }}
+                    className="relative aspect-4/3 w-full max-w-[600px] mx-auto mb-8 transition-all"
+                  >
                     <Image
                       src="/shizuoka.png"
                       alt="静岡県対応エリアマップ"
                       fill
                       className="object-contain"
                     />
-                  </div>
+                  </motion.div>
                 </div>
 
                 {/* エリア表形式 */}
@@ -62,14 +66,18 @@ export default function HomeArea() {
                     </thead>
                     <tbody>
                       {areas.map((area, index) => (
-                        <tr key={index} className={index !== areas.length - 1 ? "border-b border-(--border-light)" : ""}>
+                        <motion.tr 
+                          key={index} 
+                          whileHover={{ backgroundColor: "rgba(111, 187, 24, 0.05)" }}
+                          className={index !== areas.length - 1 ? "border-b border-(--border-light) transition-colors" : "transition-colors"}
+                        >
                           <td className="py-3 px-6 font-bold text-(--text-dark) bg-slate-50/50 text-center border-r border-(--border-light)">
                             {area.region}
                           </td>
                           <td className="py-3 px-6 text-(--text-medium) leading-relaxed">
                             {area.cities.join('、')}
                           </td>
-                        </tr>
+                        </motion.tr>
                       ))}
                     </tbody>
                   </table>

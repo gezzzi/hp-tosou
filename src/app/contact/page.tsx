@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
+import { motion } from "framer-motion";
+import FadeIn from "@/components/FadeIn";
 
 // Formspreeのフォームエンドポイント
 // ※ xxxxxxxの部分を、Formspreeで作成したフォームIDに置き換えてください
@@ -109,198 +111,209 @@ export default function ContactPage() {
           bgImage="/pic/hd/contact-hd.jpg"
         />
 
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-white overflow-hidden">
           <div className="max-w-4xl mx-auto px-4">
             <div className="space-y-16">
               {/* 電話 */}
-              <div>
-                <h2 className="text-2xl lg:text-3xl font-bold text-black mb-8 text-center">お電話でのお問い合わせ</h2>
+              <FadeIn>
+                <div>
+                  <h2 className="text-2xl lg:text-3xl font-bold text-black mb-8 text-center">お電話でのお問い合わせ</h2>
 
-                <div className="bg-[var(--bg-light)] rounded-lg p-8 md:p-12">
-                  <p className="text-lg md:text-xl text-[var(--text-light)] mb-4 text-center">お気軽にお電話ください（社長直通）</p>
-                  <a href="tel:054-552-8798" className="flex items-center justify-center gap-4 text-4xl md:text-5xl font-bold text-black mb-6">
-                    <svg className="w-10 h-10 text-[var(--primary-green)]" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                    </svg>
-                    054-552-8798
-                  </a>
-                  <p className="text-lg md:text-xl text-[var(--text-light)] text-center">平日 8:00〜17:00</p>
+                  <div className="bg-[var(--bg-light)] rounded-lg p-8 md:p-12">
+                    <p className="text-lg md:text-xl text-[var(--text-light)] mb-4 text-center">お気軽にお電話ください（社長直通）</p>
+                    <a href="tel:054-552-8798" className="flex items-center justify-center gap-4 text-4xl md:text-5xl font-bold text-black mb-6">
+                      <svg className="w-10 h-10 text-[var(--primary-green)]" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                      </svg>
+                      054-552-8798
+                    </a>
+                    <p className="text-lg md:text-xl text-[var(--text-light)] text-center">平日 8:00〜17:00</p>
+                  </div>
                 </div>
-              </div>
+              </FadeIn>
 
               {/* お問い合わせフォーム */}
-              <div>
-                <h2 className="text-2xl lg:text-3xl font-bold text-black mb-8 text-center">メールでのお問い合わせ</h2>
+              <FadeIn delay={0.2}>
+                <div>
+                  <h2 className="text-2xl lg:text-3xl font-bold text-black mb-8 text-center">メールでのお問い合わせ</h2>
 
-                {error && (
-                  <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-6">
-                    <p className="text-red-700">{error}</p>
-                  </div>
-                )}
-
-                <form onSubmit={handleSubmit} className="space-y-6 bg-[#f7f7f5] rounded-lg p-6 md:p-10">
-                  <div>
-                    <label className="block text-base lg:text-sm font-bold text-[var(--text-dark)] mb-2">
-                      <span className="inline-block bg-[#e51919] text-white px-2 py-1 text-sm lg:text-xs mr-2">必須</span>
-                      お客様種別
-                    </label>
-                    <div className="flex gap-6">
-                      <label className="flex items-center cursor-pointer ml-2">
-                        <input
-                          type="radio"
-                          name="お客様種別"
-                          value="個人"
-                          className="w-4 h-4 text-[var(--primary-green)] focus:ring-2 focus:ring-[var(--primary-green)]"
-                          required
-                        />
-                        <span className="ml-2 text-base lg:text-sm text-[var(--text-dark)]">個人</span>
-                      </label>
-                      <label className="flex items-center cursor-pointer">
-                        <input
-                          type="radio"
-                          name="お客様種別"
-                          value="法人"
-                          className="w-4 h-4 text-[var(--primary-green)] focus:ring-2 focus:ring-[var(--primary-green)]"
-                          required
-                        />
-                        <span className="ml-2 text-base lg:text-sm text-[var(--text-dark)]">法人</span>
-                      </label>
+                  {error && (
+                    <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-6">
+                      <p className="text-red-700">{error}</p>
                     </div>
-                  </div>
+                  )}
 
-                  <div>
-                    <label className="block text-base lg:text-sm font-bold text-[var(--text-dark)] mb-2">
-                      <span className="inline-block bg-[#e51919] text-white px-2 py-1 text-sm lg:text-xs mr-2">必須</span>
-                      お名前
-                    </label>
-                    <input
-                      type="text"
-                      name="お名前"
-                      className="w-full px-4 py-3 border-2 border-[#9ca3af] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] focus:border-transparent text-base"
-                      placeholder="山田 太郎"
-                      required
-                    />
-                  </div>
+                  <form onSubmit={handleSubmit} className="space-y-6 bg-[#f7f7f5] rounded-lg p-6 md:p-10">
+                    <div>
+                      <label className="block text-base lg:text-sm font-bold text-[var(--text-dark)] mb-2">
+                        <span className="inline-block bg-[#e51919] text-white px-2 py-1 text-sm lg:text-xs mr-2">必須</span>
+                        お客様種別
+                      </label>
+                      <div className="flex gap-6">
+                        <label className="flex items-center cursor-pointer ml-2">
+                          <input
+                            type="radio"
+                            name="お客様種別"
+                            value="個人"
+                            className="w-4 h-4 text-[var(--primary-green)] focus:ring-2 focus:ring-[var(--primary-green)]"
+                            required
+                          />
+                          <span className="ml-2 text-base lg:text-sm text-[var(--text-dark)]">個人</span>
+                        </label>
+                        <label className="flex items-center cursor-pointer">
+                          <input
+                            type="radio"
+                            name="お客様種別"
+                            value="法人"
+                            className="w-4 h-4 text-[var(--primary-green)] focus:ring-2 focus:ring-[var(--primary-green)]"
+                            required
+                          />
+                          <span className="ml-2 text-base lg:text-sm text-[var(--text-dark)]">法人</span>
+                        </label>
+                      </div>
+                    </div>
 
-                  <div>
-                    <label className="block text-base lg:text-sm font-bold text-[var(--text-dark)] mb-2">
-                      <span className="inline-block border border-[var(--text-light)] px-2 py-1 text-sm lg:text-xs mr-2">任意</span>
-                      フリガナ
-                    </label>
-                    <input
-                      type="text"
-                      name="フリガナ"
-                      className="w-full px-4 py-3 border-2 border-[#9ca3af] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] focus:border-transparent text-base"
-                      placeholder="ヤマダ タロウ"
-                    />
-                  </div>
+                    <div>
+                      <label className="block text-base lg:text-sm font-bold text-[var(--text-dark)] mb-2">
+                        <span className="inline-block bg-[#e51919] text-white px-2 py-1 text-sm lg:text-xs mr-2">必須</span>
+                        お名前
+                      </label>
+                      <input
+                        type="text"
+                        name="お名前"
+                        className="w-full px-4 py-3 border-2 border-[#9ca3af] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] focus:border-transparent text-base"
+                        placeholder="山田 太郎"
+                        required
+                      />
+                    </div>
 
-                  <div>
-                    <label className="block text-base lg:text-sm font-bold text-[var(--text-dark)] mb-2">
-                      <span className="inline-block bg-[#e51919] text-white px-2 py-1 text-sm lg:text-xs mr-2">必須</span>
-                      電話番号
-                    </label>
-                    <input
-                      type="tel"
-                      name="電話番号"
-                      className="w-full px-4 py-3 border-2 border-[#9ca3af] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] focus:border-transparent text-base"
-                      placeholder="090-0000-0000"
-                      required
-                    />
-                  </div>
+                    <div>
+                      <label className="block text-base lg:text-sm font-bold text-[var(--text-dark)] mb-2">
+                        <span className="inline-block border border-[var(--text-light)] px-2 py-1 text-sm lg:text-xs mr-2">任意</span>
+                        フリガナ
+                      </label>
+                      <input
+                        type="text"
+                        name="フリガナ"
+                        className="w-full px-4 py-3 border-2 border-[#9ca3af] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] focus:border-transparent text-base"
+                        placeholder="ヤマダ タロウ"
+                      />
+                    </div>
 
-                  <div>
-                    <label className="block text-base lg:text-sm font-bold text-[var(--text-dark)] mb-2">
-                      <span className="inline-block bg-[#e51919] text-white px-2 py-1 text-sm lg:text-xs mr-2">必須</span>
-                      メールアドレス
-                    </label>
-                    <input
-                      type="email"
-                      name="メールアドレス"
-                      className="w-full px-4 py-3 border-2 border-[#9ca3af] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] focus:border-transparent text-base"
-                      placeholder="example@example.com"
-                      required
-                    />
-                  </div>
+                    <div>
+                      <label className="block text-base lg:text-sm font-bold text-[var(--text-dark)] mb-2">
+                        <span className="inline-block bg-[#e51919] text-white px-2 py-1 text-sm lg:text-xs mr-2">必須</span>
+                        電話番号
+                      </label>
+                      <input
+                        type="tel"
+                        name="電話番号"
+                        className="w-full px-4 py-3 border-2 border-[#9ca3af] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] focus:border-transparent text-base"
+                        placeholder="090-0000-0000"
+                        required
+                      />
+                    </div>
 
-                  <div>
-                    <label className="block text-base lg:text-sm font-bold text-[var(--text-dark)] mb-2">
-                      <span className="inline-block bg-[#e51919] text-white px-2 py-1 text-sm lg:text-xs mr-2">必須</span>
-                      ご住所
-                    </label>
-                    <input
-                      type="text"
-                      name="ご住所"
-                      className="w-full px-4 py-3 border-2 border-[#9ca3af] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] focus:border-transparent text-base"
-                      placeholder="静岡県富士市..."
-                      required
-                    />
-                  </div>
+                    <div>
+                      <label className="block text-base lg:text-sm font-bold text-[var(--text-dark)] mb-2">
+                        <span className="inline-block bg-[#e51919] text-white px-2 py-1 text-sm lg:text-xs mr-2">必須</span>
+                        メールアドレス
+                      </label>
+                      <input
+                        type="email"
+                        name="メールアドレス"
+                        className="w-full px-4 py-3 border-2 border-[#9ca3af] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] focus:border-transparent text-base"
+                        placeholder="example@example.com"
+                        required
+                      />
+                    </div>
 
-                  <div>
-                    <label className="block text-base lg:text-sm font-bold text-[var(--text-dark)] mb-2">
-                      <span className="inline-block bg-[#e51919] text-white px-2 py-1 text-sm lg:text-xs mr-2">必須</span>
-                      ご依頼内容
-                    </label>
-                    <select
-                      name="ご依頼内容"
-                      className="w-full px-4 py-3 border-2 border-[#9ca3af] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] focus:border-transparent text-base"
-                      required
-                    >
-                      <option value="">選択してください</option>
-                      <option value="塗装工事">塗装工事</option>
-                      <option value="不用品回収">不用品回収</option>
-                      <option value="草刈り・高圧洗浄清掃">草刈り・高圧洗浄清掃</option>
-                      <option value="ゴミ屋敷清掃">ゴミ屋敷清掃</option>
-                      <option value="その他">その他</option>
-                    </select>
-                  </div>
+                    <div>
+                      <label className="block text-base lg:text-sm font-bold text-[var(--text-dark)] mb-2">
+                        <span className="inline-block bg-[#e51919] text-white px-2 py-1 text-sm lg:text-xs mr-2">必須</span>
+                        ご住所
+                      </label>
+                      <input
+                        type="text"
+                        name="ご住所"
+                        className="w-full px-4 py-3 border-2 border-[#9ca3af] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] focus:border-transparent text-base"
+                        placeholder="静岡県富士市..."
+                        required
+                      />
+                    </div>
 
-                  <div>
-                    <label className="block text-base lg:text-sm font-bold text-[var(--text-dark)] mb-2">
-                      <span className="inline-block border border-[var(--text-light)] px-2 py-1 text-sm lg:text-xs mr-2">任意</span>
-                      お問い合わせ内容
-                    </label>
-                    <textarea
-                      name="お問い合わせ内容"
-                      rows={6}
-                      className="w-full px-4 py-3 border-2 border-[#9ca3af] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] focus:border-transparent resize-none"
-                      placeholder="ご相談内容をご記入ください"
-                    ></textarea>
-                  </div>
+                    <div>
+                      <label className="block text-base lg:text-sm font-bold text-[var(--text-dark)] mb-2">
+                        <span className="inline-block bg-[#e51919] text-white px-2 py-1 text-sm lg:text-xs mr-2">必須</span>
+                        ご依頼内容
+                      </label>
+                      <select
+                        name="ご依頼内容"
+                        className="w-full px-4 py-3 border-2 border-[#9ca3af] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] focus:border-transparent text-base"
+                        required
+                      >
+                        <option value="">選択してください</option>
+                        <option value="塗装工事">塗装工事</option>
+                        <option value="不用品回収">不用品回収</option>
+                        <option value="草刈り・高圧洗浄清掃">草刈り・高圧洗浄清掃</option>
+                        <option value="ゴミ屋敷清掃">ゴミ屋敷清掃</option>
+                        <option value="その他">その他</option>
+                      </select>
+                    </div>
 
-                  <div className="flex justify-center">
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="bg-[#ffea03] text-black text-lg py-4 px-16 font-bold hover:opacity-90 transition-opacity flex items-center justify-center gap-2 border border-black disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <svg className="animate-spin w-5 h-5" viewBox="0 0 24 24">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                          </svg>
-                          送信中...
-                        </>
-                      ) : (
-                        <>
-                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
-                          </svg>
-                          送信する
-                        </>
-                      )}
-                    </button>
-                  </div>
+                    <div>
+                      <label className="block text-base lg:text-sm font-bold text-[var(--text-dark)] mb-2">
+                        <span className="inline-block border border-[var(--text-light)] px-2 py-1 text-sm lg:text-xs mr-2">任意</span>
+                        お問い合わせ内容
+                      </label>
+                      <textarea
+                        name="お問い合わせ内容"
+                        rows={6}
+                        className="w-full px-4 py-3 border-2 border-[#9ca3af] rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-green)] focus:border-transparent resize-none"
+                        placeholder="ご相談内容をご記入ください"
+                      ></textarea>
+                    </div>
 
-                  <div className="bg-[var(--bg-light)] rounded-lg p-4 text-base lg:text-sm text-[var(--text-dark)]">
-                    <p>
-                      プライバシーポリシーは<a href="/privacy-policy/" className="text-[var(--primary-green)] underline hover:opacity-80">こちら</a>からご確認いただけます。
-                    </p>
-                  </div>
-                </form>
-              </div>
+                    <div className="flex justify-center">
+                      <motion.button
+                        type="submit"
+                        disabled={isSubmitting}
+                        whileTap={{ scale: 0.95 }}
+                        className="bg-[#ffea03] text-black text-lg py-4 px-16 font-bold hover:shadow-lg transition-all flex items-center justify-center gap-2 border border-black disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <svg className="animate-spin w-5 h-5" viewBox="0 0 24 24">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                            </svg>
+                            送信中...
+                          </>
+                        ) : (
+                          <>
+                            <motion.svg 
+                              className="w-5 h-5" 
+                              fill="currentColor" 
+                              viewBox="0 0 24 24"
+                              animate={{ x: [0, 3, 0] }}
+                              transition={{ repeat: Infinity, duration: 1.5 }}
+                            >
+                              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                            </motion.svg>
+                            送信する
+                          </>
+                        )}
+                      </motion.button>
+                    </div>
+
+                    <div className="bg-[var(--bg-light)] rounded-lg p-4 text-base lg:text-sm text-[var(--text-dark)]">
+                      <p>
+                        プライバシーポリシーは<a href="/privacy-policy/" className="text-[var(--primary-green)] underline hover:opacity-80">こちら</a>からご確認いただけます。
+                      </p>
+                    </div>
+                  </form>
+                </div>
+              </FadeIn>
             </div>
           </div>
         </section>

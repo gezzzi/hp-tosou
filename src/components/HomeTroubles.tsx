@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { HelpCircle } from 'lucide-react';
 import FadeIn from './FadeIn';
 
@@ -32,7 +33,13 @@ export default function HomeTroubles() {
           <div className="flex flex-wrap justify-center gap-4 md:gap-8">
             {troubles.map((trouble, index) => (
               <FadeIn key={index} delay={index * 0.1}>
-                <div className="trouble-item relative group w-44 h-44 md:w-56 md:h-56 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                <motion.div 
+                  whileHover={{ 
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                    transition: { duration: 0.3 }
+                  }}
+                  className="trouble-item relative group w-44 h-44 md:w-56 md:h-56 flex items-center justify-center transition-all duration-300"
+                >
                   {/* 画像のデザインを忠実に再現したSVG */}
                   <svg viewBox="0 0 200 200" className="absolute inset-0 w-full h-full drop-shadow-lg">
                     {/* 外側の塗りつぶし円 */}
@@ -52,7 +59,7 @@ export default function HomeTroubles() {
                       <p key={i} className="whitespace-nowrap">{line}</p>
                     ))}
                   </div>
-                </div>
+                </motion.div>
               </FadeIn>
             ))}
           </div>

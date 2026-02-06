@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
 import logoIcon from '@/app/icon.png';
 
@@ -83,7 +84,7 @@ export default function Footer() {
         </div>
 
         {/* サイトマップ */}
-        <div className="mt-12 grid grid-cols-2 gap-8">
+        <div className="mt-12 grid grid-cols-2 gap-8 text-center">
           {/* リソース */}
           <div>
             <h4 className="font-bold mb-3 text-[var(--text-dark)]">リソース</h4>
@@ -141,13 +142,15 @@ export default function Footer() {
       </div>
 
       {/* ページトップへ戻るボタン - PC版のみ表示 */}
-      <button
+      <motion.button
         onClick={scrollToTop}
-        className="hidden lg:flex fixed bottom-6 right-6 w-12 h-12 bg-[var(--primary-green)] text-white rounded-full items-center justify-center shadow-lg hover:bg-[var(--primary-green-dark)] transition-colors z-40"
+        whileHover={{ backgroundColor: "var(--primary-green-dark)" }}
+        whileTap={{ scale: 0.9 }}
+        className="hidden lg:flex fixed bottom-6 right-6 w-12 h-12 bg-[var(--primary-green)] text-white rounded-full items-center justify-center shadow-lg transition-colors z-40"
         aria-label="ページトップへ戻る"
       >
         <ArrowUp className="w-6 h-6" />
-      </button>
+      </motion.button>
 
       {/* コピーライト */}
       <div className="border-t border-[var(--border-light)] py-4" style={{ backgroundColor: '#038717' }}>

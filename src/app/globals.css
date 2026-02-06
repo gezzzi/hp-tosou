@@ -58,7 +58,6 @@
 }
 
 .btn-junk:hover {
-  transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   background: linear-gradient(135deg, var(--btn-junk-dark) 0%, var(--btn-junk) 100%);
 }
@@ -133,7 +132,6 @@ body {
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   background: linear-gradient(135deg, var(--primary-green-dark) 0%, var(--primary-green) 100%);
 }
@@ -151,8 +149,8 @@ body {
 }
 
 .btn-accent:hover {
-  transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  filter: brightness(0.95);
 }
 
 .btn-secondary {
@@ -197,7 +195,6 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 

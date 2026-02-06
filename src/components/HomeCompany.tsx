@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Info, ArrowRight } from 'lucide-react';
@@ -23,29 +24,45 @@ export default function HomeCompany() {
 
         <FadeIn direction="up" delay={0.2}>
           <div className="max-w-4xl mx-auto">
-            <div className="flex flex-col md:flex-row gap-8 items-center bg-white rounded-2xl p-8 border-[3px] border-[#6fbb18]">
+            <motion.div 
+              whileHover={{ borderColor: "var(--primary-green-light)", shadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+              className="flex flex-col md:flex-row gap-8 items-center bg-white rounded-2xl p-8 border-[3px] border-[#6fbb18] transition-all"
+            >
               <div className="w-full md:w-1/3">
-                <div className="relative aspect-square rounded-full overflow-hidden border-4 border-white shadow-lg">
+                <motion.div 
+                  whileHover={{ scale: 1.05 }}
+                  className="relative aspect-square rounded-full overflow-hidden border-4 border-white shadow-lg transition-transform"
+                >
                   <Image
                     src="/pic/ceo-photo.webp?v=2"
                     alt="代表取締役 望月達也"
                     fill
                     className="object-cover"
                   />
-                </div>
+                </motion.div>
                 <div className="text-center mt-4">
                   <p className="text-xs text-(--text-light) mb-1">代表取締役</p>
                   <p className="text-lg font-bold text-(--text-dark)">望月 達也</p>
                 </div>
               </div>
 
-              <div className="w-full md:w-2/3 flex flex-col items-center md:items-start justify-center">
-                <Link href="/about/" className="btn-outline !flex flex-row items-center justify-center gap-2 whitespace-nowrap w-full max-w-[300px] sm:w-80 sm:max-w-none py-4">
-                  会社案内・代表挨拶
-                  <ArrowRight className="w-5 h-5 shrink-0" />
-                </Link>
+              <div className="w-full md:w-2/3 flex flex-col items-center justify-center">
+                <motion.div
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full max-w-[300px] sm:w-80"
+                >
+                  <Link href="/about/" className="btn-outline !flex flex-row items-center justify-center gap-2 whitespace-nowrap py-4 w-full">
+                    会社案内・代表挨拶
+                    <motion.div
+                      animate={{ x: [0, 5, 0] }}
+                      transition={{ repeat: Infinity, duration: 1.5 }}
+                    >
+                      <ArrowRight className="w-5 h-5 shrink-0" />
+                    </motion.div>
+                  </Link>
+                </motion.div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </FadeIn>
       </div>

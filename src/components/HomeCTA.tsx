@@ -40,10 +40,14 @@ export default function HomeCTA() {
             </p>
 
             <div className="mb-8">
-              <a href="tel:054-552-8798" className="inline-flex items-center gap-3 text-3xl md:text-5xl font-black text-(--text-dark) hover:opacity-70 transition-opacity mb-2">
+              <motion.a 
+                href="tel:054-552-8798" 
+                whileHover={{ color: "var(--primary-green)" }}
+                className="inline-flex items-center gap-3 text-3xl md:text-5xl font-black text-(--text-dark) transition-colors mb-2"
+              >
                 <Phone className="w-8 h-8 md:w-10 md:h-10 text-primary" />
                 054-552-8798
-              </a>
+              </motion.a>
               <p className="text-base font-medium text-slate-600">
                 <span className="border border-slate-600 px-1 mr-2">営業時間</span>平日 8:00〜17:00
               </p>
@@ -51,7 +55,6 @@ export default function HomeCTA() {
 
             <div className="flex justify-center">
               <motion.div
-                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Link href="/contact/" className="btn-accent text-lg px-16! md:px-32! py-4 shadow-lg flex! items-center justify-center gap-2 whitespace-nowrap">

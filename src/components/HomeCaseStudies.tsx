@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ClipboardCheck } from 'lucide-react';
+import { motion } from 'framer-motion';
 import FadeIn from './FadeIn';
 
 export default function HomeCaseStudies() {
@@ -67,10 +68,14 @@ export default function HomeCaseStudies() {
                     <p className="text-white/90 text-base mb-4 line-clamp-3">
                       {item.description}
                     </p>
-                    <div className="text-center">
-                      <Link href={item.href} className={item.color === 'primary' ? 'btn-secondary' : 'btn-junk'}>
-                        詳しく見る →
-                      </Link>
+                    <div className="flex justify-center">
+                      <motion.div
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <Link href={item.href} className={item.color === 'primary' ? 'btn-secondary' : 'btn-junk'}>
+                          詳しく見る →
+                        </Link>
+                      </motion.div>
                     </div>
                   </div>
                 </div>

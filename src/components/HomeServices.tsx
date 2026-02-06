@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { Wrench } from 'lucide-react';
 import FadeIn from './FadeIn';
 
@@ -54,19 +55,26 @@ export default function HomeServices() {
                   ? 'bg-primary/10'
                   : 'bg-accent/10'
                   }`}></div>
-                <div className="absolute inset-0 flex flex-col p-6 bg-linear-to-t from-black/60 via-black/20 to-transparent">
-                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-auto brush-stroke-container mx-auto text-white text-center mt-4 whitespace-nowrap">
+                <div className="absolute inset-0 flex flex-col p-6 bg-linear-to-t from-black/80 via-black/30 to-transparent">
+                  <motion.h3 
+                    whileHover={{ color: "var(--accent-yellow)" }}
+                    className="text-2xl md:text-3xl lg:text-4xl font-bold mb-auto brush-stroke-container mx-auto text-white text-center mt-4 whitespace-nowrap transition-colors"
+                  >
                     <span className="relative z-10">{service.title}</span>
                     <div className={`brush-stroke-bg ${service.color === 'primary' ? 'bg-service-painting' : 'bg-service-junk'}`} />
-                  </h3>
+                  </motion.h3>
                   <div className="mt-4">
                     <p className="text-white/90 text-base mb-4 line-clamp-3">
                       {service.description}
                     </p>
                     <div className="text-center">
-                      <Link href={service.href} className={service.color === 'primary' ? 'btn-secondary' : 'btn-junk'}>
-                        詳しく見る →
-                      </Link>
+                      <motion.div
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <Link href={service.href} className={service.color === 'primary' ? 'btn-secondary' : 'btn-junk'}>
+                          詳しく見る →
+                        </Link>
+                      </motion.div>
                     </div>
                   </div>
                 </div>

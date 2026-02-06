@@ -4,7 +4,8 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Phone, ChevronDown } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Phone, ChevronDown, Mail } from 'lucide-react';
 import logoIcon from '@/app/icon.png';
 
 export default function Header() {
@@ -104,13 +105,14 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-6">
             <div className="text-right">
               <p className="text-xs text-[var(--text-light)]">お気軽にお電話ください</p>
-              <a href="tel:054-552-8798" className="flex items-center gap-2 text-2xl font-bold text-[var(--primary-green)]">
-                <Phone className="w-6 h-6" />
+              <a href="tel:054-552-8798" className="flex items-center gap-2 text-2xl font-bold text-black">
+                <Phone className="w-6 h-6 text-[var(--primary-green)]" />
                 054-552-8798
               </a>
             </div>
-            <Link href="/contact/" className="btn-primary">
-              無料お見積り
+            <Link href="/contact/" className="bg-[var(--accent-yellow)] text-[var(--text-dark)] py-3 px-6 font-bold hover:bg-[var(--accent-yellow-dark)] transition-colors shadow-sm flex items-center gap-2 border border-black">
+              <Mail className="w-5 h-5" />
+              お問い合わせ
             </Link>
           </div>
 
@@ -146,13 +148,20 @@ export default function Header() {
             <li className="flex-1 border-l border-gray-300 last:border-r">
               <Link
                 href="/"
-                className={`flex items-center justify-center py-4 text-lg font-bold transition-colors w-full h-full ${
+                className={`flex items-center justify-center py-4 text-lg font-bold transition-all w-full h-full relative group ${
                   isActive('/')
                     ? 'text-[var(--primary-green)] bg-[var(--primary-green)]/5'
                     : 'text-[var(--text-dark)] hover:text-[var(--primary-green)] hover:bg-gray-50'
                 }`}
               >
                 ホーム
+                <motion.div 
+                  className="absolute bottom-0 left-0 right-0 h-1 bg-[var(--primary-green)]"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: isActive('/') ? 1 : 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
               </Link>
             </li>
 
@@ -165,40 +174,52 @@ export default function Header() {
             >
               <Link
                 href="/services/"
-                className={`flex items-center justify-center py-4 text-lg font-bold transition-colors w-full h-full ${
+                className={`flex items-center justify-center py-4 text-lg font-bold transition-all w-full h-full relative ${
                   isServicesActive()
                     ? 'text-[var(--primary-green)] bg-[var(--primary-green)]/5'
                     : 'text-[var(--text-dark)] hover:text-[var(--primary-green)] hover:bg-gray-50'
                 }`}
               >
                 サービス
+                <ChevronDown className={`ml-1 w-4 h-4 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} />
+                <motion.div 
+                  className="absolute bottom-0 left-0 right-0 h-1 bg-[var(--primary-green)]"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: isServicesActive() ? 1 : 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
               </Link>
 
               {/* ドロップダウンメニュー */}
-              <div
-                className={`absolute top-full left-0 w-56 bg-white shadow-lg border border-[var(--border-light)] overflow-hidden transition-all duration-200 z-[60] ${
-                  isServicesOpen
-                    ? 'opacity-100 visible translate-y-0'
-                    : 'opacity-0 invisible -translate-y-2'
-                }`}
-              >
-                <div className="py-2">
-                  {serviceItems.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className={`block px-4 py-2 text-base font-bold transition-colors ${
-                        isActive(item.href)
-                          ? 'text-[var(--primary-green)] bg-[var(--primary-green)]/5'
-                          : 'text-[var(--text-dark)] hover:bg-[var(--bg-light)] hover:text-[var(--primary-green)]'
-                      }`}
-                      onClick={() => setIsServicesOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
+              <AnimatePresence>
+                {isServicesOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full left-0 w-56 bg-white shadow-xl border border-[var(--border-light)] overflow-hidden z-[60]"
+                  >
+                    <div className="py-2">
+                      {serviceItems.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className={`block px-4 py-3 text-base font-bold transition-all hover:pl-6 ${
+                            isActive(item.href)
+                              ? 'text-[var(--primary-green)] bg-[var(--primary-green)]/5'
+                              : 'text-[var(--text-dark)] hover:bg-[var(--bg-light)] hover:text-[var(--primary-green)]'
+                          }`}
+                          onClick={() => setIsServicesOpen(false)}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </li>
 
             {/* サービス事例（ドロップダウン） */}
@@ -210,40 +231,52 @@ export default function Header() {
             >
               <Link
                 href="/case-studies/"
-                className={`flex items-center justify-center py-4 text-lg font-bold transition-colors w-full h-full ${
+                className={`flex items-center justify-center py-4 text-lg font-bold transition-all w-full h-full relative ${
                   isCaseStudiesActive()
                     ? 'text-[var(--primary-green)] bg-[var(--primary-green)]/5'
                     : 'text-[var(--text-dark)] hover:text-[var(--primary-green)] hover:bg-gray-50'
                 }`}
               >
                 サービス事例
+                <ChevronDown className={`ml-1 w-4 h-4 transition-transform duration-300 ${isCaseStudiesOpen ? 'rotate-180' : ''}`} />
+                <motion.div 
+                  className="absolute bottom-0 left-0 right-0 h-1 bg-[var(--primary-green)]"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: isCaseStudiesActive() ? 1 : 0 }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
               </Link>
 
               {/* ドロップダウンメニュー */}
-              <div
-                className={`absolute top-full left-0 w-64 bg-white shadow-lg border border-[var(--border-light)] overflow-hidden transition-all duration-200 z-[60] ${
-                  isCaseStudiesOpen
-                    ? 'opacity-100 visible translate-y-0'
-                    : 'opacity-0 invisible -translate-y-2'
-                }`}
-              >
-                <div className="py-2">
-                  {caseStudiesItems.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className={`block px-4 py-2 text-base font-bold transition-colors ${
-                        isActive(item.href)
-                          ? 'text-[var(--primary-green)] bg-[var(--primary-green)]/5'
-                          : 'text-[var(--text-dark)] hover:bg-[var(--bg-light)] hover:text-[var(--primary-green)]'
-                      }`}
-                      onClick={() => setIsCaseStudiesOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
+              <AnimatePresence>
+                {isCaseStudiesOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full left-0 w-64 bg-white shadow-xl border border-[var(--border-light)] overflow-hidden z-[60]"
+                  >
+                    <div className="py-2">
+                      {caseStudiesItems.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className={`block px-4 py-3 text-base font-bold transition-all hover:pl-6 ${
+                            isActive(item.href)
+                              ? 'text-[var(--primary-green)] bg-[var(--primary-green)]/5'
+                              : 'text-[var(--text-dark)] hover:bg-[var(--bg-light)] hover:text-[var(--primary-green)]'
+                          }`}
+                          onClick={() => setIsCaseStudiesOpen(false)}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </li>
 
             {/* 他のナビゲーション項目 */}
@@ -251,13 +284,20 @@ export default function Header() {
               <li key={item.href} className="flex-1 border-l border-gray-300 last:border-r">
                 <Link
                   href={item.href}
-                  className={`flex items-center justify-center py-4 text-lg font-bold transition-colors w-full h-full ${
+                  className={`flex items-center justify-center py-4 text-lg font-bold transition-all w-full h-full relative group ${
                     isActive(item.href)
                       ? 'text-[var(--primary-green)] bg-[var(--primary-green)]/5'
                       : 'text-[var(--text-dark)] hover:text-[var(--primary-green)] hover:bg-gray-50'
                   }`}
                 >
                   {item.label}
+                  <motion.div 
+                    className="absolute bottom-0 left-0 right-0 h-1 bg-[var(--primary-green)]"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: isActive(item.href) ? 1 : 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
                 </Link>
               </li>
             ))}
