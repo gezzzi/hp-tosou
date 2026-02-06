@@ -9,33 +9,59 @@ export default function Hero() {
     <section className="relative min-h-[600px] flex items-center overflow-hidden">
       {/* 背景画像 */}
       <div className="absolute inset-0">
-        {/* モバイル用画像 */}
-        <div className="block min-[461px]:hidden h-full w-full relative">
-          <Image
-            src="/pic/header-mb.jpg?v=2"
-            alt="塗装作業イメージ"
-            fill
-            className="object-cover"
-            priority
+        <div className="relative h-full w-full">
+          {/* モバイル用画像 */}
+          <div className="block min-[461px]:hidden h-full w-full relative">
+            <Image
+              src="/pic/header-mb.jpg?v=2"
+              alt="塗装作業イメージ"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          {/* PC・タブレット用画像 */}
+          <div className="hidden min-[461px]:block h-full w-full relative">
+            <Image
+              src="/pic/header-pc.jpg?v=2"
+              alt="塗装作業イメージ"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          {/* オーバーレイ */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            className="absolute inset-0 bg-black/20"
+          ></motion.div>
+
+          {/* SVG 形状オーバーレイ (波形) */}
+          <div className="absolute bottom-[-1px] left-0 right-0 z-20">
+            <svg 
+              viewBox="0 0 1440 120" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-full h-[60px] md:h-[121px] block"
+              preserveAspectRatio="none"
+            >
+              <path 
+                d="M0 120L1440 120L1440 0C1440 0 1140 120 720 120C300 120 0 0 0 0L0 120Z" 
+                fill="white"
+              />
+            </svg>
+          </div>
+          
+          {/* 装飾的なアクセント形状 */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 0.1, scale: 1 }}
+            transition={{ duration: 1.5, delay: 0.5 }}
+            className="absolute top-[-10%] right-[-5%] w-[50%] aspect-square bg-[var(--primary-green)] rounded-full blur-[100px] z-10"
           />
         </div>
-        {/* PC・タブレット用画像 */}
-        <div className="hidden min-[461px]:block h-full w-full relative">
-          <Image
-            src="/pic/header-pc.jpg?v=2"
-            alt="塗装作業イメージ"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-        {/* オーバーレイ */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="absolute inset-0 bg-black/15"
-        ></motion.div>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-16 relative z-10">
@@ -54,9 +80,6 @@ export default function Hero() {
           </motion.h2>
         </div>
       </div>
-
-      {/* 下部の区切り線 */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-white"></div>
     </section>
   );
 }
