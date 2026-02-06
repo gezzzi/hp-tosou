@@ -78,7 +78,7 @@ html {
 }
 
 body {
-  background: var(--background);
+  background: transparent;
   color: var(--foreground);
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
   line-height: 1.8;
@@ -86,7 +86,7 @@ body {
 
 /* メインコンテンツ */
 .main-content {
-  /* ヘッダーは固定しないのでpadding-topは不要 */
+  background: transparent;
 }
 
 /* セクション共通スタイル */

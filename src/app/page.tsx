@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import HomeTroubles from "@/components/HomeTroubles";
 import ChevronDivider from "@/components/ChevronDivider";
+import WaveDivider from "@/components/WaveDivider";
 import HomeServices from "@/components/HomeServices";
 import HomeCaseStudies from "@/components/HomeCaseStudies";
 import HomeArea from "@/components/HomeArea";
@@ -17,29 +18,29 @@ export default function Home() {
       <main className="main-content">
         <Hero />
         <HomeTroubles />
-        {/* white -> bg-light */}
-        <div className="bg-white">
-          <ChevronDivider color="var(--bg-light)" />
+        {/* transparent -> bg-light (Wave at bottom) */}
+        <div className="bg-transparent">
+          <WaveDivider color="var(--bg-light)" />
         </div>
         <HomeServices />
-        {/* bg-light -> white */}
-        <div className="bg-(--bg-light)">
-          <ChevronDivider color="#ffffff" />
+        {/* bg-light -> transparent (Wave at top) */}
+        <div className="bg-transparent">
+          <WaveDivider color="var(--bg-light)" flip />
         </div>
         <HomeCaseStudies />
-        {/* white -> bg-light */}
-        <div className="bg-white">
-          <ChevronDivider color="var(--bg-light)" />
+        {/* transparent -> bg-light (Wave at bottom) */}
+        <div className="bg-transparent">
+          <WaveDivider color="var(--bg-light)" />
         </div>
         <HomeArea />
-        {/* bg-light -> white */}
-        <div className="bg-(--bg-light)">
-          <ChevronDivider color="#ffffff" />
+        {/* bg-light -> transparent (Wave at top) */}
+        <div className="bg-transparent">
+          <WaveDivider color="var(--bg-light)" flip />
         </div>
         <HomeCompany />
-        {/* white -> bg-light */}
-        <div className="bg-white">
-          <ChevronDivider color="var(--bg-light)" />
+        {/* transparent -> bg-light (Wave at bottom) */}
+        <div className="bg-transparent">
+          <WaveDivider color="var(--bg-light)" />
         </div>
         <HomeReviews />
         <HomeCTA />

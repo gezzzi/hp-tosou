@@ -71,7 +71,7 @@ export default function PricingContent() {
           <div className="max-w-3xl mx-auto">
             <FadeIn delay={0.2}>
               <motion.div 
-                whileHover={{ borderColor: "var(--primary-green-light)", shadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)" }}
+                whileHover={{ borderColor: "var(--primary-green-light)", boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)" }}
                 className="bg-white rounded-lg p-8 mb-8 border-2 border-[#6fbb18] shadow-md transition-all"
               >
                 <div className="text-center mb-6">
@@ -129,7 +129,7 @@ export default function PricingContent() {
           <div className="max-w-2xl mx-auto">
             <FadeIn delay={0.2} direction="right">
               <motion.div 
-                whileHover={{ borderColor: "var(--accent-yellow-dark)", backgroundColor: "rgba(255, 234, 3, 0.15)" }}
+                whileHover={{ borderColor: "var(--accent-yellow-dark)", backgroundColor: "rgba(255, 234, 3, 0.15)", boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)" }}
                 className="bg-[var(--accent-yellow)]/10 rounded-lg p-8 text-center mb-8 border-2 border-[var(--accent-yellow)] shadow-md transition-all"
               >
                 <p className="text-xl md:text-2xl font-bold text-[var(--text-dark)] mb-2">2トントラック積み放題</p>

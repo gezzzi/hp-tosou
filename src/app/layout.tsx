@@ -3,6 +3,7 @@ import { Noto_Sans_JP, M_PLUS_1p, Mochiy_Pop_P_One } from "next/font/google";
 import "./globals.css";
 import MobileFloatingCTA from "@/components/MobileFloatingCTA";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import FloatingCircles from "@/components/FloatingCircles";
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
@@ -62,9 +63,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={`${notoSansJP.variable} ${mPlus1p.variable} ${mochiyPopPOne.variable} antialiased`}>
+      <body className={`${notoSansJP.variable} ${mPlus1p.variable} ${mochiyPopPOne.variable} antialiased relative`}>
         <GoogleAnalytics />
-        {children}
+        {/* ベースの白背景 */}
+        <div className="fixed inset-0 bg-white -z-20" />
+        {/* 浮遊する丸 */}
+        <FloatingCircles />
+        {/* コンテンツ */}
+        <div className="relative z-10">
+          {children}
+        </div>
         <MobileFloatingCTA />
       </body>
     </html>

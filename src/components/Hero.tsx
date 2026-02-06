@@ -6,10 +6,16 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[600px] flex items-center overflow-hidden">
-      {/* 背景画像 */}
-      <div className="absolute inset-0">
-        <div className="relative h-full w-full">
+    <section className="relative min-h-[600px] flex items-center overflow-hidden bg-transparent">
+      {/* 背景画像と切り抜き処理 */}
+      <div className="absolute inset-0 z-0">
+        <div 
+          className="absolute inset-0"
+          style={{
+            clipPath: 'url(#hero-single-wave)',
+            WebkitClipPath: 'url(#hero-single-wave)',
+          }}
+        >
           {/* モバイル用画像 */}
           <div className="block min-[461px]:hidden h-full w-full relative">
             <Image
@@ -37,31 +43,24 @@ export default function Hero() {
             transition={{ duration: 1 }}
             className="absolute inset-0 bg-black/20"
           ></motion.div>
-
-          {/* SVG 形状オーバーレイ (波形) */}
-          <div className="absolute bottom-[-1px] left-0 right-0 z-20">
-            <svg 
-              viewBox="0 0 1440 120" 
-              fill="none" 
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-full h-[60px] md:h-[121px] block"
-              preserveAspectRatio="none"
-            >
-              <path 
-                d="M0 120L1440 120L1440 0C1440 0 1140 120 720 120C300 120 0 0 0 0L0 120Z" 
-                fill="white"
-              />
-            </svg>
-          </div>
-          
-          {/* 装飾的なアクセント形状 */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 0.1, scale: 1 }}
-            transition={{ duration: 1.5, delay: 0.5 }}
-            className="absolute top-[-10%] right-[-5%] w-[50%] aspect-square bg-[var(--primary-green)] rounded-full blur-[100px] z-10"
-          />
         </div>
+
+        {/* 単一の波形クリップパス定義 */}
+        <svg width="0" height="0" className="absolute">
+          <defs>
+            <clipPath id="hero-single-wave" clipPathUnits="objectBoundingBox">
+              <path d="M0,0 H1 V0.85 C1,0.85 0.8,1 0.5,1 C0.2,1 0,0.85 0,0.85 Z" />
+            </clipPath>
+          </defs>
+        </svg>
+
+        {/* 装飾的なアクセント形状 */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 0.1, scale: 1 }}
+          transition={{ duration: 1.5, delay: 0.5 }}
+          className="absolute top-[-10%] right-[-5%] w-[50%] aspect-square bg-[var(--primary-green)] rounded-full blur-[100px] z-10"
+        />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-16 relative z-10">

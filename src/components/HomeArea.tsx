@@ -14,8 +14,8 @@ export default function HomeArea() {
   ];
 
   return (
-    <section className="py-16 bg-(--bg-light) overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4">
+    <section className="py-16 bg-(--bg-light) overflow-hidden relative">
+      <div className="max-w-6xl mx-auto px-4 relative z-10">
         <FadeIn>
           <div className="max-w-sm md:max-w-[800px] mx-auto text-left mb-12 relative overflow-visible">
             <h2 className="section-title flex items-center justify-start gap-3 text-(--text-dark)! text-left! relative z-10">

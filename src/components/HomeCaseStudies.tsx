@@ -29,7 +29,7 @@ export default function HomeCaseStudies() {
   ];
 
   return (
-    <section className="py-16 bg-white overflow-hidden">
+    <section className="py-16 bg-transparent overflow-hidden relative">
       <div className="max-w-6xl mx-auto px-4">
         <FadeIn>
           <div className="max-w-sm md:max-w-[800px] mx-auto text-left mb-12 relative overflow-visible">

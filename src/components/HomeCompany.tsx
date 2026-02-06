@@ -8,7 +8,7 @@ import FadeIn from './FadeIn';
 
 export default function HomeCompany() {
   return (
-    <section className="py-16 bg-white overflow-hidden">
+    <section className="py-16 bg-transparent overflow-hidden relative">
       <div className="max-w-6xl mx-auto px-4">
         <FadeIn>
           <div className="max-w-sm md:max-w-[800px] mx-auto text-left mb-12 relative overflow-visible">
@@ -25,7 +25,7 @@ export default function HomeCompany() {
         <FadeIn direction="up" delay={0.2}>
           <div className="max-w-4xl mx-auto">
             <motion.div 
-              whileHover={{ borderColor: "var(--primary-green-light)", shadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+              whileHover={{ borderColor: "var(--primary-green-light)", boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
               className="flex flex-col md:flex-row gap-8 items-center bg-white rounded-2xl p-8 border-[3px] border-[#6fbb18] transition-all"
             >
               <div className="w-full md:w-1/3">
