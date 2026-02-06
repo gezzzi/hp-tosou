@@ -1,5 +1,8 @@
+'use client';
+
 import Image from "next/image";
 import Breadcrumbs from "./Breadcrumbs";
+import { motion } from "framer-motion";
 
 interface PageHeaderProps {
   title: string;
@@ -24,7 +27,12 @@ export default function PageHeader({ title, subtitle, bgImage = "/pic/hd/service
           <div className="absolute inset-0 bg-linear-to-b from-white/20 via-transparent to-white/40"></div>
         </div>
 
-        <div className="relative z-10 text-center px-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="relative z-10 text-center px-4"
+        >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--text-dark)] mb-2 drop-shadow-sm">
             {title}
           </h1>
@@ -33,7 +41,7 @@ export default function PageHeader({ title, subtitle, bgImage = "/pic/hd/service
               {subtitle}
             </p>
           )}
-        </div>
+        </motion.div>
       </div>
       <Breadcrumbs lastSegmentLabel={title} />
     </>

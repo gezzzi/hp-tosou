@@ -1,5 +1,8 @@
+'use client';
+
 import Image from 'next/image';
 import { MapPin } from 'lucide-react';
+import FadeIn from './FadeIn';
 
 export default function HomeArea() {
   const areas = [
@@ -10,19 +13,22 @@ export default function HomeArea() {
   ];
 
   return (
-    <section className="py-16 bg-(--bg-light)">
+    <section className="py-16 bg-(--bg-light) overflow-hidden">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="max-w-sm md:max-w-[800px] mx-auto text-left mb-12 relative overflow-visible">
-          <h2 className="section-title flex items-center justify-start gap-3 text-(--text-dark)! text-left! relative z-10">
-            <MapPin className="w-10 h-10 text-(--secondary-green) shrink-0" />
-            <span className="relative z-10 text-3xl md:text-4xl">対応エリア</span>
-            <span className="absolute right-0 top-1/2 -translate-y-1/2 text-6xl md:text-7xl font-black text-slate-200 italic uppercase tracking-tighter opacity-80 -z-10 leading-none select-none pr-4">
-              area
-            </span>
-          </h2>
-        </div>
+        <FadeIn>
+          <div className="max-w-sm md:max-w-[800px] mx-auto text-left mb-12 relative overflow-visible">
+            <h2 className="section-title flex items-center justify-start gap-3 text-(--text-dark)! text-left! relative z-10">
+              <MapPin className="w-10 h-10 text-(--secondary-green) shrink-0" />
+              <span className="relative z-10 text-3xl md:text-4xl">対応エリア</span>
+              <span className="absolute right-0 top-1/2 -translate-y-1/2 text-6xl md:text-7xl font-black text-slate-200 italic uppercase tracking-tighter opacity-80 -z-10 leading-none select-none pr-4">
+                area
+              </span>
+            </h2>
+          </div>
+        </FadeIn>
 
-        <div className="max-w-5xl mx-auto">
+        <FadeIn direction="none" delay={0.2}>
+          <div className="max-w-5xl mx-auto">
           <div className="border-t-[3px] border-(--border-light) overflow-hidden">
             <div className="border-x-[3px] border-(--border-light)">
               <div className="bg-(--bg-light) px-4 py-3 border-b-[3px] border-(--border-light)">
@@ -78,7 +84,8 @@ export default function HomeArea() {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </FadeIn>
+    </div>
+  </section>
   );
 }
