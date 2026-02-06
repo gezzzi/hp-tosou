@@ -14,7 +14,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-white border-t border-[var(--border-light)]">
+    <footer className="bg-transparent border-t border-[var(--border-light)] relative">
       {/* メインフッター */}
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -66,7 +66,7 @@ export default function Footer() {
           <div className="bg-[var(--bg-light)] px-4 py-3 border-b-[3px] border-[var(--border-light)]">
             <h3 className="font-bold text-xl text-[var(--text-dark)]">株式会社マルヨ</h3>
           </div>
-          <div className="p-3">
+          <div className="p-3 bg-[var(--bg-light)]">
             <h4 className="mb-4 text-lg text-[var(--text-dark)]">〒417-0061 静岡県富士市伝法2503-5</h4>
             <div className="w-full aspect-video overflow-hidden shadow-md">
             <iframe

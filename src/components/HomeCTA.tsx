@@ -10,16 +10,16 @@ export default function HomeCTA() {
   const title = "無料｜ご相談｜診断｜お見積り｜";
   const description = "まずはお気軽にご相談ください";
   return (
-    <section className="py-16 relative overflow-hidden">
+    <section className="py-16 relative overflow-hidden bg-white">
       {/* 背景画像とオーバーレイ */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/pic/hd/footer.jpg"
           alt="背景画像"
           fill
-          className="object-cover opacity-50"
+          className="object-cover opacity-40"
         />
-        <div className="absolute inset-0 bg-linear-to-b from-white/20 via-transparent to-white/40"></div>
+        <div className="absolute inset-0 bg-white/60"></div>
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-4">

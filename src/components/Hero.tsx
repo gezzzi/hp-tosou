@@ -53,14 +53,6 @@ export default function Hero() {
             </clipPath>
           </defs>
         </svg>
-
-        {/* 装飾的なアクセント形状 */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.1, scale: 1 }}
-          transition={{ duration: 1.5, delay: 0.5 }}
-          className="absolute top-[-10%] right-[-5%] w-[50%] aspect-square bg-[var(--primary-green)] rounded-full blur-[100px] z-10"
-        />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-16 relative z-10">
