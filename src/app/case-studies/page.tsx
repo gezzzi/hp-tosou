@@ -45,7 +45,7 @@ export default function CaseStudiesPage() {
         <section className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-dark)] mb-6">
+              <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[var(--text-dark)] mb-6">
                 これまでの施工・サービス実績
               </h2>
               <div className="flex justify-center gap-2 mb-6">
@@ -53,7 +53,7 @@ export default function CaseStudiesPage() {
                 <div className="w-3 h-3 rounded-full bg-[#ffea03]"></div>
                 <div className="w-3 h-3 rounded-full bg-[#6fbb18]"></div>
               </div>
-              <p className="text-[var(--text-medium)] leading-relaxed max-w-3xl mx-auto">
+              <p className="text-[var(--text-medium)] text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
                 株式会社マルヨがこれまでに手掛けてきた、外壁塗装や屋根塗装の施工事例、
                 不用品回収や清掃サービスの実施例をご紹介します。
                 お客様のご要望にどのようにお応えしたか、ビフォーアフターを交えて詳しく掲載しています。
@@ -87,7 +87,7 @@ export default function CaseStudiesPage() {
                   >
                     {category.icon}
                   </div>
-                  <p className="text-[var(--text-medium)] mb-6 leading-relaxed">
+                  <p className="text-[var(--text-medium)] text-base sm:text-lg mb-6 leading-relaxed">
                     {category.description}
                   </p>
                   <div className="flex justify-center">

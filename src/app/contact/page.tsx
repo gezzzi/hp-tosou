@@ -110,35 +110,35 @@ export default function ContactPage() {
         />
 
         <section className="py-16 bg-white">
-          <div className="max-w-6xl mx-auto px-0 lg:px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="max-w-4xl mx-auto px-4">
+            <div className="space-y-16">
               {/* 電話 */}
-              <div className="px-4 lg:px-0">
-                <h2 className="text-2xl lg:text-xl font-bold text-black mb-6 text-center">お電話でのお問い合わせ</h2>
+              <div>
+                <h2 className="text-2xl lg:text-3xl font-bold text-black mb-8 text-center">お電話でのお問い合わせ</h2>
 
-                <div className="bg-[var(--bg-light)] rounded-lg p-8 mb-6">
-                  <p className="text-base lg:text-sm text-[var(--text-light)] mb-2 text-center">お気軽にお電話ください（社長直通）</p>
-                  <a href="tel:054-552-8798" className="flex items-center justify-center gap-3 text-3xl font-bold text-black mb-4">
-                    <svg className="w-8 h-8 text-[var(--primary-green)]" fill="currentColor" viewBox="0 0 24 24">
+                <div className="bg-[var(--bg-light)] rounded-lg p-8 md:p-12">
+                  <p className="text-lg md:text-xl text-[var(--text-light)] mb-4 text-center">お気軽にお電話ください（社長直通）</p>
+                  <a href="tel:054-552-8798" className="flex items-center justify-center gap-4 text-4xl md:text-5xl font-bold text-black mb-6">
+                    <svg className="w-10 h-10 text-[var(--primary-green)]" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                     </svg>
                     054-552-8798
                   </a>
-                  <p className="text-base lg:text-sm text-[var(--text-light)] text-center">平日 8:00〜17:00</p>
+                  <p className="text-lg md:text-xl text-[var(--text-light)] text-center">平日 8:00〜17:00</p>
                 </div>
               </div>
 
               {/* お問い合わせフォーム */}
               <div>
-                <h2 className="text-2xl lg:text-xl font-bold text-black mb-6 text-center">メールでのお問い合わせ</h2>
+                <h2 className="text-2xl lg:text-3xl font-bold text-black mb-8 text-center">メールでのお問い合わせ</h2>
 
                 {error && (
-                  <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-6 mx-4 lg:mx-0">
+                  <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-6">
                     <p className="text-red-700">{error}</p>
                   </div>
                 )}
 
-                <form onSubmit={handleSubmit} className="space-y-6 bg-[#f7f7f5] rounded-lg px-4 py-8 lg:px-6">
+                <form onSubmit={handleSubmit} className="space-y-6 bg-[#f7f7f5] rounded-lg p-6 md:p-10">
                   <div>
                     <label className="block text-base lg:text-sm font-bold text-[var(--text-dark)] mb-2">
                       <span className="inline-block bg-[#e51919] text-white px-2 py-1 text-sm lg:text-xs mr-2">必須</span>

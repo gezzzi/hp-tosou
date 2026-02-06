@@ -45,7 +45,7 @@ export default function ServicesPage() {
         <section className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-dark)] mb-6">
+              <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[var(--text-dark)] mb-6">
                 塗装・不用品回収・清掃のことはお任せください
               </h2>
               <div className="flex justify-center gap-2 mb-6">
@@ -53,7 +53,7 @@ export default function ServicesPage() {
                 <div className="w-3 h-3 rounded-full bg-[#ffea03]"></div>
                 <div className="w-3 h-3 rounded-full bg-[#6fbb18]"></div>
               </div>
-              <p className="text-[var(--text-medium)] leading-relaxed max-w-3xl mx-auto">
+              <p className="text-[var(--text-medium)] text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
                 株式会社マルヨは、静岡県富士市を拠点に、地域に根ざした住まいのトータルサポートを提供しています。
                 親子代々培ってきた確かな塗装技術をはじめ、不用品回収や専門的な清掃業務まで、
                 お客様の「困った」を解決するために、誠心誠意対応させていただきます。
@@ -87,7 +87,7 @@ export default function ServicesPage() {
                   >
                     {category.icon}
                   </div>
-                  <p className="text-[var(--text-medium)] mb-6 leading-relaxed">
+                  <p className="text-[var(--text-medium)] text-base sm:text-lg mb-6 leading-relaxed">
                     {category.description}
                   </p>
                   <div className="flex justify-center">

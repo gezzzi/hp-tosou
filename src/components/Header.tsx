@@ -139,17 +139,17 @@ export default function Header() {
       </header>
 
       {/* ナビゲーション - PC */}
-      <nav className="hidden lg:block sticky top-0 bg-white py-3 z-50 shadow-md">
+      <nav className="hidden lg:block sticky top-0 bg-white py-0 z-50 shadow-md border-y border-gray-200">
         <div className="max-w-6xl mx-auto px-4">
-          <ul className="flex justify-center gap-6">
+          <ul className="flex justify-center items-stretch">
             {/* ホーム */}
-            <li>
+            <li className="flex-1 border-l border-gray-300 last:border-r">
               <Link
                 href="/"
-                className={`font-medium transition-colors pb-1 ${
+                className={`flex items-center justify-center py-4 text-lg font-bold transition-colors w-full h-full ${
                   isActive('/')
-                    ? 'text-[var(--primary-green)] border-b-2 border-[var(--primary-green)]'
-                    : 'text-[var(--text-dark)] hover:text-[var(--primary-green)]'
+                    ? 'text-[var(--primary-green)] bg-[var(--primary-green)]/5'
+                    : 'text-[var(--text-dark)] hover:text-[var(--primary-green)] hover:bg-gray-50'
                 }`}
               >
                 ホーム
@@ -158,17 +158,17 @@ export default function Header() {
 
             {/* サービス（ドロップダウン） */}
             <li
-              className="relative"
+              className="flex-1 border-l border-gray-300 last:border-r relative group"
               ref={servicesDropdownRef}
               onMouseEnter={() => setIsServicesOpen(true)}
               onMouseLeave={() => setIsServicesOpen(false)}
             >
               <Link
                 href="/services/"
-                className={`font-medium transition-colors pb-1 ${
+                className={`flex items-center justify-center py-4 text-lg font-bold transition-colors w-full h-full ${
                   isServicesActive()
-                    ? 'text-[var(--primary-green)] border-b-2 border-[var(--primary-green)]'
-                    : 'text-[var(--text-dark)] hover:text-[var(--primary-green)]'
+                    ? 'text-[var(--primary-green)] bg-[var(--primary-green)]/5'
+                    : 'text-[var(--text-dark)] hover:text-[var(--primary-green)] hover:bg-gray-50'
                 }`}
               >
                 サービス
@@ -176,7 +176,7 @@ export default function Header() {
 
               {/* ドロップダウンメニュー */}
               <div
-                className={`absolute top-full left-0 mt-2 w-56 bg-white shadow-lg border border-[var(--border-light)] overflow-hidden transition-all duration-200 ${
+                className={`absolute top-full left-0 w-56 bg-white shadow-lg border border-[var(--border-light)] overflow-hidden transition-all duration-200 z-[60] ${
                   isServicesOpen
                     ? 'opacity-100 visible translate-y-0'
                     : 'opacity-0 invisible -translate-y-2'
@@ -187,7 +187,7 @@ export default function Header() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className={`block px-4 py-2 font-medium transition-colors ${
+                      className={`block px-4 py-2 text-base font-bold transition-colors ${
                         isActive(item.href)
                           ? 'text-[var(--primary-green)] bg-[var(--primary-green)]/5'
                           : 'text-[var(--text-dark)] hover:bg-[var(--bg-light)] hover:text-[var(--primary-green)]'
@@ -203,17 +203,17 @@ export default function Header() {
 
             {/* サービス事例（ドロップダウン） */}
             <li
-              className="relative"
+              className="flex-1 border-l border-gray-300 last:border-r relative group"
               ref={caseStudiesDropdownRef}
               onMouseEnter={() => setIsCaseStudiesOpen(true)}
               onMouseLeave={() => setIsCaseStudiesOpen(false)}
             >
               <Link
                 href="/case-studies/"
-                className={`font-medium transition-colors pb-1 ${
+                className={`flex items-center justify-center py-4 text-lg font-bold transition-colors w-full h-full ${
                   isCaseStudiesActive()
-                    ? 'text-[var(--primary-green)] border-b-2 border-[var(--primary-green)]'
-                    : 'text-[var(--text-dark)] hover:text-[var(--primary-green)]'
+                    ? 'text-[var(--primary-green)] bg-[var(--primary-green)]/5'
+                    : 'text-[var(--text-dark)] hover:text-[var(--primary-green)] hover:bg-gray-50'
                 }`}
               >
                 サービス事例
@@ -221,7 +221,7 @@ export default function Header() {
 
               {/* ドロップダウンメニュー */}
               <div
-                className={`absolute top-full left-0 mt-2 w-64 bg-white shadow-lg border border-[var(--border-light)] overflow-hidden transition-all duration-200 ${
+                className={`absolute top-full left-0 w-64 bg-white shadow-lg border border-[var(--border-light)] overflow-hidden transition-all duration-200 z-[60] ${
                   isCaseStudiesOpen
                     ? 'opacity-100 visible translate-y-0'
                     : 'opacity-0 invisible -translate-y-2'
@@ -232,7 +232,7 @@ export default function Header() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className={`block px-4 py-2 font-medium transition-colors ${
+                      className={`block px-4 py-2 text-base font-bold transition-colors ${
                         isActive(item.href)
                           ? 'text-[var(--primary-green)] bg-[var(--primary-green)]/5'
                           : 'text-[var(--text-dark)] hover:bg-[var(--bg-light)] hover:text-[var(--primary-green)]'
@@ -248,13 +248,13 @@ export default function Header() {
 
             {/* 他のナビゲーション項目 */}
             {navItems.slice(1).map((item) => (
-              <li key={item.href}>
+              <li key={item.href} className="flex-1 border-l border-gray-300 last:border-r">
                 <Link
                   href={item.href}
-                  className={`font-medium transition-colors pb-1 ${
+                  className={`flex items-center justify-center py-4 text-lg font-bold transition-colors w-full h-full ${
                     isActive(item.href)
-                      ? 'text-[var(--primary-green)] border-b-2 border-[var(--primary-green)]'
-                      : 'text-[var(--text-dark)] hover:text-[var(--primary-green)]'
+                      ? 'text-[var(--primary-green)] bg-[var(--primary-green)]/5'
+                      : 'text-[var(--text-dark)] hover:text-[var(--primary-green)] hover:bg-gray-50'
                   }`}
                 >
                   {item.label}

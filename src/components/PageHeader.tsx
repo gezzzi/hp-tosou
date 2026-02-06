@@ -25,7 +25,7 @@ export default function PageHeader({ title, subtitle, bgImage = "/pic/hd/service
         </div>
 
         <div className="relative z-10 text-center px-4">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[var(--text-dark)] mb-2 drop-shadow-sm">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--text-dark)] mb-2 drop-shadow-sm">
             {title}
           </h1>
           {subtitle && (
