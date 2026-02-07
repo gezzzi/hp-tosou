@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Wrench } from 'lucide-react';
+import { ClipboardCheck } from 'lucide-react';
 import FadeIn from './FadeIn';
 
 export default function HomeServices() {
@@ -30,7 +30,7 @@ export default function HomeServices() {
         <FadeIn>
           <div className="max-w-sm md:max-w-[800px] mx-auto text-left mb-12 relative overflow-visible">
             <h2 className="section-title flex items-center justify-start gap-3 text-(--text-dark)! text-left! relative z-10">
-              <Wrench className="w-10 h-10 text-(--secondary-green) shrink-0" />
+              <ClipboardCheck className="w-10 h-10 text-(--secondary-green) shrink-0" />
               <span className="relative z-10 text-2xl md:text-3xl lg:text-5xl">サービス</span>
               <span className="absolute right-0 top-1/2 -translate-y-1/2 text-6xl md:text-7xl font-black text-slate-300 italic uppercase tracking-tighter opacity-60 -z-10 leading-none select-none pr-4">
                 service

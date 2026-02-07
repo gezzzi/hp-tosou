@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { ClipboardCheck } from 'lucide-react';
+import { Trophy } from 'lucide-react';
 import { motion } from 'framer-motion';
 import FadeIn from './FadeIn';
 import { useState, useEffect } from 'react';
@@ -98,10 +98,10 @@ export default function HomeCaseStudies() {
         <FadeIn>
           <div className="max-w-sm md:max-w-[800px] mx-auto text-left mb-12 relative overflow-visible">
             <h2 className="section-title flex items-center justify-start gap-3 text-(--text-dark)! text-left! relative z-10">
-              <ClipboardCheck className="w-10 h-10 text-(--secondary-green)" />
-              <span className="relative z-10 text-3xl md:text-4xl">サービス事例</span>
+              <Trophy className="w-10 h-10 text-(--secondary-green)" />
+              <span className="relative z-10 text-3xl md:text-4xl">実績</span>
               <span className="absolute right-0 top-1/2 -translate-y-1/2 text-5xl md:text-6xl font-black text-slate-300 italic uppercase tracking-tighter opacity-60 -z-10 leading-none select-none pr-1">
-                case studies
+                WORKS
               </span>
             </h2>
           </div>

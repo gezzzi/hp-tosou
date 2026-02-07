@@ -13,11 +13,6 @@ export default function HomeCTA() {
   const description = "まずはお気軽にご相談ください";
   return (
     <>
-      {/* 背景デザイン（WaveDivider） */}
-      <div className="bg-transparent overflow-hidden">
-        <WaveDivider color="var(--bg-light)" flip />
-      </div>
-
       <section className="py-16 relative overflow-hidden bg-transparent">
         {/* 背景デザインが見えるように背景画像とオーバーレイを削除 */}
 

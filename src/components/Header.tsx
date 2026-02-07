@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, ChevronDown, Mail } from 'lucide-react';
-import logoIcon from '@/app/icon.png';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -71,17 +70,6 @@ export default function Header() {
         <div className="flex justify-between items-center">
           {/* ロゴ・会社名 */}
           <Link href="/" className="flex items-center gap-3">
-            <div className="flex items-center justify-center">
-              <Image 
-                src={logoIcon} 
-                alt="株式会社マルヨ ロゴ" 
-                width={48}
-                height={48}
-                quality={100}
-                priority
-                className="object-contain"
-              />
-            </div>
             <div>
               <h1 className="text-3xl font-extrabold text-black" style={{ fontFamily: "var(--font-mochiy-pop-p-one), sans-serif" }}>株式会社マルヨ</h1>
             </div>

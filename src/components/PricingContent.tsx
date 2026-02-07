@@ -9,7 +9,7 @@ export default function PricingContent() {
   return (
     <>
       {/* 導入セクション */}
-      <section className="py-16 bg-[var(--bg-light)] overflow-hidden">
+      <section className="py-16 bg-transparent overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <FadeIn>
             <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[var(--text-dark)] mb-6">
@@ -52,11 +52,11 @@ export default function PricingContent() {
 
       {/* bg-light -> transparent (Wave at top) */}
       <div className="bg-transparent">
-        <WaveDivider color="var(--bg-light)" flip />
+        <WaveDivider color="var(--bg-light)" />
       </div>
 
       {/* 塗装料金 */}
-      <section id="painting" className="py-16 bg-transparent overflow-hidden">
+      <section id="painting" className="py-16 bg-[var(--bg-light)] overflow-hidden">
         <div className="max-w-6xl mx-auto px-4">
           <FadeIn>
             <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[var(--text-dark)] mb-4 text-center">
@@ -110,8 +110,8 @@ export default function PricingContent() {
       </section>
 
       {/* transparent -> bg-light (Wave at bottom) */}
-      <div className="bg-transparent">
-        <WaveDivider color="var(--bg-light)" />
+      <div className="hidden">
+        <WaveDivider color="var(--bg-light)" flip />
       </div>
 
       {/* 不用品回収料金 */}

@@ -9,18 +9,21 @@ const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
   subsets: ["latin"],
   weight: ["400", "500", "700"],
+  preload: false,
 });
 
 const mPlus1p = M_PLUS_1p({
   variable: "--font-m-plus-1p",
   subsets: ["latin"],
   weight: ["400", "700", "800"],
+  preload: false,
 });
 
 const mochiyPopPOne = Mochiy_Pop_P_One({
   variable: "--font-mochiy-pop-p-one",
   subsets: ["latin"],
   weight: ["400"],
+  preload: false,
 });
 
 export const metadata: Metadata = {
