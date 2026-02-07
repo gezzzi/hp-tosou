@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { HelpCircle } from 'lucide-react';
 import FadeIn from './FadeIn';
@@ -13,6 +14,34 @@ export default function HomeTroubles() {
     '大手業者の見積もりが高すぎて驚いた',
     '地元の信頼できる業者に直接頼みたい'
   ];
+
+  // 2列表示（384px 〜 767px）かどうかを判定する
+  const [isTwoColumn, setIsTwoColumn] = useState(false);
+
+  useEffect(() => {
+    const mql = window.matchMedia('(min-width: 384px) and (max-width: 767px)');
+    setIsTwoColumn(mql.matches);
+    const handler = (e: MediaQueryListEvent) => setIsTwoColumn(e.matches);
+    mql.addEventListener('change', handler);
+    return () => mql.removeEventListener('change', handler);
+  }, []);
+
+  // 色の決定ロジック
+  const getCircleColor = (index: number) => {
+    if (isTwoColumn) {
+      // 2列表示の場合：1行目(0,1)は(P,S)、2行目(2,3)は(S,P)、3行目(4,5)は(P,S)
+      // 行番号 (index / 2 の切り捨て) が奇数なら反転させる
+      const row = Math.floor(index / 2);
+      const isEvenRow = row % 2 === 0;
+      if (isEvenRow) {
+        return index % 2 === 0 ? 'var(--primary-green)' : 'var(--secondary-green)';
+      } else {
+        return index % 2 === 0 ? 'var(--secondary-green)' : 'var(--primary-green)';
+      }
+    }
+    // 1列または3列表示の場合：単純に交互
+    return index % 2 === 0 ? 'var(--primary-green)' : 'var(--secondary-green)';
+  };
 
   return (
     <section className="py-16 bg-transparent overflow-hidden relative">
@@ -30,37 +59,40 @@ export default function HomeTroubles() {
         </FadeIn>
 
         <div>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8 max-w-[340px] sm:max-w-[500px] md:max-w-none mx-auto">
             {troubles.map((trouble, index) => (
-              <FadeIn key={index} delay={index * 0.1}>
-                <motion.div 
-                  whileHover={{ 
-                    backgroundColor: "rgba(255, 255, 255, 0.1)",
-                    transition: { duration: 0.3 }
-                  }}
-                  className="trouble-item relative group w-44 h-44 md:w-56 md:h-56 flex items-center justify-center transition-all duration-300"
-                >
-                  {/* 画像のデザインを忠実に再現したSVG */}
-                  <svg viewBox="0 0 200 200" className="absolute inset-0 w-full h-full drop-shadow-lg">
-                    {/* 外側の塗りつぶし円 */}
-                    <circle
-                      cx="100"
-                      cy="100"
-                      r="98"
-                      className="trouble-circle"
-                    />
-                    {/* 外側の白線 */}
-                    <circle cx="100" cy="100" r="92" fill="none" stroke="white" strokeWidth="1.5" />
-                  </svg>
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+                whileHover={{ 
+                  backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  transition: { duration: 0.3 }
+                }}
+                className="trouble-item relative group w-40 h-40 sm:w-52 sm:h-52 md:w-56 md:h-56 flex items-center justify-center transition-all duration-300"
+              >
+                {/* 画像のデザインを忠実に再現したSVG */}
+                <svg viewBox="0 0 200 200" className="absolute inset-0 w-full h-full drop-shadow-lg">
+                  {/* 外側の塗りつぶし円 */}
+                  <circle
+                    cx="100"
+                    cy="100"
+                    r="98"
+                    fill={getCircleColor(index)}
+                  />
+                  {/* 外側の白線 */}
+                  <circle cx="100" cy="100" r="92" fill="none" stroke="white" strokeWidth="1.5" />
+                </svg>
 
-                  {/* テキスト部分：画像のように複数行で中央配置 */}
-                  <div className="relative z-10 text-white font-bold text-center px-6 leading-relaxed text-base md:text-xl">
-                    {trouble.match(/.{1,7}/g)?.map((line, i) => (
-                      <p key={i} className="whitespace-nowrap">{line}</p>
-                    ))}
-                  </div>
-                </motion.div>
-              </FadeIn>
+                {/* テキスト部分：画像のように複数行で中央配置 */}
+                <div className="relative z-10 text-white font-bold text-center px-6 leading-relaxed text-base md:text-xl">
+                  {trouble.match(/.{1,7}/g)?.map((line, i) => (
+                    <p key={i} className="whitespace-nowrap">{line}</p>
+                  ))}
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
