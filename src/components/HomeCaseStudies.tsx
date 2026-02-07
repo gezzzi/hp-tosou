@@ -5,28 +5,92 @@ import Image from 'next/image';
 import { ClipboardCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 import FadeIn from './FadeIn';
+import { useState, useEffect } from 'react';
 
 export default function HomeCaseStudies() {
+  // サービス事例ページから取得したデータ
   const cases = [
     {
-      id: 'painting',
-      title: '塗装',
+      id: '1',
+      title: '外壁塗装施工例',
       category: '塗装',
-      description: '築15年の住宅。外壁のひび割れと屋根の苔が目立っていましたが、高耐久塗料で新築同様の輝きを取り戻しました。',
-      image: '/pic/service-tosou-v2.jpg',
-      href: '/case-studies/painting',
+      description: '築20年の戸建て住宅の外壁塗装。色褪せと一部剥がれが見られたため、全面塗り替えを実施しました。',
+      image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1920&h=1440&fit=crop&q=90',
+      imageMobile: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200&h=1600&fit=crop&q=90',
+      href: '/case-studies/painting/1',
       color: 'primary'
     },
     {
-      id: 'junk',
-      title: '不用品回収・清掃',
+      id: '2',
+      title: '屋根塗装施工例',
+      category: '塗装',
+      description: 'トタン屋根の塗り替え工事。錆止め処理後、遮熱塗料で仕上げました。',
+      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&h=1440&fit=crop&q=90',
+      imageMobile: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=1600&fit=crop&q=90',
+      href: '/case-studies/painting/2',
+      color: 'primary'
+    },
+    {
+      id: '3',
+      title: '不用品回収',
       category: '不用品回収',
-      description: '実家の片付けに伴う不用品回収。2トントラック2台分、家具から家電まで1日でスピーディーに回収いたしました。',
-      image: '/pic/hd/junk-hd.jpg',
-      href: '/case-studies/junk-removal',
+      description: '引っ越しに伴う不用品の回収。2トントラック1台分の家具・家電を回収しました。',
+      image: '/pic/truck.webp',
+      imageMobile: '/pic/truck.webp',
+      href: '/case-studies/junk-removal/1',
       color: 'junk'
-    }
+    },
+    {
+      id: '4',
+      title: '高圧洗浄清掃・草刈り作業',
+      category: '清掃',
+      description: '長年放置されていたお庭の草刈りと、外構・土間の高圧洗浄清掃。見違えるほど綺麗になりました。',
+      image: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1920&h=1440&fit=crop&q=90',
+      imageMobile: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1200&h=1600&fit=crop&q=90',
+      href: '/case-studies/junk-removal/2',
+      color: 'junk'
+    },
+    {
+      id: '5',
+      title: '防水塗装・シーリング工事',
+      category: '塗装',
+      description: 'ベランダの防水塗装とサッシ周りのシーリング打ち替え。雨漏り対策を万全にしました。',
+      image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&h=1440&fit=crop&q=90',
+      imageMobile: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&h=1600&fit=crop&q=90',
+      href: '/case-studies/painting/3',
+      color: 'primary'
+    },
+    {
+      id: '6',
+      title: 'ゴミ屋敷清掃',
+      category: '清掃',
+      description: 'お部屋の片付けから不用品回収まで一貫して対応。プライバシーに配慮して作業しました。',
+      image: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=1920&h=1440&fit=crop&q=90',
+      imageMobile: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=1200&h=1600&fit=crop&q=90',
+      href: '/case-studies/junk-removal/3',
+      color: 'junk'
+    },
   ];
+
+  const [isMobile, setIsMobile] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+
+  // モバイル判定
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // カードの幅とgapを計算（ピクセル単位）
+  const cardWidth = isMobile ? 256 : 384; // w-64 = 256px, w-96 = 384px
+  const gap = isMobile ? 16 : 24; // gap-4 = 16px, gap-6 = 24px
+  const totalDistance = (cardWidth + gap) * cases.length;
 
   return (
     <section className="py-16 bg-transparent overflow-hidden relative">
@@ -43,45 +107,60 @@ export default function HomeCaseStudies() {
           </div>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-sm md:max-w-[800px] mx-auto">
-          {cases.map((item, index) => (
-            <FadeIn key={item.id} delay={index * 0.2} direction={index === 0 ? 'right' : 'left'}>
-              <div
-                className="rounded-lg overflow-hidden shadow-lg group relative aspect-square w-full"
+        {/* 連続スクロール（モバイル・PC共通） */}
+        <div className="overflow-hidden -mx-4">
+          <motion.div
+            className="flex gap-4 md:gap-6"
+            drag={isMobile ? "x" : false}
+            dragConstraints={{ left: -totalDistance, right: 0 }}
+            dragElastic={0.1}
+            dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
+            onDragStart={() => setIsDragging(true)}
+            onDragEnd={() => setIsDragging(false)}
+            animate={!isDragging ? {
+              x: [0, -totalDistance]
+            } : undefined}
+            transition={!isDragging ? {
+              x: {
+                duration: isMobile ? cases.length * 6 : cases.length * 3,
+                repeat: Infinity,
+                ease: "linear"
+              }
+            } : undefined}
+          >
+            {[...cases, ...cases].map((item, index) => (
+              <Link
+                key={`${item.id}-${index}`}
+                href={item.href}
+                className="flex-shrink-0 w-64 md:w-96"
               >
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className={`absolute inset-0 ${item.color === 'primary'
-                  ? 'bg-primary/10'
-                  : 'bg-service-junk/10'
-                  }`}></div>
-                <div className="absolute inset-0 flex flex-col p-6 bg-linear-to-t from-black/60 via-black/20 to-transparent">
-                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-auto brush-stroke-container mx-auto text-white text-center mt-4 whitespace-nowrap">
-                    <span className="relative z-10">{item.title}</span>
-                    <div className={`brush-stroke-bg ${item.color === 'primary' ? 'bg-service-painting' : 'bg-service-junk'}`} />
-                  </h3>
-                  <div className="mt-4">
-                    <p className="text-white/90 text-base mb-4 line-clamp-3">
-                      {item.description}
-                    </p>
-                    <div className="flex justify-center">
-                      <motion.div
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <Link href={item.href} className={item.color === 'primary' ? 'btn-secondary' : 'btn-junk'}>
-                          詳しく見る →
-                        </Link>
-                      </motion.div>
+                <div className="rounded-lg overflow-hidden shadow-lg relative aspect-[3/4]">
+                  <Image
+                    src={item.imageMobile}
+                    alt={item.title}
+                    fill
+                    className="object-cover"
+                    quality={90}
+                    sizes="(max-width: 768px) 256px, 384px"
+                  />
+                  <div className={`absolute inset-0 ${item.color === 'primary' ? 'bg-primary/10' : 'bg-service-junk/10'}`}></div>
+                  <div className="absolute inset-0 flex flex-col p-4 md:p-6 bg-linear-to-t from-black/80 via-black/40 to-transparent">
+                    <div className="mt-auto">
+                      <span className={`text-xs md:text-sm px-2 py-1 rounded-full ${item.color === 'primary' ? 'bg-[#018615]' : 'bg-[#166caa]'} text-white mb-2 inline-block`}>
+                        {item.category}
+                      </span>
+                      <h3 className="text-lg md:text-xl font-bold text-white mb-2">
+                        {item.title}
+                      </h3>
+                      <p className="text-white/90 text-sm md:text-base line-clamp-2">
+                        {item.description}
+                      </p>
                     </div>
                   </div>
                 </div>
-              </div>
-            </FadeIn>
-          ))}
+              </Link>
+            ))}
+          </motion.div>
         </div>
 
         <FadeIn delay={0.4}>
