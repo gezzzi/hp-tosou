@@ -9,7 +9,7 @@ const segmentMap: { [key: string]: string } = {
   "services": "サービス",
   "painting": "塗装事例",
   "junk-removal": "不用品回収・清掃事例",
-  "case-studies": "サービス事例",
+  "works": "実績",
   "pricing": "料金プラン",
   "faq": "よくあるご質問",
   "contact": "お問い合わせ",

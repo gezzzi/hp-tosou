@@ -117,7 +117,7 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ id:
       <main className="main-content">
         <PageHeader
           title={caseItem.title}
-          subtitle="CASE STUDY"
+          subtitle="WORKS"
           bgImage={bgImage}
         />
 

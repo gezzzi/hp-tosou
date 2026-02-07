@@ -6,78 +6,78 @@ import Link from "next/link";
 import { Clock } from "lucide-react";
 
 const allCases = [
-  {
-    id: '1',
-    title: '外壁塗装施工例',
-    description: '築20年の戸建て住宅の外壁塗装。色褪せと一部剥がれが見られたため、全面塗り替えを実施しました。',
-    image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&h=450&fit=crop',
-    tags: ['外壁塗装'],
-    date: '2024年1月15日',
-    href: '/case-studies/1'
-  },
-  {
-    id: '2',
-    title: '不用品回収',
-    description: '引っ越しに伴う不用品の回収。2トントラック1台分の家具・家電を回収しました。',
-    image: '/pic/truck.webp',
-    tags: ['不用品回収'],
-    date: '2024年2月10日',
-    href: '/case-studies/2'
-  },
-  {
-    id: '3',
-    title: '高圧洗浄清掃・草刈り作業',
-    description: '長年放置されていたお庭の草刈りと、外構・土間の高圧洗浄清掃。見違えるほど綺麗になりました。',
-    image: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=600&h=450&fit=crop',
-    tags: ['清掃'],
-    date: '2024年1月25日',
-    href: '/case-studies/3'
-  },
-  {
-    id: '4',
-    title: '屋根塗装施工例',
-    description: 'トタン屋根の塗り替え工事。錆止め処理後、遮熱塗料で仕上げました。',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=450&fit=crop',
-    tags: ['屋根塗装'],
-    date: '2023年12月20日',
-    href: '/case-studies/4'
-  },
-  {
-    id: '5',
-    title: 'ゴミ屋敷清掃',
-    description: 'お部屋の片付けから不用品回収まで一貫して対応。プライバシーに配慮して作業しました。',
-    image: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&h=450&fit=crop',
-    tags: ['清掃', '不用品回収'],
-    date: '2023年12月15日',
-    href: '/case-studies/5'
-  },
-  {
-    id: '6',
-    title: '防水塗装・シーリング工事',
-    description: 'ベランダの防水塗装とサッシ周りのシーリング打ち替え。雨漏り対策を万全にしました。',
-    image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=450&fit=crop',
-    tags: ['防水塗装'],
-    date: '2023年11月5日',
-    href: '/case-studies/6'
-  },
-  {
-    id: '7',
-    title: 'アパート外壁・屋根塗装',
-    description: 'アパート一棟の丸ごと塗装。入居率アップを目指し、清潔感のある配色に仕上げました。',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=450&fit=crop',
-    tags: ['外壁塗装', '屋根塗装'],
-    date: '2023年10月12日',
-    href: '/case-studies/7'
-  },
-  {
-    id: '8',
-    title: '大型家具回収',
-    description: 'タンス、ベッド、ソファなど大型家具の回収。搬出から処分まですべてお任せいただきました。',
-    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=450&fit=crop',
-    tags: ['不用品回収'],
-    date: '2023年11月20日',
-    href: '/case-studies/8'
-  },
+    {
+      id: '1',
+      title: '外壁塗装施工例',
+      description: '築20年の戸建て住宅の外壁塗装。色褪せと一部剥がれが見られたため、全面塗り替えを実施しました。',
+      image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&h=450&fit=crop',
+      tags: ['外壁塗装'],
+      date: '2024年1月15日',
+      href: '/works/1'
+    },
+    {
+      id: '2',
+      title: '不用品回収',
+      description: '引っ越しに伴う不用品の回収。2トントラック1台分の家具・家電を回収しました。',
+      image: '/pic/truck.webp',
+      tags: ['不用品回収'],
+      date: '2024年2月10日',
+      href: '/works/2'
+    },
+    {
+      id: '3',
+      title: '高圧洗浄清掃・草刈り作業',
+      description: '長年放置されていたお庭の草刈りと、外構・土間の高圧洗浄清掃。見違えるほど綺麗になりました。',
+      image: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=600&h=450&fit=crop',
+      tags: ['清掃'],
+      date: '2024年1月25日',
+      href: '/works/3'
+    },
+    {
+      id: '4',
+      title: '屋根塗装施工例',
+      description: 'トタン屋根の塗り替え工事。錆止め処理後、遮熱塗料で仕上げました。',
+      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=450&fit=crop',
+      tags: ['屋根塗装'],
+      date: '2023年12月20日',
+      href: '/works/4'
+    },
+    {
+      id: '5',
+      title: 'ゴミ屋敷清掃',
+      description: 'お部屋の片付けから不用品回収まで一貫して対応。プライバシーに配慮して作業しました。',
+      image: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&h=450&fit=crop',
+      tags: ['清掃', '不用品回収'],
+      date: '2023年12月15日',
+      href: '/works/5'
+    },
+    {
+      id: '6',
+      title: '防水塗装・シーリング工事',
+      description: 'ベランダの防水塗装とサッシ周りのシーリング打ち替え。雨漏り対策を万全にしました。',
+      image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=450&fit=crop',
+      tags: ['防水塗装'],
+      date: '2023年11月5日',
+      href: '/works/6'
+    },
+    {
+      id: '7',
+      title: 'アパート外壁・屋根塗装',
+      description: 'アパート一棟の丸ごと塗装。入居率アップを目指し、清潔感のある配色に仕上げました。',
+      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=450&fit=crop',
+      tags: ['外壁塗装', '屋根塗装'],
+      date: '2023年10月12日',
+      href: '/works/7'
+    },
+    {
+      id: '8',
+      title: '大型家具回収',
+      description: 'タンス、ベッド、ソファなど大型家具の回収。搬出から処分まですべてお任せいただきました。',
+      image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&h=450&fit=crop',
+      tags: ['不用品回収'],
+      date: '2023年11月20日',
+      href: '/works/8'
+    },
 ];
 
 const allTags = ['すべて', '外壁塗装', '屋根塗装', '防水塗装', '不用品回収', '清掃'];

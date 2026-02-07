@@ -6,6 +6,8 @@ import { motion } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
 import logoIcon from '@/app/icon.png';
 
+import WaveDivider from './WaveDivider';
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -14,7 +16,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-transparent border-t border-[var(--border-light)] relative">
+    <footer className="relative mt-[-1px] bg-transparent">
       {/* メインフッター */}
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -63,10 +65,10 @@ export default function Footer() {
 
         {/* 地図セクション */}
         <div className="mt-12 border-[3px] border-[var(--border-light)] max-w-3xl mx-auto">
-          <div className="bg-[var(--bg-light)] px-4 py-3 border-b-[3px] border-[var(--border-light)]">
+          <div className="bg-white px-4 py-3 border-b-[3px] border-[var(--border-light)]">
             <h3 className="font-bold text-xl text-[var(--text-dark)]">株式会社マルヨ</h3>
           </div>
-          <div className="p-3 bg-[var(--bg-light)]">
+          <div className="p-3 bg-white">
             <h4 className="mb-4 text-lg text-[var(--text-dark)]">〒417-0061 静岡県富士市伝法2503-5</h4>
             <div className="w-full aspect-video overflow-hidden shadow-md">
             <iframe
@@ -100,8 +102,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/case-studies/" className="text-[var(--text-medium)] hover:text-[var(--primary-green)] transition-colors">
-                  サービス事例
+                <Link href="/works/" className="text-[var(--text-medium)] hover:text-[var(--primary-green)] transition-colors">
+                  実績
                 </Link>
               </li>
               <li>

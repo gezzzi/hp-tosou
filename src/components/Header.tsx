@@ -40,7 +40,7 @@ export default function Header() {
 
   const navItems = [
     { label: 'ホーム', href: '/' },
-    { label: 'サービス事例', href: '/case-studies/' },
+    { label: '実績', href: '/works/' },
     { label: '料金案内', href: '/pricing/' },
     { label: '会社案内', href: '/about/' },
     { label: 'よくあるご質問', href: '/faq/' },

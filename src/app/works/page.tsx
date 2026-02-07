@@ -5,8 +5,8 @@ import HomeCTA from "@/components/HomeCTA";
 import ServiceCaseList from "@/components/ServiceCaseList";
 
 export const metadata = {
-  title: "サービス事例 | 株式会社マルヨ",
-  description: "株式会社マルヨのサービス事例。外壁塗装、屋根塗装、不用品回収、草刈り・清掃など、これまでのサービス実績をご紹介します。",
+  title: "実績 | 株式会社マルヨ",
+  description: "株式会社マルヨのサービス実績。外壁塗装、屋根塗装、不用品回収、草刈り・清掃など、これまでの施工実績をご紹介します。",
 };
 
 export default function CaseStudiesPage() {
@@ -15,7 +15,7 @@ export default function CaseStudiesPage() {
       <Header />
       <main className="main-content">
         <PageHeader
-          title="サービス事例"
+          title="実績"
           subtitle="WORKS"
           bgImage="/pic/hd/service-hd.jpg"
         />

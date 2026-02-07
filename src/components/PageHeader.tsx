@@ -1,6 +1,5 @@
 'use client';
 
-import Image from "next/image";
 import Breadcrumbs from "./Breadcrumbs";
 import { motion } from "framer-motion";
 
@@ -10,40 +9,58 @@ interface PageHeaderProps {
   bgImage?: string;
 }
 
-export default function PageHeader({ title, subtitle, bgImage = "/pic/hd/service-hd.jpg" }: PageHeaderProps) {
+export default function PageHeader({ title, subtitle }: PageHeaderProps) {
   return (
     <>
-      <div className="relative h-48 md:h-64 flex items-center justify-center overflow-hidden border-t-4 border-b-4 border-[#99c144]">
-        {/* 背景画像 */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src={`${bgImage}${bgImage.includes('?') ? '&' : '?'}v=2`}
-            alt={title}
-            fill
-            className="object-cover opacity-50"
-            priority
-          />
-          {/* グラデーションオーバーレイ */}
-          <div className="absolute inset-0 bg-linear-to-b from-white/20 via-transparent to-white/40"></div>
-        </div>
-
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="relative z-10 text-center px-4"
-        >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--text-dark)] mb-2 drop-shadow-sm">
-            {title}
-          </h1>
-          {subtitle && (
-            <p className="text-[#018615] italic tracking-widest font-medium drop-shadow-sm text-base sm:text-lg">
-              {subtitle}
-            </p>
-          )}
-        </motion.div>
-      </div>
       <Breadcrumbs lastSegmentLabel={title} />
+      <div className="bg-transparent py-12 md:py-20">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="flex flex-col items-center gap-4 text-center">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ 
+                opacity: 1, 
+                y: [0, -10, 0],
+              }}
+              transition={{ 
+                opacity: { duration: 0.6 },
+                y: {
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }
+              }}
+              style={{ willChange: "transform" }}
+              className="text-5xl md:text-7xl font-bold text-[var(--primary-green)] drop-shadow-[0_2px_2px_rgba(0,0,0,0.1)] transform-gpu"
+            >
+              {title}
+            </motion.h1>
+            
+            {subtitle && (
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ 
+                  opacity: 1, 
+                  y: [0, 8, 0],
+                }}
+                transition={{ 
+                  opacity: { duration: 0.6, delay: 0.2 },
+                  y: {
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 0.5
+                  }
+                }}
+                style={{ willChange: "transform" }}
+                className="text-xl md:text-2xl italic tracking-[0.2em] font-black text-slate-400 uppercase drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)] ml-1 transform-gpu"
+              >
+                {subtitle}
+              </motion.span>
+            )}
+          </div>
+        </div>
+      </div>
     </>
   );
 }

@@ -30,7 +30,7 @@ export default function HomeReviews() {
             <h2 className="section-title flex items-center justify-start gap-3 text-(--text-dark)! text-left! relative z-10">
               <MessageSquare className="w-10 h-10 text-(--secondary-green) shrink-0" />
               <span className="relative z-10 text-3xl md:text-4xl">お客様の声</span>
-              <span className="absolute right-0 top-1/2 -translate-y-1/2 text-6xl md:text-7xl font-black text-slate-200 italic uppercase tracking-tighter opacity-80 -z-10 leading-none select-none pr-4">
+              <span className="absolute right-0 top-1/2 -translate-y-1/2 text-6xl md:text-7xl font-black text-slate-300 italic uppercase tracking-tighter opacity-60 -z-10 leading-none select-none pr-4">
                 reviews
               </span>
             </h2>

@@ -15,7 +15,7 @@ export default function HomeCompany() {
             <h2 className="section-title flex items-center justify-start gap-3 text-(--text-dark)! text-left! relative z-10">
               <Info className="w-10 h-10 text-(--secondary-green) shrink-0" />
               <span className="relative z-10 text-3xl md:text-4xl">会社案内</span>
-              <span className="absolute right-0 top-1/2 -translate-y-1/2 text-6xl md:text-7xl font-black text-slate-200 italic uppercase tracking-tighter opacity-80 -z-10 leading-none select-none pr-4">
+              <span className="absolute right-0 top-1/2 -translate-y-1/2 text-6xl md:text-7xl font-black text-slate-300 italic uppercase tracking-tighter opacity-60 -z-10 leading-none select-none pr-4">
                 about us
               </span>
             </h2>
@@ -25,8 +25,8 @@ export default function HomeCompany() {
         <FadeIn direction="up" delay={0.2}>
           <div className="max-w-4xl mx-auto">
             <motion.div 
-              whileHover={{ borderColor: "var(--primary-green-light)", boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
-              className="flex flex-col md:flex-row gap-8 items-center bg-white rounded-2xl p-8 border-[3px] border-[#6fbb18] transition-all"
+              whileHover={{ boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+              className="flex flex-col md:flex-row gap-8 items-center bg-white backdrop-blur-sm rounded-2xl p-8 border-[3px] border-[var(--border-light)] shadow-xl transition-all"
             >
               <div className="w-full md:w-1/3">
                 <motion.div 

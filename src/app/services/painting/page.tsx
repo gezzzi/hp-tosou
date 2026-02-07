@@ -128,10 +128,10 @@ export default function PaintingServicePage() {
                   <p className="text-[var(--text-medium)] leading-relaxed mb-8">{service.description}</p>
                   <div className="flex justify-center">
                     <Link
-                      href="/case-studies/"
+                      href="/works/"
                       className="btn-outline px-6! flex! items-center justify-center gap-2 group whitespace-nowrap min-w-[200px]"
                     >
-                      {service.title}の事例
+                      {service.title}の実績
                       <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </div>
