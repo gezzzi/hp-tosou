@@ -59,9 +59,9 @@ export default function ServicesContent() {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-black/20 flex items-center justify-center pb-16">
                     <h2 className="text-2xl md:text-3xl font-bold brush-stroke-container text-white whitespace-nowrap">
-                      <span className="relative z-10">{category.title}</span>
+                      <span className={`relative z-10 ${category.color === 'var(--service-junk-light)' ? 'text-black/70' : 'text-white'}`}>{category.title}</span>
                       <div className={`brush-stroke-bg ${category.color === 'var(--primary-green)' ? 'bg-service-painting' : 'bg-service-junk'}`} />
                     </h2>
                   </div>

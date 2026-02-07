@@ -6,12 +6,12 @@
   --primary-green-dark: #5a9a14;
   --primary-green-light: #82d426;
   --service-painting: #2a6f48;
-  --service-junk: #166caa;
-  --service-junk-dark: #12548a;
-  --service-junk-light: #1a84cf;
-  --btn-junk: #408cc2;
-  --btn-junk-dark: #2e74a8;
-  --btn-junk-light: #64aee0;
+  --service-junk: var(--accent-yellow);
+  --service-junk-dark: var(--accent-yellow-dark);
+  --service-junk-light: var(--accent-yellow-light);
+  --btn-junk: var(--accent-yellow);
+  --btn-junk-dark: var(--accent-yellow-dark);
+  --btn-junk-light: var(--accent-yellow-light);
   --secondary-green: #37bb18;
   --accent-yellow: #ffea03;
   --accent-yellow-dark: #e6d400;
@@ -46,8 +46,8 @@
 }
 
 .btn-junk {
-  background: linear-gradient(135deg, var(--btn-junk) 0%, var(--btn-junk-light) 100%);
-  color: white;
+  background: var(--btn-junk);
+  color: var(--text-dark);
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
   font-weight: bold;
@@ -59,7 +59,7 @@
 
 .btn-junk:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  background: linear-gradient(135deg, var(--btn-junk-dark) 0%, var(--btn-junk) 100%);
+  background: var(--btn-junk-dark);
 }
 
 * {
@@ -277,6 +277,14 @@ body {
   -webkit-mask-position: center;
   mask-position: center;
   pointer-events: none;
+}
+
+.bg-service-painting {
+  background-color: #2e9d14;
+}
+
+.bg-service-junk {
+  background-color: var(--accent-yellow);
 }
 
 /* お困りごとセクションの円の配色 */

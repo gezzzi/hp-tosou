@@ -110,8 +110,8 @@ export default function JunkRemovalServicePage() {
                       fill
                       className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                      <h3 className="text-xl md:text-2xl font-bold brush-stroke-container text-white whitespace-nowrap">
+                    <div className="absolute inset-0 bg-black/20 flex items-center justify-center pb-16">
+                      <h3 className="text-xl md:text-2xl font-bold brush-stroke-container text-black/70 whitespace-nowrap">
                         <span className="relative z-10">{service.title}</span>
                         <div className="brush-stroke-bg bg-service-junk" />
                       </h3>

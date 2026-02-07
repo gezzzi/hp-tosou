@@ -10,14 +10,14 @@ export default function HomeServices() {
   const services = [
     {
       title: '塗装',
-      description: '外壁塗装、屋根塗装、物置・門扉など各種塗装工事。親子代々続く確かな技術で対応します。',
+      description: '外壁塗装、屋根塗装、物置・門扉など各種塗装工事。\n親子代々続く確かな技術で対応します。',
       image: '/pic/service-tosou-v2.jpg?v=2',
       href: '/services/painting',
       color: 'primary'
     },
     {
       title: '不用品回収・清掃',
-      description: '2トントラック積み放題28,000円。追加料金なし、自社施工で安心のサービスを提供します。',
+      description: '2トントラック積み放題28,000円。\n追加料金なし、自社施工で安心のサービスを提供します。',
       image: '/pic/truck.webp?v=2',
       href: '/services/junk-removal',
       color: 'accent'
@@ -39,11 +39,12 @@ export default function HomeServices() {
           </div>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-sm md:max-w-[800px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-sm md:max-w-6xl mx-auto">
           {services.map((service, index) => (
             <FadeIn key={index} delay={index * 0.2} direction={index === 0 ? 'right' : 'left'}>
-              <div
-                className="rounded-lg overflow-hidden shadow-lg group relative aspect-square w-full"
+              <Link
+                href={service.href}
+                className="block rounded-lg overflow-hidden shadow-lg group relative aspect-[4/3] w-full"
               >
                 <Image
                   src={service.image}
@@ -55,30 +56,31 @@ export default function HomeServices() {
                   ? 'bg-primary/10'
                   : 'bg-accent/10'
                   }`}></div>
-                <div className="absolute inset-0 flex flex-col p-6 bg-linear-to-t from-black/80 via-black/30 to-transparent">
+                <div className="absolute inset-0 flex flex-col p-6 bg-linear-to-t from-black/80 via-black/30 to-transparent pb-8">
                   <motion.h3 
-                    whileHover={{ color: "var(--accent-yellow)" }}
                     className="text-2xl md:text-3xl lg:text-4xl font-bold mb-auto brush-stroke-container mx-auto text-white text-center mt-4 whitespace-nowrap transition-colors"
                   >
-                    <span className="relative z-10">{service.title}</span>
+                    <span className={`relative z-10 ${service.color === 'accent' ? 'text-black/70' : 'text-white'}`}>{service.title}</span>
                     <div className={`brush-stroke-bg ${service.color === 'primary' ? 'bg-service-painting' : 'bg-service-junk'}`} />
                   </motion.h3>
-                  <div className="mt-4">
-                    <p className="text-white/90 text-base mb-4 line-clamp-3">
+                  <div className="mt-8">
+                    <p className="text-white/90 text-base md:text-lg lg:text-xl mb-4 line-clamp-3 whitespace-pre-wrap">
                       {service.description}
                     </p>
-                    <div className="text-center">
-                      <motion.div
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <Link href={service.href} className={service.color === 'primary' ? 'btn-secondary' : 'btn-junk'}>
-                          詳しく見る →
-                        </Link>
-                      </motion.div>
+                    <div className="text-right">
+                      <span className="text-white/80 text-sm font-bold flex items-center justify-end gap-1 group-hover:text-white transition-colors">
+                        Read More
+                        <motion.span
+                          animate={{ x: [0, 5, 0] }}
+                          transition={{ repeat: Infinity, duration: 1.5 }}
+                        >
+                          →
+                        </motion.span>
+                      </span>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </FadeIn>
           ))}
         </div>
