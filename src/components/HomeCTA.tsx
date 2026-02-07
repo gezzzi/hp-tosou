@@ -47,13 +47,24 @@ export default function HomeCTA() {
                 </p>
               </div>
 
-              <div className="flex justify-center">
+              <div className="flex flex-col items-center gap-4">
                 <motion.div
                   whileTap={{ scale: 0.95 }}
+                  className="w-full flex justify-center"
                 >
-                  <Link href="/contact/" className="btn-accent text-lg px-16! md:px-32! py-4 shadow-lg flex! items-center justify-center gap-2 whitespace-nowrap">
+                  <Link href="/contact/" className="bg-[var(--accent-yellow)] text-[var(--text-dark)] hover:bg-[var(--accent-yellow-dark)] text-lg px-16! md:px-32! py-4 shadow-lg flex! items-center justify-center gap-2 whitespace-nowrap w-full md:w-auto font-bold rounded">
                     <Mail className="w-6 h-6 shrink-0" />
-                    <span>お問い合わせ</span>
+                    <span>個人お問い合わせ</span>
+                  </Link>
+                </motion.div>
+                
+                <motion.div
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full flex justify-center"
+                >
+                  <Link href="/contact/?type=business" className="bg-[var(--primary-green-light)] text-[var(--text-dark)] hover:bg-[var(--primary-green)] text-lg px-16! md:px-32! py-4 shadow-md flex! items-center justify-center gap-2 whitespace-nowrap transition-all w-full md:w-auto font-bold rounded">
+                    <Mail className="w-6 h-6 shrink-0" />
+                    <span>法人お問い合わせ</span>
                   </Link>
                 </motion.div>
               </div>

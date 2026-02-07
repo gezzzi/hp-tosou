@@ -62,27 +62,24 @@ export default function JunkRemovalServicePage() {
                 また、草刈り機を使用した除草や、高圧洗浄機を使った清掃業務など、幅広く対応いたします。
               </p>
               
-                <div className="mt-10 bg-[var(--primary-green)]/10 rounded-xl p-6 border-l-4 border-[var(--primary-green)] text-left max-w-2xl mx-auto">
-                  <h3 className="font-bold text-[var(--text-dark)] mb-4 text-xl md:text-2xl text-center">こんなお困りありませんか？</h3>
-                  <ul className="text-[var(--text-medium)] space-y-2">
-                  <li className="flex items-start gap-2">
-                    <span className="text-[var(--primary-green)] mt-1">●</span>
-                    大きな家具や家電を処分したい
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-[var(--primary-green)] mt-1">●</span>
-                    重いものを運べない・車がない
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-[var(--primary-green)] mt-1">●</span>
-                    草刈りや高圧洗浄清掃を頼みたい
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-[var(--primary-green)] mt-1">●</span>
-                    お部屋をまるごと片付けたい
-                  </li>
-                </ul>
-              </div>
+                <div className="mt-10 bg-white rounded-lg p-8 border-2 border-[#6fbb18] shadow-md max-w-2xl mx-auto">
+                  <h3 className="text-lg md:text-2xl font-bold text-[var(--text-dark)] mb-6 text-center">こんなお困りありませんか？</h3>
+                  <ul className="grid grid-cols-1 gap-3 text-base text-[var(--text-medium)]">
+                    {[
+                      "大きな家具や家電を処分したい",
+                      "重いものを運べない・車がない",
+                      "草刈りや高圧洗浄清掃を頼みたい",
+                      "お部屋をまるごと片付けたい"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-center gap-2">
+                        <svg className="w-5 h-5 text-[var(--primary-green)] shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
             </div>
           </div>
         </section>
