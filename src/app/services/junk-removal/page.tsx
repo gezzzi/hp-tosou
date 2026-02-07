@@ -97,6 +97,11 @@ export default function JunkRemovalServicePage() {
           <div className="max-w-6xl mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-2xl font-bold text-[var(--text-dark)] mb-4">対応サービス</h2>
+            <div className="flex justify-center gap-2 mb-12">
+              <div className="w-3 h-3 rounded-full bg-[#6fbb18]"></div>
+              <div className="w-3 h-3 rounded-full bg-[#ffea03]"></div>
+              <div className="w-3 h-3 rounded-full bg-[#6fbb18]"></div>
+            </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16">
               {junkServices.map((service, index) => (

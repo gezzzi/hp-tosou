@@ -4,6 +4,7 @@ import "./globals.css";
 import MobileFloatingCTA from "@/components/MobileFloatingCTA";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import FloatingCircles from "@/components/FloatingCircles";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
@@ -66,6 +67,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={`${notoSansJP.variable} ${mPlus1p.variable} ${mochiyPopPOne.variable} antialiased relative`}>
+        <ScrollToTop />
         <GoogleAnalytics />
         {/* ベースの白背景 */}
         <div className="fixed inset-0 bg-white -z-20" />

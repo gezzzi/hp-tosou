@@ -164,6 +164,11 @@ export default function PricingContent() {
           </div>
         </div>
       </section>
+      
+      {/* bg-light -> transparent (Wave at bottom) */}
+      <div className="bg-transparent">
+        <WaveDivider color="var(--bg-light)" flip />
+      </div>
     </>
   );
 }

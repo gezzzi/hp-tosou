@@ -62,25 +62,22 @@ export default function PaintingServicePage() {
                   お客様のご要望・ご予算に応じて最適なプランをご提案します。
                 </p>
                 
-                <div className="mt-10 bg-[var(--primary-green)]/10 rounded-xl p-6 border-l-4 border-[var(--primary-green)] text-left max-w-2xl mx-auto">
-                  <h3 className="font-bold text-[var(--text-dark)] mb-4 text-xl md:text-2xl text-center">こんなお困りありませんか？</h3>
-                  <ul className="text-[var(--text-medium)] space-y-2">
-                    <li className="flex items-start gap-2">
-                      <span className="text-[var(--primary-green)] mt-1">●</span>
-                      外壁の汚れやひび割れが気になる
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-[var(--primary-green)] mt-1">●</span>
-                      前回の塗装から10年以上経過している
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-[var(--primary-green)] mt-1">●</span>
-                      屋根の錆や色褪せを直したい
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-[var(--primary-green)] mt-1">●</span>
-                      信頼できる地元の職人に頼みたい
-                    </li>
+                <div className="mt-10 bg-white rounded-lg p-8 border-2 border-[#6fbb18] shadow-md max-w-2xl mx-auto">
+                  <h3 className="text-lg md:text-2xl font-bold text-[var(--text-dark)] mb-6 text-center">こんなお困りありませんか？</h3>
+                  <ul className="grid grid-cols-1 gap-3 text-base text-[var(--text-medium)]">
+                    {[
+                      "外壁の汚れやひび割れが気になる",
+                      "前回の塗装から10年以上経過している",
+                      "屋根の錆や色褪せを直したい",
+                      "信頼できる地元の職人に頼みたい"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-center gap-2">
+                        <svg className="w-5 h-5 text-[var(--primary-green)] shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                        {item}
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -97,6 +94,11 @@ export default function PaintingServicePage() {
           <div className="max-w-6xl mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-2xl font-bold text-[var(--text-dark)] mb-4">対応サービス</h2>
+            <div className="flex justify-center gap-2 mb-12">
+              <div className="w-3 h-3 rounded-full bg-[#6fbb18]"></div>
+              <div className="w-3 h-3 rounded-full bg-[#ffea03]"></div>
+              <div className="w-3 h-3 rounded-full bg-[#6fbb18]"></div>
+            </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16">
               {paintingServices.map((service, index) => (

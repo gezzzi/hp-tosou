@@ -155,7 +155,7 @@ export default function Footer() {
       </motion.button>
 
       {/* コピーライト */}
-      <div className="border-t border-[var(--border-light)] py-4" style={{ backgroundColor: '#038717' }}>
+      <div className="border-t border-[var(--border-light)] py-4 bg-[var(--secondary-green)]">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <p className="text-base text-white">
             © {currentYear} 株式会社マルヨ
