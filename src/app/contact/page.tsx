@@ -70,7 +70,7 @@ export default function ContactPage() {
             bgImage="/pic/hd/contact-hd.jpg"
           />
 
-          <section className="py-16 bg-white">
+          <section className="py-16 bg-transparent">
             <div className="max-w-2xl mx-auto px-4 text-center">
               <div className="bg-[var(--primary-green)]/10 rounded-lg p-8 lg:p-12 border-l-4 border-[var(--primary-green)]">
                 <div className="mb-6">
@@ -111,7 +111,7 @@ export default function ContactPage() {
           bgImage="/pic/hd/contact-hd.jpg"
         />
 
-        <section className="py-16 bg-white overflow-hidden">
+        <section className="py-16 bg-transparent overflow-hidden">
           <div className="max-w-4xl mx-auto px-4">
             <div className="space-y-16">
               {/* 電話 */}

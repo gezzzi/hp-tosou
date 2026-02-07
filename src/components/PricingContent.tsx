@@ -3,7 +3,7 @@
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import { motion } from "framer-motion";
-import ChevronDivider from "@/components/ChevronDivider";
+import WaveDivider from "@/components/WaveDivider";
 
 export default function PricingContent() {
   return (
@@ -50,12 +50,13 @@ export default function PricingContent() {
         </div>
       </section>
 
-      <div className="bg-[var(--bg-light)]">
-        <ChevronDivider color="#ffffff" />
+      {/* bg-light -> transparent (Wave at top) */}
+      <div className="bg-transparent">
+        <WaveDivider color="var(--bg-light)" flip />
       </div>
 
       {/* 塗装料金 */}
-      <section id="painting" className="py-16 bg-white overflow-hidden">
+      <section id="painting" className="py-16 bg-transparent overflow-hidden">
         <div className="max-w-6xl mx-auto px-4">
           <FadeIn>
             <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[var(--text-dark)] mb-4 text-center">
@@ -108,8 +109,9 @@ export default function PricingContent() {
         </div>
       </section>
 
-      <div className="bg-white">
-        <ChevronDivider color="var(--bg-light)" />
+      {/* transparent -> bg-light (Wave at bottom) */}
+      <div className="bg-transparent">
+        <WaveDivider color="var(--bg-light)" />
       </div>
 
       {/* 不用品回収料金 */}

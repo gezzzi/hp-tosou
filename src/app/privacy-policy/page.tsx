@@ -74,7 +74,7 @@ export default function PrivacyPolicyPage() {
           subtitle="PRIVACY POLICY" 
         />
 
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-transparent">
           <div className="max-w-4xl mx-auto px-4">
             {/* 前文 */}
             <div className="mb-12">

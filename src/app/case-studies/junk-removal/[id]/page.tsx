@@ -60,7 +60,7 @@ export default async function JunkRemovalCaseDetailPage({ params }: { params: Pr
           bgImage="/pic/hd/junk-hd.jpg"
         />
 
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-transparent">
           <div className="max-w-4xl mx-auto px-4">
             <div className="bg-white">
               <div className="relative pl-8 mb-8 md:mb-12">

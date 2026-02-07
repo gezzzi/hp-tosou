@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
 import HomeCTA from "@/components/HomeCTA";
+import WaveDivider from "@/components/WaveDivider";
 import Link from "next/link";
 import Image from "next/image";
 import { BrickWall, Home, Warehouse, Droplets, Menu, Paintbrush, Phone, Search, FileText, CheckCircle, ChevronDown, ChevronRight } from "lucide-react";
@@ -52,7 +53,7 @@ export default function PaintingServicePage() {
         />
 
         {/* イントロダクション */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-transparent">
           <div className="max-w-4xl mx-auto px-4">
             <div className="text-center">
               <div className="flex items-center justify-center mb-4">
@@ -93,14 +94,9 @@ export default function PaintingServicePage() {
             </div>
           </section>
 
-        {/* 区切り 1: Intro -> Services */}
-        <div className="bg-white">
-          <section className="relative w-full h-10 overflow-hidden">
-            <div 
-              className="absolute inset-0 bg-[var(--bg-light)]" 
-              style={{ clipPath: 'polygon(0px 0px, 40% 0px, 50% 100%, 60% 0px, 100% 0px, 100% 100%, 0px 100%)' }}
-            />
-          </section>
+        {/* transparent -> bg-light (Wave at bottom) */}
+        <div className="bg-transparent">
+          <WaveDivider color="var(--bg-light)" />
         </div>
 
         {/* サービス一覧 */}
@@ -145,18 +141,13 @@ export default function PaintingServicePage() {
           </div>
         </section>
 
-        {/* 区切り 2: Services -> Flow */}
-        <div className="bg-[var(--bg-light)]">
-          <section className="relative w-full h-10 overflow-hidden">
-            <div 
-              className="absolute inset-0 bg-white" 
-              style={{ clipPath: 'polygon(0px 0px, 40% 0px, 50% 100%, 60% 0px, 100% 0px, 100% 100%, 0px 100%)' }}
-            />
-          </section>
+        {/* bg-light -> transparent (Wave at top) */}
+        <div className="bg-transparent">
+          <WaveDivider color="var(--bg-light)" flip />
         </div>
 
         {/* 施工の流れ */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-transparent">
           <div className="max-w-6xl mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-2xl font-bold text-[var(--text-dark)] mb-4">ご依頼の流れ</h2>

@@ -50,7 +50,7 @@ export default function PaintingCaseList() {
     : paintingCases.filter(c => c.tags.includes(selectedTag));
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-transparent">
       <div className="max-w-6xl mx-auto px-4">
         {/* フィルター */}
         <div className="mb-8 flex justify-end items-center gap-4">

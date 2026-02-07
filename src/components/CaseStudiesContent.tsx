@@ -27,7 +27,7 @@ export default function CaseStudiesContent() {
   ];
 
   return (
-    <section className="py-16 bg-white overflow-hidden">
+    <section className="py-16 bg-transparent overflow-hidden">
       <div className="max-w-6xl mx-auto px-4">
         <FadeIn>
           <div className="text-center mb-16">

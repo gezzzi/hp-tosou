@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
+import WaveDivider from "@/components/WaveDivider";
 
 export default function AboutContent() {
   const companyInfo = [
@@ -43,7 +44,7 @@ export default function AboutContent() {
   return (
     <>
       {/* 代表挨拶 */}
-      <section className="py-16 bg-white overflow-hidden">
+      <section className="py-16 bg-transparent overflow-hidden">
         <div className="max-w-6xl mx-auto px-4">
           <FadeIn>
             <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[var(--text-dark)] mb-6 text-center">代表者挨拶</h2>
@@ -89,6 +90,11 @@ export default function AboutContent() {
         </div>
       </section>
 
+      {/* transparent -> bg-light (Wave at bottom) */}
+      <div className="bg-transparent">
+        <WaveDivider color="var(--bg-light)" />
+      </div>
+
       {/* 会社情報 */}
       <section className="py-16 bg-[var(--bg-light)] overflow-hidden">
         <div className="max-w-6xl mx-auto px-4">
@@ -123,8 +129,13 @@ export default function AboutContent() {
         </div>
       </section>
 
+      {/* bg-light -> transparent (Wave at top) */}
+      <div className="bg-transparent">
+        <WaveDivider color="var(--bg-light)" flip />
+      </div>
+
       {/* ご依頼の流れ */}
-      <section className="py-16 bg-white overflow-hidden">
+      <section className="py-16 bg-transparent overflow-hidden">
         <div className="max-w-6xl mx-auto px-4">
           <FadeIn>
             <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[var(--text-dark)] mb-6 text-center">ご依頼の流れ</h2>
