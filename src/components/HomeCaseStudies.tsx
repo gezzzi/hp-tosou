@@ -17,7 +17,7 @@ export default function HomeCaseStudies() {
       description: '築20年の戸建て住宅の外壁塗装。色褪せと一部剥がれが見られたため、全面塗り替えを実施しました。',
       image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1920&h=1440&fit=crop&q=90',
       imageMobile: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200&h=1600&fit=crop&q=90',
-      href: '/case-studies/painting/1',
+      href: '/case-studies/1',
       color: 'primary'
     },
     {
@@ -27,7 +27,7 @@ export default function HomeCaseStudies() {
       description: 'トタン屋根の塗り替え工事。錆止め処理後、遮熱塗料で仕上げました。',
       image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&h=1440&fit=crop&q=90',
       imageMobile: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=1600&fit=crop&q=90',
-      href: '/case-studies/painting/2',
+      href: '/case-studies/4',
       color: 'primary'
     },
     {
@@ -37,7 +37,7 @@ export default function HomeCaseStudies() {
       description: '引っ越しに伴う不用品の回収。2トントラック1台分の家具・家電を回収しました。',
       image: '/pic/truck.webp',
       imageMobile: '/pic/truck.webp',
-      href: '/case-studies/junk-removal/1',
+      href: '/case-studies/2',
       color: 'junk'
     },
     {
@@ -47,7 +47,7 @@ export default function HomeCaseStudies() {
       description: '長年放置されていたお庭の草刈りと、外構・土間の高圧洗浄清掃。見違えるほど綺麗になりました。',
       image: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1920&h=1440&fit=crop&q=90',
       imageMobile: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1200&h=1600&fit=crop&q=90',
-      href: '/case-studies/junk-removal/2',
+      href: '/case-studies/3',
       color: 'junk'
     },
     {
@@ -57,7 +57,7 @@ export default function HomeCaseStudies() {
       description: 'ベランダの防水塗装とサッシ周りのシーリング打ち替え。雨漏り対策を万全にしました。',
       image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&h=1440&fit=crop&q=90',
       imageMobile: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&h=1600&fit=crop&q=90',
-      href: '/case-studies/painting/3',
+      href: '/case-studies/6',
       color: 'primary'
     },
     {
@@ -67,7 +67,7 @@ export default function HomeCaseStudies() {
       description: 'お部屋の片付けから不用品回収まで一貫して対応。プライバシーに配慮して作業しました。',
       image: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=1920&h=1440&fit=crop&q=90',
       imageMobile: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=1200&h=1600&fit=crop&q=90',
-      href: '/case-studies/junk-removal/3',
+      href: '/case-studies/5',
       color: 'junk'
     },
   ];

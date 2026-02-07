@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
 import HomeCTA from "@/components/HomeCTA";
-import CaseStudiesContent from "@/components/CaseStudiesContent";
+import ServiceCaseList from "@/components/ServiceCaseList";
 
 export const metadata = {
   title: "サービス事例 | 株式会社マルヨ",
@@ -19,7 +19,7 @@ export default function CaseStudiesPage() {
           subtitle="WORKS"
           bgImage="/pic/hd/service-hd.jpg"
         />
-        <CaseStudiesContent />
+        <ServiceCaseList />
         <HomeCTA />
       </main>
       <Footer />

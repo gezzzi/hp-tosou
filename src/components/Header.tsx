@@ -12,11 +12,8 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
-  const [isCaseStudiesOpen, setIsCaseStudiesOpen] = useState(false);
-  const [isMobileCaseStudiesOpen, setIsMobileCaseStudiesOpen] = useState(false);
   const pathname = usePathname();
   const servicesDropdownRef = useRef<HTMLLIElement>(null);
-  const caseStudiesDropdownRef = useRef<HTMLLIElement>(null);
 
   // メニューが開いているときスクロールを無効化
   useEffect(() => {
@@ -36,9 +33,6 @@ export default function Header() {
       if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target as Node)) {
         setIsServicesOpen(false);
       }
-      if (caseStudiesDropdownRef.current && !caseStudiesDropdownRef.current.contains(event.target as Node)) {
-        setIsCaseStudiesOpen(false);
-      }
     }
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
@@ -46,6 +40,7 @@ export default function Header() {
 
   const navItems = [
     { label: 'ホーム', href: '/' },
+    { label: 'サービス事例', href: '/case-studies/' },
     { label: '料金案内', href: '/pricing/' },
     { label: '会社案内', href: '/about/' },
     { label: 'よくあるご質問', href: '/faq/' },
@@ -57,11 +52,6 @@ export default function Header() {
     { label: '不用品回収・清掃', href: '/services/junk-removal/' },
   ];
 
-  const caseStudiesItems = [
-    { label: '塗装事例', href: '/case-studies/painting/' },
-    { label: '不用品回収・清掃事例', href: '/case-studies/junk-removal/' },
-  ];
-
   const isActive = (href: string) => {
     if (href === '/') {
       return pathname === '/';
@@ -71,10 +61,6 @@ export default function Header() {
 
   const isServicesActive = () => {
     return pathname.startsWith('/services');
-  };
-
-  const isCaseStudiesActive = () => {
-    return pathname.startsWith('/case-studies');
   };
 
   return (
@@ -222,63 +208,6 @@ export default function Header() {
               </AnimatePresence>
             </li>
 
-            {/* サービス事例（ドロップダウン） */}
-            <li
-              className="flex-1 border-l border-gray-300 last:border-r relative group"
-              ref={caseStudiesDropdownRef}
-              onMouseEnter={() => setIsCaseStudiesOpen(true)}
-              onMouseLeave={() => setIsCaseStudiesOpen(false)}
-            >
-              <Link
-                href="/case-studies/"
-                className={`flex items-center justify-center py-4 text-lg font-bold transition-all w-full h-full relative ${
-                  isCaseStudiesActive()
-                    ? 'text-[var(--primary-green)] bg-[var(--primary-green)]/5'
-                    : 'text-[var(--text-dark)] hover:text-[var(--primary-green)] hover:bg-gray-50'
-                }`}
-              >
-                サービス事例
-                <ChevronDown className={`ml-1 w-4 h-4 transition-transform duration-300 ${isCaseStudiesOpen ? 'rotate-180' : ''}`} />
-                <motion.div 
-                  className="absolute bottom-0 left-0 right-0 h-1 bg-[var(--primary-green)]"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: isCaseStudiesActive() ? 1 : 0 }}
-                  whileHover={{ scaleX: 1 }}
-                  transition={{ duration: 0.3 }}
-                />
-              </Link>
-
-              {/* ドロップダウンメニュー */}
-              <AnimatePresence>
-                {isCaseStudiesOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 w-64 bg-white shadow-xl border border-[var(--border-light)] overflow-hidden z-[60]"
-                  >
-                    <div className="py-2">
-                      {caseStudiesItems.map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          className={`block px-4 py-3 text-base font-bold transition-all hover:pl-6 ${
-                            isActive(item.href)
-                              ? 'text-[var(--primary-green)] bg-[var(--primary-green)]/5'
-                              : 'text-[var(--text-dark)] hover:bg-[var(--bg-light)] hover:text-[var(--primary-green)]'
-                          }`}
-                          onClick={() => setIsCaseStudiesOpen(false)}
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </li>
-
             {/* 他のナビゲーション項目 */}
             {navItems.slice(1).map((item) => (
               <li key={item.href} className="flex-1 border-l border-gray-300 last:border-r">
@@ -370,56 +299,6 @@ export default function Header() {
                     }`}
                   >
                     {serviceItems.map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        className={`block pl-6 font-medium py-3 border-b border-[var(--border-light)] ${
-                          isActive(item.href)
-                            ? 'text-[var(--primary-green)]'
-                            : 'text-[var(--text-dark)] hover:text-[var(--primary-green)]'
-                        }`}
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                </li>
-
-                {/* サービス事例（アコーディオン） */}
-                <li>
-                  <div className="flex items-center justify-between border-b border-[var(--border-light)]">
-                    <Link
-                      href="/case-studies/"
-                      className={`flex-1 font-medium py-3 ${
-                        isCaseStudiesActive()
-                          ? 'text-[var(--primary-green)]'
-                          : 'text-[var(--text-dark)] hover:text-[var(--primary-green)]'
-                      }`}
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      サービス事例
-                    </Link>
-                    <button
-                      onClick={() => setIsMobileCaseStudiesOpen(!isMobileCaseStudiesOpen)}
-                      className="px-3 py-3"
-                      aria-label="サブメニューを開く"
-                    >
-                      <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-200 ${isMobileCaseStudiesOpen ? 'rotate-180' : ''} ${
-                          isCaseStudiesActive() ? 'text-[var(--primary-green)]' : 'text-[var(--text-dark)]'
-                        }`}
-                      />
-                    </button>
-                  </div>
-
-                  {/* サブメニュー */}
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ${
-                      isMobileCaseStudiesOpen ? 'max-h-60' : 'max-h-0'
-                    }`}
-                  >
-                    {caseStudiesItems.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}

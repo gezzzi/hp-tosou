@@ -2,53 +2,114 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import Image from "next/image";
-import Link from "next/link";
-import { Clock, MapPin, Tag, ChevronLeft } from "lucide-react";
+import { Clock } from "lucide-react";
 import { notFound } from "next/navigation";
 import ImageModalWrapper from "@/components/ImageModalWrapper";
 
-const junkRemovalCases = [
+const allCases = [
   {
     id: '1',
+    type: 'painting' as const,
+    title: '外壁塗装施工例',
+    description: '築20年の戸建て住宅の外壁塗装。色褪せと一部剥がれが見られたため、全面塗り替えを実施しました。',
+    image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200&h=800&fit=crop',
+    tags: ['外壁塗装'],
+    date: '2024年1月15日',
+  },
+  {
+    id: '2',
+    type: 'junk' as const,
     title: '不用品回収',
     description: '引っ越しに伴う不用品の回収。2トントラック1台分の家具・家電を回収しました。',
     image: '/pic/truck.webp',
     tags: ['不用品回収'],
-    date: '2024年2月10日'
+    date: '2024年2月10日',
   },
   {
-    id: '2',
+    id: '3',
+    type: 'junk' as const,
     title: '高圧洗浄清掃・草刈り作業',
     description: '長年放置されていたお庭の草刈りと、外構・土間の高圧洗浄清掃。見違えるほど綺麗になりました。',
     image: '/pic/hd/junk-hd.jpg',
     tags: ['清掃'],
-    date: '2024年1月25日'
+    date: '2024年1月25日',
   },
   {
-    id: '3',
+    id: '4',
+    type: 'painting' as const,
+    title: '屋根塗装施工例',
+    description: 'トタン屋根の塗り替え工事。錆止め処理後、遮熱塗料で仕上げました。',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=800&fit=crop',
+    tags: ['屋根塗装'],
+    date: '2023年12月20日',
+  },
+  {
+    id: '5',
+    type: 'junk' as const,
     title: 'ゴミ屋敷清掃',
     description: 'お部屋の片付けから不用品回収まで一貫して対応。プライバシーに配慮して作業しました。',
     image: '/pic/truck.webp',
     tags: ['清掃', '不用品回収'],
-    date: '2023年12月15日'
+    date: '2023年12月15日',
   },
   {
-    id: '4',
+    id: '6',
+    type: 'painting' as const,
+    title: '防水塗装・シーリング工事',
+    description: 'ベランダの防水塗装とサッシ周りのシーリング打ち替え。雨漏り対策を万全にしました。',
+    image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&h=800&fit=crop',
+    tags: ['防水塗装'],
+    date: '2023年11月5日',
+  },
+  {
+    id: '7',
+    type: 'painting' as const,
+    title: 'アパート外壁・屋根塗装',
+    description: 'アパート一棟の丸ごと塗装。入居率アップを目指し、清潔感のある配色に仕上げました。',
+    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&h=800&fit=crop',
+    tags: ['外壁塗装', '屋根塗装'],
+    date: '2023年10月12日',
+  },
+  {
+    id: '8',
+    type: 'junk' as const,
     title: '大型家具回収',
     description: 'タンス、ベッド、ソファなど大型家具の回収。搬出から処分まですべてお任せいただきました。',
     image: '/pic/hd/service-hd.jpg',
     tags: ['不用品回収'],
-    date: '2023年11月20日'
+    date: '2023年11月20日',
   },
 ];
 
-export default async function JunkRemovalCaseDetailPage({ params }: { params: Promise<{ id: string }> }) {
+const paintingPhotos = [
+  { title: '足場架設', img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=450&fit=crop' },
+  { title: '高圧洗浄', img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=450&fit=crop' },
+  { title: '下塗り作業', img: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&h=450&fit=crop' },
+];
+
+const junkPhotos = [
+  { title: '作業前確認', img: '/pic/hd/junk-hd.jpg' },
+  { title: '搬出・清掃作業', img: '/pic/truck.webp' },
+  { title: '最終確認', img: '/pic/hd/service-hd.jpg' },
+];
+
+function getTagColor(tag: string) {
+  if (tag === '不用品回収') return 'bg-[#166caa]';
+  return 'bg-[#018615]';
+}
+
+export default async function CaseDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const caseItem = junkRemovalCases.find((c) => c.id === id);
+  const caseItem = allCases.find((c) => c.id === id);
 
   if (!caseItem) {
     notFound();
   }
+
+  const isPainting = caseItem.type === 'painting';
+  const bgImage = isPainting ? '/pic/hd/painting-hd.jpg' : '/pic/hd/junk-hd.jpg';
+  const basePhotos = isPainting ? paintingPhotos : junkPhotos;
+  const photos = [...basePhotos, { title: '完了', img: caseItem.image }];
 
   return (
     <>
@@ -56,8 +117,8 @@ export default async function JunkRemovalCaseDetailPage({ params }: { params: Pr
       <main className="main-content">
         <PageHeader
           title={caseItem.title}
-          subtitle="SERVICE CASE STUDY"
-          bgImage="/pic/hd/junk-hd.jpg"
+          subtitle="CASE STUDY"
+          bgImage={bgImage}
         />
 
         <section className="py-16 bg-transparent">
@@ -74,11 +135,9 @@ export default async function JunkRemovalCaseDetailPage({ params }: { params: Pr
                   <div className="flex items-center gap-2">
                     <div className="flex gap-2">
                       {caseItem.tags.map(tag => (
-                        <span 
-                          key={tag} 
-                          className={`text-white px-2 py-0.5 text-xs ${
-                            tag === '不用品回収' ? 'bg-[#166caa]' : 'bg-[#018615]'
-                          }`}
+                        <span
+                          key={tag}
+                          className={`text-white px-2 py-0.5 text-xs ${getTagColor(tag)}`}
                         >
                           {tag}
                         </span>
@@ -100,7 +159,7 @@ export default async function JunkRemovalCaseDetailPage({ params }: { params: Pr
                   className="object-cover"
                 />
               </div>
-              
+
               <div>
                 <div className="prose max-w-none text-(--text-medium) leading-relaxed">
                   {/* メモセクション */}
@@ -127,15 +186,29 @@ export default async function JunkRemovalCaseDetailPage({ params }: { params: Pr
                       <table className="w-full text-base text-left">
                         <tbody>
                           <tr className="border-b border-gray-400">
-                            <th className="w-1/3 px-6 py-4 bg-(--bg-light) font-bold text-(--text-dark) border-r border-gray-400">サービス内容</th>
+                            <th className="w-1/3 px-6 py-4 bg-(--bg-light) font-bold text-(--text-dark) border-r border-gray-400">
+                              {isPainting ? '施工内容' : 'サービス内容'}
+                            </th>
                             <td className="px-6 py-4 text-(--text-medium)">{caseItem.tags.join('、')}</td>
                           </tr>
                           <tr className="border-b border-gray-400">
-                            <th className="px-6 py-4 bg-(--bg-light) font-bold text-(--text-dark) border-r border-gray-400">作業時間</th>
-                            <td className="px-6 py-4 text-(--text-medium)">約4時間</td>
+                            <th className="px-6 py-4 bg-(--bg-light) font-bold text-(--text-dark) border-r border-gray-400">
+                              {isPainting ? '工期' : '作業時間'}
+                            </th>
+                            <td className="px-6 py-4 text-(--text-medium)">
+                              {isPainting ? '約2週間' : '約4時間'}
+                            </td>
                           </tr>
+                          {isPainting && (
+                            <tr className="border-b border-gray-400">
+                              <th className="px-6 py-4 bg-(--bg-light) font-bold text-(--text-dark) border-r border-gray-400">使用塗料</th>
+                              <td className="px-6 py-4 text-(--text-medium)">シリコン系塗料</td>
+                            </tr>
+                          )}
                           <tr>
-                            <th className="px-6 py-4 bg-(--bg-light) font-bold text-(--text-dark) border-r border-gray-400">作業時期</th>
+                            <th className="px-6 py-4 bg-(--bg-light) font-bold text-(--text-dark) border-r border-gray-400">
+                              {isPainting ? '施工時期' : '作業時期'}
+                            </th>
                             <td className="px-6 py-4 text-(--text-medium)">{caseItem.date}</td>
                           </tr>
                         </tbody>
@@ -150,13 +223,8 @@ export default async function JunkRemovalCaseDetailPage({ params }: { params: Pr
                       現場写真
                     </h3>
                     <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                      {[
-                        { title: '作業前確認', img: '/pic/hd/junk-hd.jpg' },
-                        { title: '搬出・清掃作業', img: '/pic/truck.webp' },
-                        { title: '最終確認', img: '/pic/hd/service-hd.jpg' },
-                        { title: '完了', img: caseItem.image },
-                      ].map((step, i, array) => (
-                        <ImageModalWrapper key={i} images={array.map(s => s.img)} initialIndex={i}>
+                      {photos.map((step, i) => (
+                        <ImageModalWrapper key={i} images={photos.map(s => s.img)} initialIndex={i}>
                           <div className="bg-white overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.1)] group cursor-pointer h-full">
                             <div className="relative h-40 sm:h-64 overflow-hidden">
                               <Image
