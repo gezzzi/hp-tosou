@@ -10,6 +10,7 @@ import HomeCompany from "@/components/HomeCompany";
 import HomeReviews from "@/components/HomeReviews";
 import HomeCTA from "@/components/HomeCTA";
 import Footer from "@/components/Footer";
+import WorkFlow from "@/components/WorkFlow";
 
 export default function Home() {
   return (
@@ -43,6 +44,7 @@ export default function Home() {
           <WaveDivider color="var(--bg-light)" />
         </div>
         <HomeReviews />
+        <WorkFlow />
         <HomeCTA />
       </main>
       <Footer />

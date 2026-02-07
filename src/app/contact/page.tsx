@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
+import WorkFlow from "@/components/WorkFlow";
 import FadeIn from "@/components/FadeIn";
 
 // Formspreeのフォームエンドポイント
@@ -95,6 +96,7 @@ export default function ContactPage() {
               </div>
             </div>
           </section>
+          <WorkFlow />
         </main>
         <Footer />
       </>
@@ -317,7 +319,8 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
-      </main>
+        <WorkFlow />
+        </main>
       <Footer />
     </>
   );

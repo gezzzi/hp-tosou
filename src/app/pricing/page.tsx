@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
 import HomeCTA from "@/components/HomeCTA";
+import WorkFlow from "@/components/WorkFlow";
 import PricingContent from "@/components/PricingContent";
 
 export const metadata = {
@@ -20,6 +21,7 @@ export default function PricingPage() {
           bgImage="/pic/hd/pricing-hd.jpg"
         />
         <PricingContent />
+        <WorkFlow />
         <HomeCTA />
       </main>
       <Footer />

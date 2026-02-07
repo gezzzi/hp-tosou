@@ -3,6 +3,7 @@ import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
 import HomeCTA from "@/components/HomeCTA";
 import ServiceCaseList from "@/components/ServiceCaseList";
+import WorkFlow from "@/components/WorkFlow";
 
 export const metadata = {
   title: "実績 | 株式会社マルヨ",
@@ -20,6 +21,7 @@ export default function CaseStudiesPage() {
           bgImage="/pic/hd/service-hd.jpg"
         />
         <ServiceCaseList />
+        <WorkFlow />
         <HomeCTA />
       </main>
       <Footer />

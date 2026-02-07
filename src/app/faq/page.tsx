@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
 import HomeCTA from "@/components/HomeCTA";
+import WorkFlow from "@/components/WorkFlow";
 import FAQContent from "@/components/FAQContent";
 
 export const metadata = {
@@ -20,6 +21,7 @@ export default function FAQPage() {
           bgImage="/pic/hd/faq-hd.jpg"
         />
         <FAQContent />
+        <WorkFlow />
         <HomeCTA />
       </main>
       <Footer />

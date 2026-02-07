@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
 import HomeCTA from "@/components/HomeCTA";
+import WorkFlow from "@/components/WorkFlow";
 import Link from "next/link";
 
 export const metadata = {
@@ -129,6 +130,7 @@ export default function PrivacyPolicyPage() {
           </div>
         </section>
 
+        <WorkFlow />
         <HomeCTA />
       </main>
       <Footer />

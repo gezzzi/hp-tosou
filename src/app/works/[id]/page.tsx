@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Clock } from "lucide-react";
 import { notFound } from "next/navigation";
 import ImageModalWrapper from "@/components/ImageModalWrapper";
+import WorkFlow from "@/components/WorkFlow";
 
 const allCases = [
   {
@@ -247,6 +248,7 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ id:
             </div>
           </div>
         </section>
+        <WorkFlow />
       </main>
       <Footer />
     </>

@@ -1,15 +1,16 @@
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
+import WorkFlow from "@/components/WorkFlow";
 import HomeCTA from "@/components/HomeCTA";
 import WaveDivider from "@/components/WaveDivider";
 import Link from "next/link";
 import Image from "next/image";
-import { Truck, Heart, Sparkles, Scissors, CheckCircle, Users, Lock, Phone, Search, FileText, Paintbrush, Droplets, Trash2, Brush, SprayCan, ChevronDown, ChevronRight } from "lucide-react";
+import { Truck, Sparkles, Trash2, ChevronRight } from "lucide-react";
 
 export const metadata = {
   title: "不用品回収・清掃 | 株式会社マルヨ",
-  description: "株式会社マルヨの不用品回収・清掃サービス。追加料金一切なし、自社スタッフが責任を持って対応。草刈りや高圧洗浄機を使った清掃業務もお任せください。",
+  description: "株式会社マルヨの不用品回収・清掃サービス. 追加料金一切なし、自社スタッフが責任を持って対応。草刈りや高圧洗浄機を使った清掃業務もお任せください。",
 };
 
 export default function JunkRemovalServicePage() {
@@ -32,14 +33,6 @@ export default function JunkRemovalServicePage() {
       image: '/pic/header-junk.jpg',
       icon: <Trash2 className="w-16 h-16" />,
     },
-  ];
-
-  const processSteps = [
-    { step: 1, title: 'お問い合わせ', description: 'お電話またはメールでお気軽にご連絡ください。', icon: <Phone className="w-24 h-24" /> },
-    { step: 2, title: '現地調査・お見積り', description: '現地を確認し、無料でお見積りをご提示します。', icon: <Search className="w-24 h-24" /> },
-    { step: 3, title: 'ご契約', description: '内容にご納得いただけましたら契約となります。', icon: <FileText className="w-24 h-24" /> },
-    { step: 4, title: '作業開始', description: '自社スタッフが責任を持って丁寧に作業いたします。', icon: <Paintbrush className="w-24 h-24" /> },
-    { step: 5, title: '作業完了', description: '仕上がりをご確認いただき、完了となります。', icon: <CheckCircle className="w-24 h-24" /> },
   ];
 
   return (
@@ -146,47 +139,10 @@ export default function JunkRemovalServicePage() {
           <WaveDivider color="var(--bg-light)" flip />
         </div>
 
-        {/* 施工の流れ */}
-        <section className="py-16 bg-transparent">
-          <div className="max-w-6xl mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl font-bold text-[var(--text-dark)] mb-4">ご依頼の流れ</h2>
-            </div>
-            <div className="relative">
-              <div className="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-[var(--primary-green)]/20" />
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-                {processSteps.map((item) => (
-                  <div key={item.step} className="relative text-center">
-                    <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 bg-[#038717] text-white font-bold text-3xl relative z-10">
-                      {item.step}
-                    </div>
-                    <div className="relative py-4">
-                      <div className="absolute inset-0 flex items-center justify-center text-[var(--primary-green)] opacity-20 pointer-events-none">
-                        {item.icon}
-                      </div>
-                      <div className="relative z-10">
-                        <h3 className="text-xl font-bold text-[var(--text-dark)] mb-2">
-                          {item.title}
-                        </h3>
-                        <p className="text-base text-[var(--text-medium)] leading-relaxed">{item.description}</p>
-                      </div>
-                    </div>
-                    {item.step < processSteps.length && (
-                      <div className="md:hidden flex justify-center py-4">
-                        <ChevronDown className="w-8 h-8 text-[var(--primary-green)]/30" />
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
+        <WorkFlow />
         <HomeCTA />
       </main>
       <Footer />
     </>
   );
 }
-

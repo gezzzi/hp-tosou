@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
 import HomeCTA from "@/components/HomeCTA";
+import WorkFlow from "@/components/WorkFlow";
 import ServicesContent from "@/components/ServicesContent";
 
 export const metadata = {
@@ -20,6 +21,7 @@ export default function ServicesPage() {
           bgImage="/pic/hd/service-hd.jpg"
         />
         <ServicesContent />
+        <WorkFlow />
         <HomeCTA />
       </main>
       <Footer />
