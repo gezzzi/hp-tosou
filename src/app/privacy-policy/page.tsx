@@ -1,9 +1,8 @@
 import Header from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import Footer from "@/components/Footer";
-import HomeCTA from "@/components/HomeCTA";
-import WorkFlow from "@/components/WorkFlow";
 import Link from "next/link";
+import WaveDivider from "@/components/WaveDivider";
 
 export const metadata = {
   title: "プライバシーポリシー | 株式会社マルヨ",
@@ -75,7 +74,12 @@ export default function PrivacyPolicyPage() {
           subtitle="PRIVACY POLICY" 
         />
 
-        <section className="py-16 bg-transparent">
+        {/* transparent -> bg-[#f7f7f5] (Wave at bottom) */}
+        <div className="bg-transparent">
+          <WaveDivider color="#f7f7f5" />
+        </div>
+
+        <section className="py-16 bg-[#f7f7f5]">
           <div className="max-w-4xl mx-auto px-4">
             {/* 前文 */}
             <div className="mb-12">
@@ -102,14 +106,14 @@ export default function PrivacyPolicyPage() {
                     </ul>
                   )}
                   {section.note && (
-                    <div className="bg-[var(--primary-green)]/5 border-l-4 border-[var(--primary-green)] p-4 rounded-r-lg">
+                    <div className="bg-white p-4 rounded-lg shadow-sm">
                       <p className="text-[var(--text-dark)] font-medium text-sm">
                         ※ {section.note}
                       </p>
                     </div>
                   )}
                   {section.contactInfo && (
-                    <div className="bg-[var(--bg-light)] rounded-lg p-6 mt-4">
+                    <div className="bg-white rounded-lg p-6 mt-4 shadow-sm">
                       <p className="font-bold text-[var(--text-dark)] mb-2">株式会社マルヨ</p>
                       <p className="text-sm text-[var(--text-medium)] mb-1">電話：054-552-8798</p>
                       <p className="text-sm text-[var(--text-medium)] mb-1">受付時間：平日 8:00〜17:00</p>
@@ -130,8 +134,10 @@ export default function PrivacyPolicyPage() {
           </div>
         </section>
 
-        <WorkFlow />
-        <HomeCTA />
+        {/* bg-[#f7f7f5] -> transparent (Wave at top, flipped) */}
+        <div className="bg-transparent">
+          <WaveDivider color="#f7f7f5" flip />
+        </div>
       </main>
       <Footer />
     </>
