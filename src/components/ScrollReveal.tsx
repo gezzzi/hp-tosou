@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, HTMLMotionProps } from 'framer-motion';
-import { ReactNode } from 'react';
+import { ReactNode, useState, useEffect } from 'react';
 
 interface ScrollRevealProps extends HTMLMotionProps<'div'> {
   children: ReactNode;
@@ -25,6 +25,14 @@ export default function ScrollReveal({
   margin = "-100px",
   ...props
 }: ScrollRevealProps) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
+
+  const resolvedMargin = isMobile ? "-50px" : margin;
+
   const directions = {
     up: { y: distance, x: 0 },
     down: { y: -distance, x: 0 },
@@ -51,7 +59,7 @@ export default function ScrollReveal({
         ...directions[direction],
         ...(scale ? { scale: scaleFrom } : {}),
       }}
-      viewport={{ once: false, margin: margin }}
+      viewport={{ once: false, margin: resolvedMargin }}
       transition={{
         duration: duration,
         delay: delay,

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, HTMLMotionProps } from 'framer-motion';
-import { ReactNode } from 'react';
+import { ReactNode, useState, useEffect } from 'react';
 
 interface FadeInProps extends HTMLMotionProps<'div'> {
   children: ReactNode;
@@ -17,6 +17,12 @@ export default function FadeIn({
   duration = 0.5,
   ...props
 }: FadeInProps) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
+
   const directions = {
     up: { y: 20, x: 0 },
     down: { y: -20, x: 0 },
@@ -36,7 +42,7 @@ export default function FadeIn({
         x: 0,
         y: 0,
       }}
-      viewport={{ once: true, margin: "-200px" }}
+      viewport={{ once: true, margin: isMobile ? "-50px" : "-200px" }}
       transition={{
         duration: duration,
         delay: delay,
