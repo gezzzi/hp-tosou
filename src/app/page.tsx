@@ -44,6 +44,10 @@ export default function Home() {
           <WaveDivider color="var(--bg-light)" />
         </div>
         <HomeReviews />
+        {/* bg-light -> transparent (Wave at top) */}
+        <div className="bg-transparent">
+          <WaveDivider color="var(--bg-light)" flip />
+        </div>
         <WorkFlow />
         <HomeCTA />
       </main>

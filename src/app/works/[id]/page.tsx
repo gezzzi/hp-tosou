@@ -6,6 +6,7 @@ import { Clock } from "lucide-react";
 import { notFound } from "next/navigation";
 import ImageModalWrapper from "@/components/ImageModalWrapper";
 import WorkFlow from "@/components/WorkFlow";
+import WaveDivider from "@/components/WaveDivider";
 
 const allCases = [
   {
@@ -122,9 +123,14 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ id:
           bgImage={bgImage}
         />
 
-        <section className="py-16 bg-transparent">
+        {/* transparent -> bg-light (Wave at bottom) */}
+        <div className="bg-transparent">
+          <WaveDivider color="var(--bg-light)" />
+        </div>
+
+        <section className="py-16 bg-[#f8f9fa] relative z-10">
           <div className="max-w-4xl mx-auto px-4">
-            <div className="bg-white">
+            <div className="bg-[#f8f9fa]">
               <div className="relative pl-8 mb-8 md:mb-12">
                 <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#018615]"></div>
                 <div className="absolute left-2 top-0 bottom-0 w-0.5 bg-[#018615]"></div>
@@ -226,7 +232,7 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ id:
                     <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                       {photos.map((step, i) => (
                         <ImageModalWrapper key={i} images={photos.map(s => s.img)} initialIndex={i}>
-                          <div className="bg-white overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.1)] group cursor-pointer h-full">
+                          <div className="bg-white overflow-hidden group cursor-pointer h-full">
                             <div className="relative h-40 sm:h-64 overflow-hidden">
                               <Image
                                 src={step.img}
@@ -248,6 +254,12 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ id:
             </div>
           </div>
         </section>
+
+        {/* bg-light -> transparent (Wave at top) */}
+        <div className="bg-transparent">
+          <WaveDivider color="var(--bg-light)" flip />
+        </div>
+
         <WorkFlow />
       </main>
       <Footer />
