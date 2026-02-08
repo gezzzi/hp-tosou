@@ -73,7 +73,6 @@ export default function HomeCaseStudies() {
   ];
 
   const [isMobile, setIsMobile] = useState(false);
-  const [isDragging, setIsDragging] = useState(false);
 
   // モバイル判定
   useEffect(() => {
@@ -111,22 +110,16 @@ export default function HomeCaseStudies() {
         <div className="overflow-hidden -mx-4">
           <motion.div
             className="flex gap-4 md:gap-6"
-            drag={isMobile ? "x" : false}
-            dragConstraints={{ left: -totalDistance, right: 0 }}
-            dragElastic={0.1}
-            dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
-            onDragStart={() => setIsDragging(true)}
-            onDragEnd={() => setIsDragging(false)}
-            animate={!isDragging ? {
+            animate={{
               x: [0, -totalDistance]
-            } : undefined}
-            transition={!isDragging ? {
+            }}
+            transition={{
               x: {
                 duration: isMobile ? cases.length * 6 : cases.length * 3,
                 repeat: Infinity,
                 ease: "linear"
               }
-            } : undefined}
+            }}
           >
             {[...cases, ...cases].map((item, index) => (
               <Link
