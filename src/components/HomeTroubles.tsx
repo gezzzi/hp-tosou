@@ -1,7 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
 import { HelpCircle } from 'lucide-react';
 import FadeIn from './FadeIn';
 
@@ -17,6 +16,8 @@ export default function HomeTroubles() {
 
   // 2列表示（384px 〜 767px）かどうかを判定する
   const [isTwoColumn, setIsTwoColumn] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const mql = window.matchMedia('(min-width: 384px) and (max-width: 767px)');
@@ -24,6 +25,21 @@ export default function HomeTroubles() {
     const handler = (e: MediaQueryListEvent) => setIsTwoColumn(e.matches);
     mql.addEventListener('change', handler);
     return () => mql.removeEventListener('change', handler);
+  }, []);
+
+  // IntersectionObserverでビューポート内に入ったらアニメーション開始
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+    if (containerRef.current) observer.observe(containerRef.current);
+    return () => observer.disconnect();
   }, []);
 
   // 色の決定ロジック
@@ -44,7 +60,7 @@ export default function HomeTroubles() {
   };
 
   return (
-    <section className="py-16 bg-transparent overflow-hidden relative">
+    <section className="py-16 bg-transparent overflow-visible relative">
       <div className="max-w-4xl mx-auto px-2 md:px-4 relative z-10">
         <FadeIn>
           <div className="max-w-sm md:max-w-[800px] mx-auto text-left mb-12 relative overflow-visible">
@@ -58,20 +74,38 @@ export default function HomeTroubles() {
           </div>
         </FadeIn>
 
-        <div>
+        <div ref={containerRef}>
+          <style>{`
+            @keyframes dropIn {
+              0% {
+                opacity: 0;
+                transform: translateY(-300px) rotate(-10deg);
+              }
+              60% {
+                transform: translateY(15px) rotate(5deg);
+              }
+              80% {
+                transform: translateY(-8px) rotate(-2deg);
+              }
+              100% {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg);
+              }
+            }
+            .circle-drop {
+              opacity: 0;
+              transform: translateY(-300px);
+            }
+            .circle-drop.animate {
+              animation: dropIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            }
+          `}</style>
           <div className="flex flex-wrap justify-center gap-4 md:gap-8 max-w-[340px] sm:max-w-[500px] md:max-w-none mx-auto">
             {troubles.map((trouble, index) => (
-              <motion.div 
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                whileHover={{ 
-                  backgroundColor: "rgba(255, 255, 255, 0.1)",
-                  transition: { duration: 0.3 }
-                }}
-                className="trouble-item relative group w-40 h-40 sm:w-52 sm:h-52 md:w-56 md:h-56 flex items-center justify-center transition-all duration-300"
+                className={`circle-drop${isVisible ? ' animate' : ''} trouble-item relative group w-40 h-40 sm:w-52 sm:h-52 md:w-56 md:h-56 flex items-center justify-center transition-all duration-300`}
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* 画像のデザインを忠実に再現したSVG */}
                 <svg viewBox="0 0 200 200" className="absolute inset-0 w-full h-full drop-shadow-lg">
@@ -92,7 +126,7 @@ export default function HomeTroubles() {
                     <p key={i} className="whitespace-nowrap">{line}</p>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

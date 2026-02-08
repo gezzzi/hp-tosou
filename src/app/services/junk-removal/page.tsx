@@ -4,6 +4,8 @@ import Footer from "@/components/Footer";
 import WorkFlow from "@/components/WorkFlow";
 import HomeCTA from "@/components/HomeCTA";
 import WaveDivider from "@/components/WaveDivider";
+import FadeIn from "@/components/FadeIn";
+import ScrollReveal from "@/components/ScrollReveal";
 import Link from "next/link";
 import Image from "next/image";
 import { Truck, Sparkles, Trash2, ChevronRight } from "lucide-react";
@@ -49,6 +51,7 @@ export default function JunkRemovalServicePage() {
         <section className="py-16 bg-transparent">
           <div className="max-w-4xl mx-auto px-4">
             <div className="text-center">
+                <FadeIn>
                 <div className="flex items-center justify-center mb-4">
                   <h2 className="text-3xl font-bold text-[var(--text-dark)]">暮らしの困った！<br />に対応いたします</h2>
                 </div>
@@ -61,7 +64,9 @@ export default function JunkRemovalServicePage() {
                 不要になった家具や家電等を回収し、処分場へ運搬するサービスです。
                 また、草刈り機を使用した除草や、高圧洗浄機を使った清掃業務など、幅広く対応いたします。
               </p>
-              
+                </FadeIn>
+
+                <FadeIn delay={0.2}>
                 <div className="mt-10 bg-white rounded-lg p-8 border-2 border-[#6fbb18] shadow-md max-w-2xl mx-auto">
                   <h3 className="text-lg md:text-2xl font-bold text-[var(--text-dark)] mb-6 text-center">こんなお困りありませんか？</h3>
                   <ul className="grid grid-cols-1 gap-3 text-base text-[var(--text-medium)]">
@@ -80,6 +85,7 @@ export default function JunkRemovalServicePage() {
                     ))}
                   </ul>
                 </div>
+                </FadeIn>
             </div>
           </div>
         </section>
@@ -92,6 +98,7 @@ export default function JunkRemovalServicePage() {
         {/* サービス一覧 */}
         <section className="py-16 bg-[var(--bg-light)]">
           <div className="max-w-6xl mx-auto px-4">
+            <FadeIn>
             <div className="text-center mb-12">
               <h2 className="text-2xl font-bold text-[var(--text-dark)] mb-4">対応サービス</h2>
             <div className="flex justify-center gap-2 mb-12">
@@ -100,9 +107,11 @@ export default function JunkRemovalServicePage() {
               <div className="w-3 h-3 rounded-full bg-[#6fbb18]"></div>
             </div>
             </div>
+            </FadeIn>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16">
               {junkServices.map((service, index) => (
-                <div key={index} className="text-center">
+                <ScrollReveal key={index} delay={index * 0.15} scale>
+                <div className="text-center">
                   <div className="relative h-48 md:h-56 mb-8 -mx-4 md:mx-0 overflow-hidden">
                     <Image
                       src={service.image}
@@ -131,6 +140,7 @@ export default function JunkRemovalServicePage() {
                     </Link>
                   </div>
                 </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>

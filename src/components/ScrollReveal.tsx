@@ -3,25 +3,33 @@
 import { motion, HTMLMotionProps } from 'framer-motion';
 import { ReactNode } from 'react';
 
-interface FadeInProps extends HTMLMotionProps<'div'> {
+interface ScrollRevealProps extends HTMLMotionProps<'div'> {
   children: ReactNode;
   delay?: number;
   direction?: 'up' | 'down' | 'left' | 'right' | 'none';
   duration?: number;
+  distance?: number;
+  scale?: boolean;
+  scaleFrom?: number;
+  margin?: string;
 }
 
-export default function FadeIn({
+export default function ScrollReveal({
   children,
   delay = 0,
   direction = 'up',
-  duration = 0.5,
+  duration = 0.6,
+  distance = 30,
+  scale = false,
+  scaleFrom = 0.95,
+  margin = "-100px",
   ...props
-}: FadeInProps) {
+}: ScrollRevealProps) {
   const directions = {
-    up: { y: 20, x: 0 },
-    down: { y: -20, x: 0 },
-    left: { x: 20, y: 0 },
-    right: { x: -20, y: 0 },
+    up: { y: distance, x: 0 },
+    down: { y: -distance, x: 0 },
+    left: { x: distance, y: 0 },
+    right: { x: -distance, y: 0 },
     none: { x: 0, y: 0 },
   };
 
@@ -30,13 +38,20 @@ export default function FadeIn({
       initial={{
         opacity: 0,
         ...directions[direction],
+        ...(scale ? { scale: scaleFrom } : {}),
       }}
       whileInView={{
         opacity: 1,
         x: 0,
         y: 0,
+        ...(scale ? { scale: 1 } : {}),
       }}
-      viewport={{ once: true, margin: "-200px" }}
+      exit={{
+        opacity: 0,
+        ...directions[direction],
+        ...(scale ? { scale: scaleFrom } : {}),
+      }}
+      viewport={{ once: false, margin: margin }}
       transition={{
         duration: duration,
         delay: delay,

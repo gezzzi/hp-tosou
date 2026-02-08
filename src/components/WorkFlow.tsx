@@ -1,6 +1,7 @@
 'use client';
 
 import FadeIn from "@/components/FadeIn";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function WorkFlow() {
   const flowSteps = [
@@ -40,7 +41,7 @@ export default function WorkFlow() {
         
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {flowSteps.map((step, index) => (
-            <FadeIn key={index} delay={index * 0.1} className="text-center relative">
+            <ScrollReveal key={index} delay={index * 0.1} className="text-center relative">
               {index < flowSteps.length - 1 && (
                 <div className="hidden md:block absolute top-8 left-[60%] w-[80%] h-0.5 bg-[var(--primary-green)]/30"></div>
               )}
@@ -51,7 +52,7 @@ export default function WorkFlow() {
               </div>
               <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-[var(--text-dark)] mb-2">{step.title}</h3>
               <p className="text-base sm:text-lg text-[var(--text-medium)] leading-relaxed">{step.description}</p>
-            </FadeIn>
+            </ScrollReveal>
           ))}
         </div>
       </div>

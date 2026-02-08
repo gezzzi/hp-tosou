@@ -1,12 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { Phone, Mail } from 'lucide-react';
-import FadeIn from './FadeIn';
+import ScrollReveal from './ScrollReveal';
 import { motion } from 'framer-motion';
-
-import WaveDivider from './WaveDivider';
 
 export default function HomeCTA() {
   const title = "無料｜ご相談｜診断｜お見積り｜";
@@ -17,7 +14,7 @@ export default function HomeCTA() {
         {/* 背景デザインが見えるように背景画像とオーバーレイを削除 */}
 
         <div className="relative z-10 max-w-4xl mx-auto px-4">
-          <FadeIn>
+          <ScrollReveal scale scaleFrom={0.7}>
             <div className="bg-white backdrop-blur-sm p-8 md:p-12 rounded-2xl border-[3px] border-[var(--border-light)] shadow-xl text-center text-(--text-dark)">
               <h2 className="text-2xl md:text-4xl font-bold mb-3 flex flex-wrap items-center justify-center gap-x-1">
                 {title === "無料｜ご相談｜診断｜お見積り｜" ? (
@@ -69,7 +66,7 @@ export default function HomeCTA() {
                 </motion.div>
               </div>
             </div>
-          </FadeIn>
+          </ScrollReveal>
         </div>
       </section>
     </>

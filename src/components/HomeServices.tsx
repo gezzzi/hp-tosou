@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ClipboardCheck } from 'lucide-react';
 import FadeIn from './FadeIn';
+import ScrollReveal from './ScrollReveal';
 
 export default function HomeServices() {
   const services = [
@@ -41,7 +42,7 @@ export default function HomeServices() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-sm md:max-w-6xl mx-auto">
           {services.map((service, index) => (
-            <FadeIn key={index} delay={index * 0.2} direction={index === 0 ? 'right' : 'left'}>
+            <ScrollReveal key={index} delay={index * 0.15} direction={index === 0 ? 'right' : 'left'} scale>
               <Link
                 href={service.href}
                 className="block rounded-lg overflow-hidden shadow-lg group relative aspect-[4/3] w-full"
@@ -81,7 +82,7 @@ export default function HomeServices() {
                   </div>
                 </div>
               </Link>
-            </FadeIn>
+            </ScrollReveal>
           ))}
         </div>
 

@@ -2,6 +2,7 @@
 
 import { MessageSquare, Star } from 'lucide-react';
 import FadeIn from './FadeIn';
+import ScrollReveal from './ScrollReveal';
 
 export default function HomeReviews() {
   const reviews = [
@@ -39,7 +40,7 @@ export default function HomeReviews() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {reviews.map((review, index) => (
-            <FadeIn key={index} delay={index * 0.1}>
+            <ScrollReveal key={index} delay={index * 0.1} scale scaleFrom={0.7}>
               <div className="bg-white rounded-lg p-6 shadow-md h-full hover:shadow-lg transition-shadow duration-300">
                 <div className="flex text-[var(--accent-yellow)] mb-3">
                   {[...Array(review.rating)].map((_, i) => (
@@ -51,7 +52,7 @@ export default function HomeReviews() {
                 </p>
                 <p className="text-xs text-[var(--text-light)]">— {review.service}のお客様</p>
               </div>
-            </FadeIn>
+            </ScrollReveal>
           ))}
         </div>
       </div>

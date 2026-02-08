@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Clock } from "lucide-react";
 import { useSearchParams } from "next/navigation";
+import ScrollReveal from "./ScrollReveal";
 
 const allCases = [
     {
@@ -126,7 +127,8 @@ export default function ServiceCaseList() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredCases.map((caseItem, index) => (
-            <Link key={index} href={caseItem.href} className="bg-white overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.1)] group block">
+            <ScrollReveal key={caseItem.id} delay={index * 0.1}>
+            <Link href={caseItem.href} className="bg-white overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.1)] group block">
               <div className="relative h-80 overflow-hidden">
                 <Image
                   src={caseItem.image}
@@ -153,6 +155,7 @@ export default function ServiceCaseList() {
                 <h3 className="font-bold text-(--text-dark)">{caseItem.title}</h3>
               </div>
             </Link>
+            </ScrollReveal>
           ))}
         </div>
 

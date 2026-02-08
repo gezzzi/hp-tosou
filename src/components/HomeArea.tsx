@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { MapPin } from 'lucide-react';
 import FadeIn from './FadeIn';
+import ScrollReveal from './ScrollReveal';
 
 export default function HomeArea() {
   const areas = [
@@ -28,7 +29,7 @@ export default function HomeArea() {
           </div>
         </FadeIn>
 
-        <FadeIn direction="none" delay={0.2}>
+        <ScrollReveal direction="none" scale margin="-300px">
           <div className="max-w-3xl mx-auto">
           <div className="border-t-[3px] border-(--border-light) overflow-hidden">
             <div className="border-x-[3px] border-(--border-light)">
@@ -92,7 +93,7 @@ export default function HomeArea() {
             </div>
           </div>
         </div>
-      </FadeIn>
+      </ScrollReveal>
     </div>
   </section>
   );
