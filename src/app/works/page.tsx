@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import HomeCTA from "@/components/HomeCTA";
 import ServiceCaseList from "@/components/ServiceCaseList";
 import WorkFlow from "@/components/WorkFlow";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "実績 | 株式会社マルヨ",
@@ -20,7 +21,9 @@ export default function CaseStudiesPage() {
           subtitle="WORKS"
           bgImage="/pic/hd/service-hd.jpg"
         />
-        <ServiceCaseList />
+        <Suspense fallback={<div className="py-32 text-center">読み込み中...</div>}>
+          <ServiceCaseList />
+        </Suspense>
         <WorkFlow />
         <HomeCTA />
       </main>

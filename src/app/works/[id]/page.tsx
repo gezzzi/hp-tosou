@@ -15,7 +15,7 @@ const allCases = [
     title: '外壁塗装施工例',
     description: '築20年の戸建て住宅の外壁塗装。色褪せと一部剥がれが見られたため、全面塗り替えを実施しました。',
     image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200&h=800&fit=crop',
-    tags: ['外壁塗装'],
+    tags: ['塗装', '外壁塗装'],
     date: '2024年1月15日',
   },
   {
@@ -42,7 +42,7 @@ const allCases = [
     title: '屋根塗装施工例',
     description: 'トタン屋根の塗り替え工事。錆止め処理後、遮熱塗料で仕上げました。',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=800&fit=crop',
-    tags: ['屋根塗装'],
+    tags: ['塗装', '屋根塗装'],
     date: '2023年12月20日',
   },
   {
@@ -60,7 +60,7 @@ const allCases = [
     title: '防水塗装・シーリング工事',
     description: 'ベランダの防水塗装とサッシ周りのシーリング打ち替え。雨漏り対策を万全にしました。',
     image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&h=800&fit=crop',
-    tags: ['防水塗装'],
+    tags: ['塗装', '防水塗装'],
     date: '2023年11月5日',
   },
   {
@@ -69,7 +69,7 @@ const allCases = [
     title: 'アパート外壁・屋根塗装',
     description: 'アパート一棟の丸ごと塗装。入居率アップを目指し、清潔感のある配色に仕上げました。',
     image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&h=800&fit=crop',
-    tags: ['外壁塗装', '屋根塗装'],
+    tags: ['塗装', '外壁塗装', '屋根塗装'],
     date: '2023年10月12日',
   },
   {
@@ -96,8 +96,9 @@ const junkPhotos = [
 ];
 
 function getTagColor(tag: string) {
-  if (tag === '不用品回収') return 'bg-[#166caa]';
-  return 'bg-[#018615]';
+  if (tag === '不用品回収') return 'bg-[#ffea03] text-[var(--text-dark)] font-bold';
+  if (tag === '清掃') return 'bg-[#3b82f6]';
+  return 'bg-[#2e9d14]';
 }
 
 export default async function CaseDetailPage({ params }: { params: Promise<{ id: string }> }) {
@@ -132,8 +133,8 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ id:
           <div className="max-w-4xl mx-auto px-4">
             <div className="bg-[#f8f9fa]">
               <div className="relative pl-8 mb-8 md:mb-12">
-                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#018615]"></div>
-                <div className="absolute left-2 top-0 bottom-0 w-0.5 bg-[#018615]"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#2e9d14]"></div>
+                <div className="absolute left-2 top-0 bottom-0 w-0.5 bg-[#2e9d14]"></div>
                 <div className="flex flex-wrap items-center gap-6 mb-4 text-sm text-(--text-medium)">
                   <div className="flex items-center gap-2">
                     <Clock size={18} />
@@ -172,12 +173,12 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ id:
                   {/* メモセクション */}
                   <div className="mt-12">
                     <h3 className="text-xl font-bold text-(--text-dark) mb-6 flex items-center gap-2">
-                      <span className="w-2 h-6 bg-[#018615]"></span>
+                      <span className="w-2 h-6 bg-[#2e9d14]"></span>
                       メモ
                     </h3>
-                    <div className="p-8 bg-white border-t-4 border-b-2 border-[#dee2e6] border-t-[#018615] relative shadow-sm">
+                    <div className="p-8 bg-white border-t-4 border-b-2 border-[#dee2e6] border-t-[#2e9d14] relative shadow-sm">
                       <div className="absolute top-0 left-8 right-8 h-full opacity-60 pointer-events-none" style={{ backgroundImage: 'linear-gradient(transparent 2.45rem, #adb5bd 2.45rem)', backgroundSize: '100% 2.5rem' }}></div>
-                      <div className="relative text-[#018615] font-medium text-lg leading-[2.5rem] pt-[0.6rem]">
+                      <div className="relative text-[#2e9d14] font-medium text-lg leading-[2.5rem] pt-[0.6rem]">
                         {caseItem.description}
                       </div>
                     </div>
@@ -186,7 +187,7 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ id:
                   {/* 作業概要セクション */}
                   <div className="mt-16">
                     <h3 className="text-xl font-bold text-(--text-dark) mb-6 flex items-center gap-2">
-                      <span className="w-2 h-6 bg-[#018615]"></span>
+                      <span className="w-2 h-6 bg-[#2e9d14]"></span>
                       作業概要
                     </h3>
                     <div className="overflow-hidden border-y border-gray-400">
@@ -226,7 +227,7 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ id:
                   {/* 現場写真セクション */}
                   <div className="mt-16">
                     <h3 className="text-xl font-bold text-(--text-dark) mb-6 flex items-center gap-2">
-                      <span className="w-2 h-6 bg-[#018615]"></span>
+                      <span className="w-2 h-6 bg-[#2e9d14]"></span>
                       現場写真
                     </h3>
                     <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">

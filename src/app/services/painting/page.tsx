@@ -123,7 +123,7 @@ export default function PaintingServicePage() {
                   <p className="text-[var(--text-medium)] leading-relaxed mb-8">{service.description}</p>
                   <div className="flex justify-center">
                     <Link
-                      href="/works/"
+                      href={`/works/?tag=${service.title}`}
                       className="btn-outline px-6! flex! items-center justify-center gap-2 group whitespace-nowrap min-w-[200px]"
                     >
                       {service.title}の実績
