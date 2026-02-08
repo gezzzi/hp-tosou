@@ -12,14 +12,14 @@ export default function HomeServices() {
     {
       title: '塗装',
       description: '外壁塗装、屋根塗装、物置・門扉など各種塗装工事。\n親子代々続く確かな技術で対応します。',
-      image: '/pic/service-tosou-v2.jpg?v=2',
+      image: '/pic/roller.png',
       href: '/services/painting',
       color: 'primary'
     },
     {
       title: '不用品回収・清掃',
       description: '2トントラック積み放題28,000円。\n追加料金なし、自社施工で安心のサービスを提供します。',
-      image: '/pic/truck.webp?v=2',
+      image: '/pic/track.png',
       href: '/services/junk-removal',
       color: 'accent'
     }

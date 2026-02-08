@@ -20,20 +20,23 @@ export default function JunkRemovalServicePage() {
     {
       title: '不用品回収',
       description: '大きな家具や家電、日用品など不要になったものを回収。お客様で運ぶ必要はありません。',
-      image: '/pic/truck.webp',
+      image: '/pic/track.png',
       icon: <Truck className="w-16 h-16" />,
+      overlayOpacity: 'bg-black/10'
     },
     {
       title: '清掃・草刈り',
       description: '草刈り機を使用した除草作業や、高圧洗浄機による外壁・土間の清掃など、住まいの「困った」に対応します。',
-      image: '/pic/service-junk.jpg',
+      image: '/pic/kusakari-v2.png',
       icon: <Sparkles className="w-16 h-16" />,
+      overlayOpacity: 'bg-black/30'
     },
     {
       title: 'ゴミ屋敷清掃',
       description: 'お部屋の状態を問わず対応。不用品の回収から清掃まで、プライバシーに配慮して作業します。',
-      image: '/pic/header-junk.jpg',
+      image: '/pic/seisou.png',
       icon: <Trash2 className="w-16 h-16" />,
+      overlayOpacity: 'bg-black/20'
     },
   ];
 
@@ -119,7 +122,7 @@ export default function JunkRemovalServicePage() {
                       fill
                       className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/20 flex items-center justify-center pb-16">
+                    <div className={`absolute inset-0 ${service.overlayOpacity || 'bg-black/20'} flex items-center justify-center pb-16`}>
                       <h3 className="text-xl md:text-2xl font-bold brush-stroke-container text-black/70 whitespace-nowrap">
                         <span className="relative z-10">{service.title}</span>
                         <div className="brush-stroke-bg bg-service-junk" />

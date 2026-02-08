@@ -20,19 +20,19 @@ export default function PaintingServicePage() {
     {
       title: '外壁塗装',
       description: '外壁の塗り替えで建物を美しく保護。色褪せや剥がれを解消し、建物の寿命を延ばします。',
-      image: '/pic/service-tosou-v2.jpg',
+      image: '/pic/gaihekitosou.png',
       icon: <BrickWall className="w-16 h-16" />,
     },
     {
       title: '屋根塗装',
       description: 'トタン屋根などの塗り替え。雨漏りや錆を防ぎ、建物を守ります。',
-      image: '/pic/header-pc.jpg',
+      image: '/pic/yanetosou.png',
       icon: <Home className="w-16 h-16" />,
     },
     {
       title: '防水塗装',
       description: 'ベランダや屋根の防水工事。雨漏りから建物を守り、耐久性を高めます。',
-      image: '/pic/service-tosou.jpg',
+      image: '/pic/bousuitosou.png',
       icon: <Droplets className="w-16 h-16" />,
     },
   ];

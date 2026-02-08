@@ -75,7 +75,7 @@ export default function HomeCompany() {
                 </div>
 
                 <div className="w-full md:w-2/3 flex flex-col">
-                  <p className="text-(--text-medium) leading-relaxed mb-6">
+                  <p className="text-(--text-medium) md:text-xl leading-relaxed mb-6">
                     親子代々続く確かな技術で、塗装から不用品回収・清掃まで幅広く対応。安心と丁寧をモットーにお客様の暮らしを支えます。
                   </p>
                   <span className="inline-flex items-center gap-1 text-sm font-bold text-(--primary-green) group-hover:gap-2 transition-all ml-auto">

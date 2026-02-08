@@ -109,7 +109,8 @@ export default function HomeCaseStudies() {
         {/* 連続スクロール（モバイル・PC共通） */}
         <div className="overflow-hidden -mx-4">
           <motion.div
-            className="flex gap-4 md:gap-6"
+            className="flex gap-4 md:gap-6 will-change-transform"
+            style={{ backfaceVisibility: 'hidden', z: 0 }}
             animate={{
               x: [0, -totalDistance]
             }}

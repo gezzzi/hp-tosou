@@ -11,7 +11,7 @@ export default function ServicesContent() {
     {
       title: '塗装',
       description: '外壁塗装、屋根塗装など、住宅の塗装工事を承ります。親子代々続く確かな技術でお客様の大切な住まいを守ります。',
-      image: '/pic/service-tosou-v2.jpg',
+      image: '/pic/roller.png',
       href: '/services/painting',
       color: 'var(--primary-green)',
       icon: <Paintbrush className="w-16 h-16" />
@@ -19,7 +19,7 @@ export default function ServicesContent() {
     {
       title: '不用品回収・清掃',
       description: '２トントラックによる不用品回収、草刈り機を使った除草作業、高圧洗浄機での土間・外壁清掃など、住まいの「困った」を解決します。',
-      image: '/pic/truck.webp',
+      image: '/pic/track.png',
       href: '/services/junk-removal',
       color: 'var(--service-junk-light)',
       icon: <Truck className="w-16 h-16" />
@@ -52,14 +52,18 @@ export default function ServicesContent() {
           {serviceCategories.map((category, index) => (
             <FadeIn key={index} delay={index * 0.2} direction={index === 0 ? 'right' : 'left'}>
               <div className="text-center">
-                <div className="relative h-48 md:h-64 mb-8 -mx-4 md:mx-0 rounded-lg overflow-hidden shadow-md group">
+                <div className="relative h-48 md:h-64 mb-8 -mx-4 md:mx-0 overflow-hidden shadow-md group">
                   <Image
                     src={category.image}
                     alt={category.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-black/20 flex items-center justify-center pb-16">
+                  <div className={`absolute inset-0 ${category.color === 'var(--primary-green)'
+                    ? 'bg-primary/10'
+                    : 'bg-accent/10'
+                    }`}></div>
+                  <div className="absolute inset-0 flex flex-col p-6 pb-16 items-center justify-center">
                     <h2 className="text-2xl md:text-3xl font-bold brush-stroke-container text-white whitespace-nowrap">
                       <span className={`relative z-10 ${category.color === 'var(--service-junk-light)' ? 'text-black/70' : 'text-white'}`}>{category.title}</span>
                       <div className={`brush-stroke-bg ${category.color === 'var(--primary-green)' ? 'bg-service-painting' : 'bg-service-junk'}`} />
