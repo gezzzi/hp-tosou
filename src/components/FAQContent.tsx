@@ -81,7 +81,7 @@ const faqItems = [
 
 export default function FAQContent() {
   return (
-    <section className="py-16 bg-transparent overflow-hidden">
+    <section className="py-16 bg-(--bg-light) overflow-hidden">
       <div className="max-w-4xl mx-auto px-4">
         <div className="space-y-12">
           {faqItems.map((category, catIndex) => (

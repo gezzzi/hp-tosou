@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import HomeCTA from "@/components/HomeCTA";
 import WorkFlow from "@/components/WorkFlow";
 import FAQContent from "@/components/FAQContent";
+import WaveDivider from "@/components/WaveDivider";
 
 export const metadata = {
   title: "よくあるご質問 | 株式会社マルヨ",
@@ -20,7 +21,19 @@ export default function FAQPage() {
           subtitle="FAQ" 
           bgImage="/pic/hd/faq-hd.jpg"
         />
+
+        {/* transparent -> bg-light (Wave at bottom) */}
+        <div className="bg-transparent">
+          <WaveDivider color="var(--bg-light)" />
+        </div>
+
         <FAQContent />
+
+        {/* bg-light -> transparent (Wave at top) */}
+        <div className="bg-transparent">
+          <WaveDivider color="var(--bg-light)" flip />
+        </div>
+
         <WorkFlow />
         <HomeCTA />
       </main>

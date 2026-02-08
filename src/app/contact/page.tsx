@@ -113,7 +113,7 @@ function ContactForm() {
             <div>
               <h2 className="text-2xl lg:text-3xl font-bold text-black mb-8 text-center">お電話でのお問い合わせ</h2>
 
-              <div className="bg-[var(--bg-light)] rounded-lg p-8 md:p-12">
+              <div className="bg-white rounded-lg p-8 md:p-12 border-[3px] border-[var(--border-light)]">
                 <p className="text-lg md:text-xl text-[var(--text-light)] mb-4 text-center">お気軽にお電話ください（社長直通）</p>
                 <a href="tel:054-552-8798" className="flex items-center justify-center gap-4 text-4xl md:text-5xl font-bold text-black mb-6">
                   <svg className="w-10 h-10 text-[var(--primary-green)]" fill="currentColor" viewBox="0 0 24 24">
