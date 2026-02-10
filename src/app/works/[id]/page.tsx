@@ -97,8 +97,8 @@ const junkPhotos = [
 
 function getTagColor(tag: string) {
   if (tag === '不用品回収') return 'bg-[#ffea03] text-[var(--text-dark)] font-bold';
-  if (tag === '清掃') return 'bg-[#3b82f6]';
-  return 'bg-[#2e9d14]';
+  if (tag === '清掃') return 'bg-[#3b82f6] text-white';
+  return 'bg-[#2e9d14] text-white';
 }
 
 export default async function CaseDetailPage({ params }: { params: Promise<{ id: string }> }) {
@@ -145,7 +145,7 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ id:
                       {caseItem.tags.map(tag => (
                         <span
                           key={tag}
-                          className={`text-white px-2 py-0.5 text-xs ${getTagColor(tag)}`}
+                          className={`px-2 py-0.5 text-xs rounded-full ${getTagColor(tag)}`}
                         >
                           {tag}
                         </span>

@@ -140,7 +140,7 @@ export default function HomeCaseStudies() {
                   <div className={`absolute inset-0 ${item.color === 'primary' ? 'bg-primary/10' : 'bg-service-junk/10'}`}></div>
                   <div className="absolute inset-0 flex flex-col p-4 md:p-6 bg-linear-to-t from-black/80 via-black/40 to-transparent">
                     <div className="mt-auto">
-                      <span className={`text-xs md:text-sm px-2 py-1 rounded-full ${item.color === 'primary' ? 'bg-[#018615]' : 'bg-[#166caa]'} text-white mb-2 inline-block`}>
+                      <span className={`text-xs md:text-sm px-2 py-1 rounded-full ${item.category === '不用品回収' ? 'bg-[#ffea03] text-[var(--text-dark)] font-bold' : item.category === '清掃' ? 'bg-[#3b82f6] text-white' : 'bg-[#2e9d14] text-white'} mb-2 inline-block`}>
                         {item.category}
                       </span>
                       <h3 className="text-lg md:text-xl font-bold text-white mb-2">

@@ -142,7 +142,7 @@ export default function ServiceCaseList() {
                   {caseItem.tags.map(tag => (
                     <span
                       key={tag}
-                      className={`text-xs px-2 py-1 rounded-none ${getTagColor(tag)}`}
+                      className={`text-xs px-2 py-1 rounded-full ${getTagColor(tag)}`}
                     >
                       {tag}
                     </span>
