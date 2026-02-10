@@ -6,6 +6,7 @@ import { Clock } from "lucide-react";
 import { notFound } from "next/navigation";
 import ImageModalWrapper from "@/components/ImageModalWrapper";
 import WorkFlow from "@/components/WorkFlow";
+import HomeCTA from "@/components/HomeCTA";
 import WaveDivider from "@/components/WaveDivider";
 
 const allCases = [
@@ -262,6 +263,7 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ id:
         </div>
 
         <WorkFlow />
+        <HomeCTA />
       </main>
       <Footer />
     </>
