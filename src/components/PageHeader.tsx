@@ -18,20 +18,9 @@ export default function PageHeader({ title, subtitle }: PageHeaderProps) {
           <div className="flex flex-col items-center gap-4 text-center">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
-              animate={{ 
-                opacity: 1, 
-                y: [0, -10, 0],
-              }}
-              transition={{ 
-                opacity: { duration: 0.6 },
-                y: {
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }
-              }}
-              style={{ willChange: "transform" }}
-              className="text-5xl md:text-7xl font-bold text-[var(--primary-green)] drop-shadow-[0_2px_2px_rgba(0,0,0,0.1)] transform-gpu"
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-5xl md:text-7xl font-bold text-[var(--primary-green)] drop-shadow-[0_2px_2px_rgba(0,0,0,0.1)]"
             >
               {title}
             </motion.h1>
@@ -39,21 +28,9 @@ export default function PageHeader({ title, subtitle }: PageHeaderProps) {
             {subtitle && (
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ 
-                  opacity: 1, 
-                  y: [0, 8, 0],
-                }}
-                transition={{ 
-                  opacity: { duration: 0.6, delay: 0.2 },
-                  y: {
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 0.5
-                  }
-                }}
-                style={{ willChange: "transform" }}
-                className="text-xl md:text-2xl italic tracking-[0.2em] font-black text-slate-400 uppercase drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)] ml-1 transform-gpu"
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-xl md:text-2xl italic tracking-[0.2em] font-black text-slate-400 uppercase drop-shadow-[0_1px_1px_rgba(0,0,0,0.1)] ml-1"
               >
                 {subtitle}
               </motion.span>

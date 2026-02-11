@@ -33,9 +33,14 @@ export default function Footer() {
                   className="object-contain"
                 />
               </div>
-              <div>
-                <h3 className="text-3xl font-extrabold text-black" style={{ fontFamily: "var(--font-mochiy-pop-p-one), sans-serif" }}>株式会社マルヨ</h3>
-              </div>
+              <Image
+                src="/株式会社マルヨ.png"
+                alt="株式会社マルヨ"
+                width={600}
+                height={100}
+                className="h-10 lg:h-16 w-auto object-contain"
+                quality={100}
+              />
             </div>
             <address className="not-italic text-sm text-[var(--text-dark)] space-y-1 text-center">
               <p>〒417-0061 静岡県富士市伝法2503-5</p>

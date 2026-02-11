@@ -66,13 +66,19 @@ export default function Header() {
     <>
       {/* メインヘッダー */}
       <header className="lg:relative sticky top-0 bg-white z-[130]">
-        <div className="max-w-6xl mx-auto px-4 py-3">
+        <div className="max-w-6xl mx-auto px-4 py-2 lg:py-3">
         <div className="flex justify-between items-center">
           {/* ロゴ・会社名 */}
           <Link href="/" className="flex items-center gap-3">
-            <div>
-              <h1 className="text-3xl font-extrabold text-black" style={{ fontFamily: "var(--font-mochiy-pop-p-one), sans-serif" }}>株式会社マルヨ</h1>
-            </div>
+            <Image
+              src="/株式会社マルヨ.png"
+              alt="株式会社マルヨ"
+              width={600}
+              height={100}
+              className="h-10 lg:h-16 w-auto object-contain"
+              quality={100}
+              priority
+            />
           </Link>
 
           {/* 電話番号 - PC */}
