@@ -19,7 +19,7 @@ export default function Hero() {
         >
           <div className="h-full w-full relative">
             <Image
-              src="/pic/header-mb.jpg?v=2"
+              src="/pic/home-mb.png"
               alt="塗装作業イメージ"
               fill
               className="object-cover"
