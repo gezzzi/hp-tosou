@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP, M_PLUS_1p, Mochiy_Pop_P_One } from "next/font/google";
+import dynamic from "next/dynamic";
 import "./globals.css";
-import MobileFloatingCTA from "@/components/MobileFloatingCTA";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
-import FloatingCircles from "@/components/FloatingCircles";
 import ScrollToTop from "@/components/ScrollToTop";
+
+const FloatingCircles = dynamic(() => import("@/components/FloatingCircles"));
+const MobileFloatingCTA = dynamic(() => import("@/components/MobileFloatingCTA"));
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",

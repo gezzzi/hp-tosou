@@ -7,6 +7,20 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, ChevronDown, Mail } from 'lucide-react';
 
+const NAV_ITEMS = [
+  { label: 'ホーム', href: '/' },
+  { label: '実績', href: '/works/' },
+  { label: '料金案内', href: '/pricing/' },
+  { label: '会社案内', href: '/about/' },
+  { label: 'よくあるご質問', href: '/faq/' },
+  { label: 'お問い合わせ', href: '/contact/' },
+];
+
+const SERVICE_ITEMS = [
+  { label: '塗装', href: '/services/painting/' },
+  { label: '不用品回収・清掃', href: '/services/junk-removal/' },
+];
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -36,20 +50,6 @@ export default function Header() {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
-
-  const navItems = [
-    { label: 'ホーム', href: '/' },
-    { label: '実績', href: '/works/' },
-    { label: '料金案内', href: '/pricing/' },
-    { label: '会社案内', href: '/about/' },
-    { label: 'よくあるご質問', href: '/faq/' },
-    { label: 'お問い合わせ', href: '/contact/' },
-  ];
-
-  const serviceItems = [
-    { label: '塗装', href: '/services/painting/' },
-    { label: '不用品回収・清掃', href: '/services/junk-removal/' },
-  ];
 
   const isActive = (href: string) => {
     if (href === '/') {
@@ -182,7 +182,7 @@ export default function Header() {
                     className="absolute top-full left-0 w-56 bg-white shadow-xl border border-[var(--border-light)] overflow-hidden z-[60]"
                   >
                     <div className="py-2">
-                      {serviceItems.map((item) => (
+                      {SERVICE_ITEMS.map((item) => (
                         <Link
                           key={item.href}
                           href={item.href}
@@ -203,7 +203,7 @@ export default function Header() {
             </li>
 
             {/* 他のナビゲーション項目 */}
-            {navItems.slice(1).map((item) => (
+            {NAV_ITEMS.slice(1).map((item) => (
               <li key={item.href} className="flex-1 border-l border-gray-300 last:border-r">
                 <Link
                   href={item.href}
@@ -292,7 +292,7 @@ export default function Header() {
                       isMobileServicesOpen ? 'max-h-60' : 'max-h-0'
                     }`}
                   >
-                    {serviceItems.map((item) => (
+                    {SERVICE_ITEMS.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}
@@ -310,7 +310,7 @@ export default function Header() {
                 </li>
 
                 {/* 他のナビゲーション項目 */}
-                {navItems.slice(1).map((item) => (
+                {NAV_ITEMS.slice(1).map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}

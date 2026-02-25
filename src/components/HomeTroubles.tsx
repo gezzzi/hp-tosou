@@ -4,15 +4,16 @@ import { useState, useEffect, useRef } from 'react';
 import { HelpCircle } from 'lucide-react';
 import FadeIn from './FadeIn';
 
+const TROUBLES = [
+  '外壁の汚れやひび割れが目立ってきた',
+  '屋根のサビや色あせをなんとかしたい',
+  '家中の不用品、自分で処分するには多すぎる',
+  'お庭や外壁を草刈機・高圧洗浄機できれいにしたい',
+  '大手業者の見積もりが高すぎて驚いた',
+  '地元の信頼できる業者に直接頼みたい'
+];
+
 export default function HomeTroubles() {
-  const troubles = [
-    '外壁の汚れやひび割れが目立ってきた',
-    '屋根のサビや色あせをなんとかしたい',
-    '家中の不用品、自分で処分するには多すぎる',
-    'お庭や外壁を草刈機・高圧洗浄機できれいにしたい',
-    '大手業者の見積もりが高すぎて驚いた',
-    '地元の信頼できる業者に直接頼みたい'
-  ];
 
   // 2列表示（384px 〜 767px）かどうかを判定する
   const [isTwoColumn, setIsTwoColumn] = useState(false);
@@ -101,7 +102,7 @@ export default function HomeTroubles() {
             }
           `}</style>
           <div className="flex flex-wrap justify-center gap-4 md:gap-8 max-w-[340px] sm:max-w-[500px] md:max-w-none mx-auto">
-            {troubles.map((trouble, index) => (
+            {TROUBLES.map((trouble, index) => (
               <div
                 key={index}
                 className={`circle-drop${isVisible ? ' animate' : ''} trouble-item relative group w-40 h-40 sm:w-52 sm:h-52 md:w-56 md:h-56 flex items-center justify-center transition-all duration-300`}

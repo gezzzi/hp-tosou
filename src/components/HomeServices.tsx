@@ -7,23 +7,24 @@ import { ClipboardCheck } from 'lucide-react';
 import FadeIn from './FadeIn';
 import ScrollReveal from './ScrollReveal';
 
+const SERVICES = [
+  {
+    title: '塗装',
+    description: '外壁塗装、屋根塗装、物置・門扉など各種塗装工事。\n親子代々続く確かな技術で対応します。',
+    image: '/pic/roller.png',
+    href: '/services/painting',
+    color: 'primary'
+  },
+  {
+    title: '不用品回収・清掃',
+    description: '2トントラック積み放題28,000円。\n追加料金なし、自社施工で安心のサービスを提供します。',
+    image: '/pic/track.png',
+    href: '/services/junk-removal',
+    color: 'accent'
+  }
+];
+
 export default function HomeServices() {
-  const services = [
-    {
-      title: '塗装',
-      description: '外壁塗装、屋根塗装、物置・門扉など各種塗装工事。\n親子代々続く確かな技術で対応します。',
-      image: '/pic/roller.png',
-      href: '/services/painting',
-      color: 'primary'
-    },
-    {
-      title: '不用品回収・清掃',
-      description: '2トントラック積み放題28,000円。\n追加料金なし、自社施工で安心のサービスを提供します。',
-      image: '/pic/track.png',
-      href: '/services/junk-removal',
-      color: 'accent'
-    }
-  ];
 
   return (
     <section className="py-16 bg-(--bg-light) overflow-hidden relative">
@@ -41,7 +42,7 @@ export default function HomeServices() {
         </FadeIn>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-sm md:max-w-6xl mx-auto">
-          {services.map((service, index) => (
+          {SERVICES.map((service, index) => (
             <ScrollReveal key={index} delay={index * 0.15} direction={index === 0 ? 'right' : 'left'} scale>
               <Link
                 href={service.href}

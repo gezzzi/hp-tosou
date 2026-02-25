@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import ImageModal from "./ImageModal";
+import dynamic from "next/dynamic";
+
+const ImageModal = dynamic(() => import("./ImageModal"), { ssr: false });
 
 interface ImageModalWrapperProps {
   images: string[];
@@ -17,12 +19,14 @@ export default function ImageModalWrapper({ images, initialIndex, children }: Im
       <div onClick={() => setIsOpen(true)}>
         {children}
       </div>
-      <ImageModal
-        images={images}
-        initialIndex={initialIndex}
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
-      />
+      {isOpen && (
+        <ImageModal
+          images={images}
+          initialIndex={initialIndex}
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+        />
+      )}
     </>
   );
 }
