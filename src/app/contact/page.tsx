@@ -11,9 +11,6 @@ import FadeIn from "@/components/FadeIn";
 import { User, Building2 } from "lucide-react";
 import WaveDivider from "@/components/WaveDivider";
 
-// Formspreeのフォームエンドポイント
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/maqeeoan";
-
 function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -45,26 +42,28 @@ function ContactForm() {
 
     const form = e.currentTarget;
     const formData = new FormData(form);
+    const payload: Record<string, string> = {};
+    for (const [key, value] of formData.entries()) {
+      if (typeof value === "string") payload[key] = value;
+    }
 
     try {
-      const response = await fetch(FORMSPREE_ENDPOINT, {
+      const response = await fetch("/api/contact", {
         method: "POST",
-        body: formData,
         headers: {
+          "Content-Type": "application/json",
           Accept: "application/json",
         },
+        body: JSON.stringify(payload),
       });
 
-      if (response.ok) {
+      const data = await response.json().catch(() => ({ success: false }));
+
+      if (response.ok && data.success) {
         setIsSubmitted(true);
         form.reset();
       } else {
-        const data = await response.json();
-        if (data.errors) {
-          setError(data.errors.map((err: { message: string }) => err.message).join(", "));
-        } else {
-          setError("送信に失敗しました。もう一度お試しください。");
-        }
+        setError("送信に失敗しました。もう一度お試しください。");
       }
     } catch {
       setError("送信に失敗しました。ネットワーク接続を確認してください。");

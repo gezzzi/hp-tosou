@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# MCP config (contains Bearer key)
+.mcp.json
+
 # references
 /refs/
 

@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import "./globals.css";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import ScrollToTop from "@/components/ScrollToTop";
+import VisitTracker from "@/components/VisitTracker";
 
 const FloatingCircles = dynamic(() => import("@/components/FloatingCircles"));
 const MobileFloatingCTA = dynamic(() => import("@/components/MobileFloatingCTA"));
@@ -71,6 +72,7 @@ export default function RootLayout({
       <body className={`${notoSansJP.variable} ${mPlus1p.variable} ${mochiyPopPOne.variable} antialiased relative`}>
         <ScrollToTop />
         <GoogleAnalytics />
+        <VisitTracker />
         {/* ベースの白背景 */}
         <div className="fixed inset-0 bg-white -z-20" />
         {/* 浮遊する丸 */}
