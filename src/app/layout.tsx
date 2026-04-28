@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Noto_Sans_JP, M_PLUS_1p, Mochiy_Pop_P_One } from "next/font/google";
 import dynamic from "next/dynamic";
 import "./globals.css";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import ScrollToTop from "@/components/ScrollToTop";
 import VisitTracker from "@/components/VisitTracker";
+import SiteAdminAnalytics from "@/components/SiteAdminAnalytics";
 
 const FloatingCircles = dynamic(() => import("@/components/FloatingCircles"));
 const MobileFloatingCTA = dynamic(() => import("@/components/MobileFloatingCTA"));
@@ -73,6 +75,9 @@ export default function RootLayout({
         <ScrollToTop />
         <GoogleAnalytics />
         <VisitTracker />
+        <Suspense fallback={null}>
+          <SiteAdminAnalytics />
+        </Suspense>
         {/* ベースの白背景 */}
         <div className="fixed inset-0 bg-white -z-20" />
         {/* 浮遊する丸 */}
